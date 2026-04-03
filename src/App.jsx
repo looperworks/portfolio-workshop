@@ -1104,28 +1104,22 @@ Peer Review: Before finalizing, have two to three trusted colleagues or mentors 
 // Case study content
 const CASE_STUDY = {
   id: "casestudy",
-  title: "Case Study — Erosion",
-  part: "Between Parts I & II",
-  overview: `Stefan DiLeo's portfolio for Toshiko Mori's Advanced Studios at Harvard GSD demonstrates every principle in this guide applied to a single project: Apres Ski, a proposal to convert a decommissioned military bunker at Col du Pillon into an Alpine Museum in Les Diablerets, Switzerland.
+  title: "Case Study: Erosion",
+  part: "Part I Conclusion",
+  overview: `Stefan DiLeo's Apres Ski project, completed in Toshiko Mori's Advanced Studio at Harvard GSD, proposes converting a decommissioned military bunker at Col du Pillon into an Alpine Museum in Les Diablerets, Switzerland. Five spreads present the project. What follows is a reading of those spreads through the six modules of Part I, showing how each principle operates in practice.
 
-The compression exercise applied to this project revealed a single word that unified all images into one argument:
+**Module 1: The Portfolio as Constructed Argument.** This is not documentation of a studio assignment. Every spread advances a single claim: that architecture can make an invisible environmental process (glacial retreat, alpine erosion) into a spatial experience a visitor moves through. The spreads are not arranged to show what was produced. They are arranged to build a case.
 
-Paragraph: "This project investigated how existing alpine infrastructure can be repurposed to make the effects of climate change visible and publicly accessible. Situated between Gstaad and Les Diablerets in the Swiss Alps, the design converts a decommissioned military bunker at Col du Pillon into an Alpine Museum. The building embeds into the mountainside, using ramped circulation and carved ground planes to create a continuous path between the landscape above and gallery spaces below."
+**Module 2: Finding Your Position.** The compression exercise applied to this project: Paragraph: "This project converts a decommissioned military bunker at Col du Pillon into an Alpine Museum. The building embeds into the mountainside, using ramped circulation and carved ground planes to create a continuous path between the landscape above and gallery spaces below." Sentence: "The Alpine Museum embeds into eroding terrain to make the trajectory of climate change a spatial experience." Word: Erosion. Every image in the portfolio (terrain models, carved sections, embedded galleries) returns to that word.
 
-Sentence: "The Alpine Museum embeds into eroding terrain to make the invisible trajectory of climate change a spatial experience visitors move through."
+**Module 3: Structuring the Narrative.** The five spreads follow the three-act framework. Opening (Spreads 1 and 2): the terrain model and aerial site map establish the landscape as raw material and locate the intervention between Gstaad and Les Diablerets. Development (Spreads 3 and 4): building sections and model photographs show how the architecture carves into the mountainside, with winter renderings and night views adding experiential depth. Resolution (Spread 5): interior gallery renderings and floor plans reveal the finished spatial experience. The arc moves from landscape to building to inhabitation.
 
-Word: Erosion.
+**Module 4: Sequencing for Impact.** The portfolio opens not with a rendering but with a terrain model: a physical object that establishes the conceptual premise before any architecture appears. This is the strongest image because it frames everything that follows. The portfolio closes with interior gallery views and floor plans: the most resolved and inhabitable images. Strongest first, most resonant last.
 
-Five spreads map the narrative arc across image types. Each image returns to the single word. That is the Red Thread.
+**Module 5: Four Image Types.** Concept: the terrain model (Spread 1), establishing the idea of landscape as design material. Context: the aerial site map and winter photographs (Spreads 2 and 3), grounding the project in geography and climate. Process: the building sections (Spreads 3 and 4), showing how the architecture embeds into the slope. Outcome: the interior renderings and floor plans (Spread 5), demonstrating the resolved spatial experience. Each type appears where it belongs in the narrative arc.
 
-Spread 1 (Setup): Terrain model (Concept image). Landscape as raw material.
-Spread 2: Site map + detail (Context image). Alpine erosion at macro scale.
-Spread 3 (Confrontation): Section drawing (Process image). Building carves into ground. Winter site photo (Context) + night rendering of ramped entrance (Outcome).
-Spread 4: Full-width building section embedded into mountainside (Process). Erosion made accessible.
-Spread 5 (Synthesis): Interior gallery rendering (Outcome) + floor plans (Process). Erosion made inhabitable.
-
-Every image in this portfolio (terrain models, carved sections, embedded galleries) returns to this single word. That is the Red Thread. Every design decision, from the site section to the material palette to the graphic hierarchy, reinforces the same idea. That is how a portfolio argues.`,
-  keyInsight: `"Every image should return to the single word. That is the Red Thread."`,
+**Module 6: The Project Statement.** The original abstract begins: "With guidance from Toshiko Mori, we are exploring the relationship between larger global issues such as climate change and its impact on local villages." That is description, not declaration. It credits the instructor, uses passive voice, and offers no position. The compressed version declares: "The Alpine Museum embeds into eroding terrain to make the trajectory of climate change a spatial experience." One sentence. Active voice. A testable claim. That is a project statement.`,
+  keyInsight: null,
 };
 
 /* ─── Hash routing ─── */
