@@ -1043,33 +1043,36 @@ function DiagramSlideshow({ diagrams, moduleLabel, backHash }) {
               key={i}
               style={{
                 flexShrink: 0, position: "relative",
-                maxHeight: "70vh",
                 display: "flex", flexDirection: "column", alignItems: "center",
               }}
               onMouseEnter={() => setHovered(i)}
               onMouseLeave={() => setHovered(null)}
             >
-              {isImage ? (
-                <img
-                  src={`${basePath}images/${diagram.image}`}
-                  alt={diagram.alt || diagram.title}
-                  draggable={false}
-                  style={{
-                    height: "60vh", width: "auto", maxWidth: "70vw",
-                    display: "block", objectFit: "contain",
-                    userSelect: "none",
-                  }}
-                />
-              ) : DiagramComp ? (
-                <div style={{
-                  background: T.bgAlt, border: `1px solid ${T.border}`, padding: "32px 24px",
-                  height: "50vh", width: "auto", minWidth: 300, maxWidth: "60vw",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  overflow: "hidden",
-                }}>
-                  <div style={{ width: "100%", maxWidth: 480 }}><DiagramComp /></div>
-                </div>
-              ) : null}
+              {/* Uniform grey card */}
+              <div style={{
+                width: "60vh", height: "60vh",
+                background: T.bgAlt,
+                display: "flex", alignItems: "center", justifyContent: "center",
+                padding: 32, boxSizing: "border-box",
+                overflow: "hidden",
+              }}>
+                {isImage ? (
+                  <img
+                    src={`${basePath}images/${diagram.image}`}
+                    alt={diagram.alt || diagram.title}
+                    draggable={false}
+                    style={{
+                      maxWidth: "100%", maxHeight: "100%",
+                      display: "block", objectFit: "contain",
+                      userSelect: "none",
+                    }}
+                  />
+                ) : DiagramComp ? (
+                  <div style={{ width: "100%", maxWidth: 420 }}>
+                    <DiagramComp />
+                  </div>
+                ) : null}
+              </div>
               {/* Title on hover */}
               <div style={{
                 marginTop: 12, fontSize: 10, color: T.textLight, letterSpacing: "0.01em",
