@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 /* ─── Design tokens ─── */
 const T = {
@@ -754,57 +754,80 @@ function Lightbox({ diagram, onClose }) {
   );
 }
 
+/* ─── Hash routing ─── */
+function useHashRoute() {
+  const [route, setRoute] = useState(window.location.hash || "#/");
+  useEffect(() => {
+    const onHash = () => setRoute(window.location.hash || "#/");
+    window.addEventListener("hashchange", onHash);
+    return () => window.removeEventListener("hashchange", onHash);
+  }, []);
+  return route;
+}
+
+function navigate(hash) {
+  window.location.hash = hash;
+  window.scrollTo(0, 0);
+}
+
+/* ─── About content ─── */
+const ABOUT_TEXT = [
+  "Portfolio as Narrative is a workshop resource for architecture and design students learning to construct portfolios that argue rather than archive.",
+  "The guide covers fourteen modules — from finding your Red Thread and writing project statements, to building grid systems and selecting typography. Each module pairs pedagogical text with reference diagrams drawn from real student portfolios and professional practice.",
+  "The material originates from the Portfolio Workshop at Kent State University's College of Architecture and Environmental Design, taught by Seth Looper. It synthesizes principles from the Threshold Architecture Career Toolkit with methods developed through years of portfolio pedagogy, admissions consulting, and design education.",
+  "Whether you are preparing for graduate school applications, professional interviews, or scholarship reviews, the framework here applies. A portfolio is not a binder. It is an argument — and this guide shows you how to build one.",
+];
+
 /* ─── Main App ─── */
 export default function PortfolioGuide() {
-  const [activeModule, setActiveModule] = useState(null);
+  const route = useHashRoute();
   const [lightboxDiagram, setLightboxDiagram] = useState(null);
   const [visible, setVisible] = useState(true);
-  const contentRef = useRef(null);
+  const prevRoute = useRef(route);
 
-  const transition = (callback) => {
-    setVisible(false);
-    setTimeout(() => {
-      callback();
-      setVisible(true);
-    }, 250);
-  };
+  // Determine view from hash
+  let view = "landing";
+  let activeModule = null;
+  if (route === "#/about") {
+    view = "about";
+  } else if (route.startsWith("#/module/")) {
+    const id = parseInt(route.split("/")[2], 10);
+    activeModule = MODULES.find(m => m.id === id) || null;
+    if (activeModule) view = "module";
+  }
 
-  const handleModuleClick = (mod) => transition(() => {
-    setActiveModule(mod);
-    window.scrollTo(0, 0);
-  });
+  // Fade transition on route change
+  useEffect(() => {
+    if (prevRoute.current !== route) {
+      setVisible(false);
+      const t = setTimeout(() => setVisible(true), 60);
+      prevRoute.current = route;
+      return () => clearTimeout(t);
+    }
+  }, [route]);
 
-  const handleBack = () => transition(() => setActiveModule(null));
-
+  const handleModuleClick = (mod) => navigate(`#/module/${mod.id}`);
+  const handleBack = () => navigate("#/");
   const handleNavClick = (mod) => {
     if (mod.id === activeModule?.id) return;
-    transition(() => {
-      setActiveModule(mod);
-      window.scrollTo(0, 0);
-    });
+    navigate(`#/module/${mod.id}`);
   };
 
   // ─── Landing ───
-  if (!activeModule) {
+  if (view === "landing") {
     return (
       <div style={{ minHeight: "100vh", background: T.bg, fontFamily: T.sans, display: "flex", flexDirection: "column" }}>
         <header style={{ padding: "28px 40px", display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
           <div style={{ fontSize: 10, letterSpacing: "0.08em", textTransform: "uppercase", color: T.textMuted, fontWeight: 400 }}>
-            Portfolio Workshop — Spring 2026
+            Portfolio Workshop
           </div>
-          <div style={{ fontSize: 10, color: T.textMuted, letterSpacing: "0.04em" }}>Seth Looper</div>
+          <button onClick={() => navigate("#/about")} style={{
+            background: "none", border: "none", fontSize: 10, color: T.textMuted,
+            cursor: "pointer", fontFamily: T.sans, letterSpacing: "0.04em", padding: 0,
+          }}>About</button>
         </header>
 
         <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", padding: "0 40px" }}>
-          <div style={{ width: "100%", maxWidth: 400, textAlign: "center", marginBottom: 48 }}>
-            <h1 style={{ fontSize: 18, fontWeight: 400, lineHeight: 1.5, color: T.text, margin: 0, letterSpacing: "0.01em" }}>
-              Portfolio as Narrative
-            </h1>
-            <p style={{ fontSize: 11, lineHeight: 1.6, color: T.textLight, margin: "6px 0 0", letterSpacing: "0.02em" }}>
-              From the Red Thread to the Grid
-            </p>
-          </div>
-
           <div style={{ width: "100%", maxWidth: 400, opacity: visible ? 1 : 0, transition: "opacity 0.3s ease" }}>
             {MODULES.map((mod) => (
               <div
@@ -815,21 +838,62 @@ export default function PortfolioGuide() {
                   padding: "9px 0", borderBottom: `1px solid ${T.border}`,
                   cursor: "pointer", transition: "opacity 0.2s ease",
                 }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.opacity = "0.5";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.opacity = "1";
-                }}
+                onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.5"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}
               >
                 <span style={{ fontSize: 10, color: T.textFaint, fontVariantNumeric: "tabular-nums", minWidth: 20, fontWeight: 400, letterSpacing: "0.02em" }}>
                   {String(mod.id).padStart(2, "0")}
                 </span>
-                <span className="mt" style={{ fontSize: 12, color: T.text, fontWeight: 400, letterSpacing: "0.01em" }}>
+                <span style={{ fontSize: 12, color: T.text, fontWeight: 400, letterSpacing: "0.01em" }}>
                   {mod.title}
                 </span>
               </div>
             ))}
+          </div>
+        </div>
+
+        <footer style={{ padding: "28px 40px", display: "flex", justifyContent: "space-between", fontSize: 9, color: T.textFaint, fontFamily: T.sans, letterSpacing: "0.04em" }}>
+          <span>Kent State University · CAED</span>
+          <span>thresholdarch.com</span>
+        </footer>
+      </div>
+    );
+  }
+
+  // ─── About ───
+  if (view === "about") {
+    return (
+      <div style={{ minHeight: "100vh", background: T.bg, fontFamily: T.sans, display: "flex", flexDirection: "column" }}>
+        <header style={{ padding: "28px 40px", display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
+          <button onClick={handleBack} style={{
+            background: "none", border: "none", fontSize: 10, color: T.textMuted,
+            cursor: "pointer", fontFamily: T.sans, letterSpacing: "0.06em", textTransform: "uppercase", padding: 0,
+          }}>← Portfolio Workshop</button>
+          <div style={{ fontSize: 10, color: T.textMuted, letterSpacing: "0.04em" }}>About</div>
+        </header>
+
+        <div style={{
+          flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center",
+          padding: "0 40px", opacity: visible ? 1 : 0, transition: "opacity 0.3s ease",
+        }}>
+          <div style={{ width: "100%", maxWidth: 440 }}>
+            <h1 style={{ fontSize: 16, fontWeight: 500, color: T.text, margin: "0 0 8px", letterSpacing: "0.01em" }}>
+              Portfolio as Narrative
+            </h1>
+            <p style={{ fontSize: 11, color: T.textLight, margin: "0 0 28px", letterSpacing: "0.02em" }}>
+              From the Red Thread to the Grid
+            </p>
+            <div style={{ width: 24, height: 1, background: T.text, marginBottom: 28 }} />
+            {ABOUT_TEXT.map((p, i) => (
+              <p key={i} style={{ fontSize: 11, lineHeight: 1.8, color: T.textMid, margin: "0 0 14px", letterSpacing: "0.01em" }}>{p}</p>
+            ))}
+            <div style={{ marginTop: 32, paddingTop: 20, borderTop: `1px solid ${T.border}` }}>
+              <p style={{ fontSize: 10, color: T.textLight, margin: 0, lineHeight: 1.7, letterSpacing: "0.01em" }}>
+                Seth Looper<br />
+                Kent State University · College of Architecture and Environmental Design<br />
+                <span style={{ color: T.textMuted }}>seth@thresholdarch.com</span>
+              </p>
+            </div>
           </div>
         </div>
 
@@ -855,7 +919,7 @@ export default function PortfolioGuide() {
         <button onClick={handleBack} style={{
           background: "none", border: "none", fontSize: 10, color: T.textMuted, cursor: "pointer",
           fontFamily: T.sans, letterSpacing: "0.06em", textTransform: "uppercase", padding: 0,
-        }}>← Index</button>
+        }}>← Portfolio Workshop</button>
         <div style={{ display: "flex", gap: 2, flexWrap: "wrap", justifyContent: "flex-end" }}>
           {MODULES.map((m) => (
             <button key={m.id} onClick={() => handleNavClick(m)} style={{
