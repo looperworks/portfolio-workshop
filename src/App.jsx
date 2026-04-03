@@ -16,6 +16,8 @@ const T = {
   accentLight: "#f4f4f4",
   coral: "#888",
   gold: "#888",
+  steel: "#5a7a8a",
+  steelLight: "#6d8d9d",
   sans: "'Inter', 'Helvetica Neue', Arial, sans-serif",
   serif: "'Inter', 'Helvetica Neue', Arial, sans-serif",
 };
@@ -1593,13 +1595,13 @@ export default function PortfolioGuide() {
               <span
                 onClick={() => navigate("#/diagrams/casestudy")}
                 style={{
-                  fontSize: 11, color: T.textMid, cursor: "pointer",
-                  borderBottom: `1px solid ${T.border}`, paddingBottom: 1,
+                  fontSize: 13, color: T.steel, cursor: "pointer",
+                  borderBottom: `1px solid ${T.steel}40`, paddingBottom: 2,
                   transition: "color 0.15s ease, border-color 0.15s ease",
-                  fontFamily: T.sans, letterSpacing: "0.01em",
+                  fontFamily: T.sans, letterSpacing: "0.01em", lineHeight: 1.8,
                 }}
-                onMouseEnter={(e) => { e.currentTarget.style.color = T.text; e.currentTarget.style.borderColor = T.text; }}
-                onMouseLeave={(e) => { e.currentTarget.style.color = T.textMid; e.currentTarget.style.borderColor = T.border; }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = T.steelLight; e.currentTarget.style.borderColor = `${T.steelLight}`; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = T.steel; e.currentTarget.style.borderColor = `${T.steel}40`; }}
               >
                 Diagrams — {diagrams.map((d, i) => d.title).join(", ")}
               </span>
@@ -1710,13 +1712,13 @@ export default function PortfolioGuide() {
             <span
               onClick={() => navigate(`#/diagrams/${mod.id}`)}
               style={{
-                fontSize: 11, color: T.textMid, cursor: "pointer",
-                borderBottom: `1px solid ${T.border}`, paddingBottom: 1,
+                fontSize: 13, color: T.steel, cursor: "pointer",
+                borderBottom: `1px solid ${T.steel}40`, paddingBottom: 2,
                 transition: "color 0.15s ease, border-color 0.15s ease",
-                fontFamily: T.sans, letterSpacing: "0.01em",
+                fontFamily: T.sans, letterSpacing: "0.01em", lineHeight: 1.8,
               }}
-              onMouseEnter={(e) => { e.currentTarget.style.color = T.text; e.currentTarget.style.borderColor = T.text; }}
-              onMouseLeave={(e) => { e.currentTarget.style.color = T.textMid; e.currentTarget.style.borderColor = T.border; }}
+              onMouseEnter={(e) => { e.currentTarget.style.color = T.steelLight; e.currentTarget.style.borderColor = `${T.steelLight}`; }}
+              onMouseLeave={(e) => { e.currentTarget.style.color = T.steel; e.currentTarget.style.borderColor = `${T.steel}40`; }}
             >
               Diagrams {String(mod.id).padStart(2, "0")} — {diagrams.map((d) => d.title).join(", ")}
             </span>
