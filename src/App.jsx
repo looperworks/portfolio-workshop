@@ -793,22 +793,22 @@ const DIAGRAM_MAP = {
     { image: "class-pdf/class1-portfolio-anatomy.png", title: "Portfolio Anatomy", alt: "Portfolio document structure — Cover, Inside Front Cover, TOC, Section Divider, Introduction Pages, Project Pages, Resume, Back Cover" },
   ],
   2: [
+    { component: DiagramCompression, title: "The Compression Exercise" },
+  ],
+  3: [
     { component: DiagramNarrativeArc, title: "Three-Act Narrative Arc" },
     { component: DiagramChronVsNarrative, title: "Chronological vs. Narrative" },
     { component: DiagramFiveNarrativeElements, title: "Five Narrative Elements" },
     { component: DiagramNarrativeConstruction, title: "Narrative Construction Process" },
     { image: "example-narrative-sequence.jpg", title: "Narrative Sequence Example", alt: "Portfolio spread showing sequential facade analysis diagrams" },
   ],
-  3: [
-    { component: DiagramFourImageTypes, title: "Four Image Types" },
-    { component: DiagramImageMapping, title: "Image Type Mapping Across Spreads" },
-  ],
   4: [
     { component: DiagramNarrativeFailures, title: "Diagnosing Narrative Failure" },
     { component: DiagramInitialsAndFinals, title: "Initials-and-Finals Sequence" },
   ],
   5: [
-    { component: DiagramCompression, title: "The Compression Exercise" },
+    { component: DiagramFourImageTypes, title: "Four Image Types" },
+    { component: DiagramImageMapping, title: "Image Type Mapping Across Spreads" },
   ],
   6: [
     { component: DiagramWeakVsStrong, title: "Weak vs. Strong Statements" },
@@ -896,6 +896,25 @@ Every architecture portfolio shares a common anatomy: cover, table of contents, 
   },
   {
     id: 2,
+    title: "The Red Thread: From Description to Position",
+    part: "Narrative",
+    overview: `The Red Thread is the single organizing idea that connects all your projects into one argument. It is not a style. It is not a medium. It is a design position (a recurring question, preoccupation, or methodology that surfaces across different projects, scales, and contexts).
+
+The Compression Exercise uses progressive compression to move from description to position:
+
+Step 1 - One Paragraph: Write a project statement of four to six sentences covering what you explored, what problem you responded to, what method you used, and what you discovered.
+
+Step 2 - One Sentence: Compress that paragraph. What survives? A weak sentence describes. A strong sentence declares.
+
+Step 3 - One Word: Threshold. Tension. Porosity. Absence. Erosion. The word is not a label; it is a lens. It describes the design position that recurs across projects.
+
+Step 4 - The Thread Test: Repeat for every project. When the same word keeps surfacing, you have found your Red Thread.
+
+When you can name your lens, you can use it to curate, sequence, and edit with precision. The compression exercise turns a vague sense of what your work is about into a single word you can test against every project in the portfolio.`,
+    keyInsight: `"If the word is the same across three or more projects, the portfolio has a position. If it scatters, it needs one."`,
+  },
+  {
+    id: 3,
     title: "Narrative Structure",
     part: "Narrative",
     overview: `Narrative is a design problem, not a writing task. A portfolio that presents projects in chronological order leaves the reviewer to construct meaning on their own. One that sequences them within a deliberate structure controls what the reviewer understands and when. The three-act framework (opening, development, resolution) is not a formula. It is a pattern of expectations that audiences already carry. Working with that pattern makes the portfolio coherent. Ignoring it makes the portfolio feel scattered, regardless of the quality of the work inside.
@@ -908,23 +927,6 @@ Every architecture portfolio shares a common anatomy: cover, table of contents, 
 
 Building a narrative takes three steps. First, write a position statement: your design point of view in one sentence. Second, map your projects to the arc, deciding which opens, which develops complexity, and which resolves. Third, sequence images within each project so they advance the argument spread by spread. The result is an explicit, editable structure you can test, revise, and defend.`,
     keyInsight: null,
-  },
-  {
-    id: 3,
-    title: "A Taxonomy of Architectural Images",
-    part: "Narrative",
-    overview: `Every image in a portfolio performs one of four roles. Knowing these roles is the difference between a page that documents and a page that argues.
-
-Concept: The diagram, collage, or sketch that captures the governing idea. It tells a reviewer what you were thinking before you started drawing plans. Concept images belong early in a project sequence.
-
-Process: Iterations, massing studies, model photographs. Process images are evidence of thinking, tested, reconsidered, and refined.
-
-Outcome: The final rendering, the technical drawing, the detail section. Outcome images prove feasibility and demonstrate professional fluency.
-
-Context: The site photograph, the street elevation, the existing condition. Context images ground the work in real-world constraints and opportunities. Without context, even the most elegant proposal reads as autonomous fancy.
-
-The sequence matters. Concept first. Context second. Process and Outcome weave together based on the project's narrative logic. A portfolio that leads with Outcome is a catalog. A portfolio that sequences concept → context → process → outcome is an argument.`,
-    keyInsight: `"Every image should earn its place. If you cannot articulate what it communicates, remove it."`,
   },
   {
     id: 4,
@@ -945,22 +947,20 @@ Precedent study sharpens sequencing instincts. Award-winning portfolios, such as
   },
   {
     id: 5,
-    title: "The Red Thread: From Description to Position",
+    title: "A Taxonomy of Architectural Images",
     part: "Narrative",
-    overview: `The Red Thread is the single organizing idea that connects all your projects into one argument. It is not a style. It is not a medium. It is a design position (a recurring question, preoccupation, or methodology that surfaces across different projects, scales, and contexts).
+    overview: `Every image in a portfolio performs one of four roles. Knowing these roles is the difference between a page that documents and a page that argues.
 
-The Compression Exercise uses progressive compression to move from description to position:
+Concept: The diagram, collage, or sketch that captures the governing idea. It tells a reviewer what you were thinking before you started drawing plans. Concept images belong early in a project sequence.
 
-Step 1 - One Paragraph: Write a project statement of four to six sentences covering what you explored, what problem you responded to, what method you used, and what you discovered.
+Process: Iterations, massing studies, model photographs. Process images are evidence of thinking, tested, reconsidered, and refined.
 
-Step 2 - One Sentence: Compress that paragraph. What survives? A weak sentence describes. A strong sentence declares.
+Outcome: The final rendering, the technical drawing, the detail section. Outcome images prove feasibility and demonstrate professional fluency.
 
-Step 3 - One Word: Threshold. Tension. Porosity. Absence. Erosion. The word is not a label; it is a lens. It describes the design position that recurs across projects.
+Context: The site photograph, the street elevation, the existing condition. Context images ground the work in real-world constraints and opportunities. Without context, even the most elegant proposal reads as autonomous fancy.
 
-Step 4 - The Thread Test: Repeat for every project. When the same word keeps surfacing, you have found your Red Thread.
-
-When you can name your lens, you can use it to curate, sequence, and edit with precision. The compression exercise turns a vague sense of what your work is about into a single word you can test against every project in the portfolio.`,
-    keyInsight: `"If the word is the same across three or more projects, the portfolio has a position. If it scatters, it needs one."`,
+The sequence matters. Concept first. Context second. Process and Outcome weave together based on the project's narrative logic. A portfolio that leads with Outcome is a catalog. A portfolio that sequences concept → context → process → outcome is an argument.`,
+    keyInsight: `"Every image should earn its place. If you cannot articulate what it communicates, remove it."`,
   },
   {
     id: 6,
