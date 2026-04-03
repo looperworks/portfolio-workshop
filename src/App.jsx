@@ -898,13 +898,13 @@ Every architecture portfolio shares a common anatomy: cover, table of contents, 
     id: 2,
     title: "Narrative Structure",
     part: "Narrative",
-    overview: `Narrative is a design problem, not a writing task. A portfolio that presents projects in chronological order leaves the reviewer to construct meaning on their own. One that sequences them within a deliberate structure controls what the reviewer understands and when. The three-act framework (opening, development, resolution) is not a formula. It is a pattern of expectations that audiences already carry. Working with that pattern makes the portfolio legible. Ignoring it makes the portfolio feel scattered, regardless of the quality of the work inside.
+    overview: `Narrative is a design problem, not a writing task. A portfolio that presents projects in chronological order leaves the reviewer to construct meaning on their own. One that sequences them within a deliberate structure controls what the reviewer understands and when. The three-act framework (opening, development, resolution) is not a formula. It is a pattern of expectations that audiences already carry. Working with that pattern makes the portfolio coherent. Ignoring it makes the portfolio feel scattered, regardless of the quality of the work inside.
 
-**Opening:** the first project establishes who you are as a designer, what territory your work occupies, and what questions drive it. A strong opening creates a lens through which a reviewer reads everything that follows. If it is vague, every subsequent project must fight to establish context on its own.
+**Opening:** the first project establishes who you are as a designer, what problems your work engages, and what questions drive it. A strong opening creates a lens through which a reviewer reads everything that follows. If it is vague, every subsequent project must fight to establish context on its own.
 
-**Development:** the middle projects build your case. Each one should introduce a new dimension of your thinking: a different scale, a different method, a different constraint. Repetition of the same strength without development signals a limited range.
+**Development:** the middle projects build your case. Each one should introduce a new dimension of your thinking: a new scale, method, or constraint. Repeating the same strength without adding complexity signals a limited range.
 
-**Resolution:** the closing projects demonstrate convergence. Technical precision, professional awareness, and design maturity come together. A reviewer should leave the final spread with a clear sense of your direction, not just your skill.
+**Resolution:** the closing projects demonstrate convergence. Technical precision and design maturity converge. A reviewer should leave the final spread with a clear sense of your direction, not just your skill.
 
 Building a narrative takes three steps. First, write a position statement: your design point of view in one sentence. Second, map your projects to the arc, deciding which opens, which develops complexity, and which resolves. Third, sequence images within each project so they advance the argument spread by spread. The result is an explicit, editable structure you can test, revise, and defend.`,
     keyInsight: null,
