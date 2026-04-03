@@ -558,10 +558,13 @@ const DIAGRAM_MAP = {
   1: [
     { component: DiagramTwoTrack, title: "Two-Track Reading System" },
     { component: DiagramAudienceMatrix, title: "Audience Matrix" },
+    { image: "diagram-audience-mapping.svg", title: "Audience Evaluation Priorities", alt: "Audience evaluation priorities across four reviewer types" },
+    { image: "diagram-skill-matrix.svg", title: "Project–Skill Coverage Matrix", alt: "Project–skill coverage matrix showing how projects map to different competencies" },
   ],
   2: [
     { component: DiagramNarrativeArc, title: "Three-Act Narrative Arc" },
     { component: DiagramChronVsNarrative, title: "Chronological vs. Narrative" },
+    { image: "example-narrative-sequence.jpg", title: "Narrative Sequence Example", alt: "Portfolio spread showing sequential facade analysis diagrams" },
   ],
   3: [
     { component: DiagramFourImageTypes, title: "Four Image Types" },
@@ -582,26 +585,54 @@ const DIAGRAM_MAP = {
   7: [
     { component: DiagramSequenceStructures, title: "Sequence Structures" },
     { component: DiagramTwoTrack, title: "Two-Track Reading System" },
+    { image: "diagram-storyboard-patterns.svg", title: "Storyboard Sequencing Patterns", alt: "Three portfolio sequencing patterns: Strong Open, Process Arc, Scale Shift" },
   ],
   8: [
     { component: DiagramTypography, title: "Typography Categories" },
     { component: DiagramSizeHierarchy, title: "Typographic Hierarchy" },
+    { image: "diagram-typeface-categories.svg", title: "Typeface Categories for Architecture", alt: "Typeface categories — Modernist, Humanist, Editorial, Functional" },
+    { image: "diagram-typeface-selection.svg", title: "Typeface Selection Decision Flow", alt: "Typeface selection decision flow — match project tone to category" },
+    { image: "diagram-typeface-pairings.svg", title: "Recommended Typeface Pairings", alt: "Recommended typeface pairings and size standards" },
   ],
   9: [
     { component: DiagramGridAnatomy, title: "Grid Anatomy Overview" },
     { component: DiagramFourGridTypes, title: "Four Grid Types" },
+    { image: "01-grid-anatomy-overview.svg", title: "Grid Anatomy — Columns, Gutters, Modules", alt: "Grid anatomy showing columns, gutters, modules, margins, and baselines" },
+    { image: "02-historical-grid-comparison.svg", title: "Historical Grid Comparison", alt: "Greek urban grid, Japanese Ken module, modern page grid" },
+    { image: "03-structural-vs-page-grid.svg", title: "Structural vs. Page Grid", alt: "Building structural grid vs page modular grid — same logic" },
+    { image: "06-consistency-across-spreads.svg", title: "Consistency Across Spreads", alt: "Same grid applied across three different spread types" },
   ],
   10: [
     { component: Diagram12Point, title: "Document Setup — 12-Point System" },
     { component: DiagramGridAnatomy, title: "Grid Anatomy Overview" },
+    { image: "07-modular-baseline-overlay.svg", title: "Modular + Baseline Overlay", alt: "Modular grid overlaid with baseline grid" },
+    { image: "12-baseline-math.svg", title: "Baseline Math", alt: "840pt page divided by 12pt gives 70 baseline lines" },
+    { image: "13-module-anatomy.svg", title: "Module Anatomy", alt: "Module anatomy showing content lines, gutter zone, and 12pt increments" },
+    { image: "09-indesign-workspace.svg", title: "InDesign Workspace Layout", alt: "InDesign workspace layout with panel positions" },
+    { image: "10-panel-closeups.svg", title: "InDesign Panel Closeups", alt: "Paragraph Styles and Align panel closeups" },
+    { image: "14-indesign-setup-steps.svg", title: "InDesign Setup Steps", alt: "InDesign setup: Preferences, Create Guides, final result" },
   ],
   11: [
     { component: DiagramCoverTypes, title: "Seven Cover Typologies" },
     { component: DiagramPageLength, title: "Page Length Guidelines" },
+    { image: "type01-pure-minimal.jpeg", title: "Cover Type 01 — Pure Minimal", alt: "Text-only composition with asymmetric placement and generous whitespace" },
+    { image: "type02-dark-ground.jpeg", title: "Cover Type 02 — Dark Ground", alt: "Light typography on dark textured surface" },
+    { image: "type03-hero-image.jpeg", title: "Cover Type 03 — Hero Image", alt: "Central architectural rendering with supporting typography" },
+    { image: "type04-bleed-image.jpeg", title: "Cover Type 04 — Bleed + Band", alt: "Rendering bleeding to edges with bold typographic band" },
+    { image: "type05-scattered-collage.jpeg", title: "Cover Type 05 — Collage", alt: "Multiple project thumbnails at varying scales" },
+    { image: "type06-grid-pattern.jpeg", title: "Cover Type 06 — Grid Pattern", alt: "Repeating motif across the page with integrated typography" },
+    { image: "type07-abstract-line.jpeg", title: "Cover Type 07 — Abstract Line", alt: "Sweeping curves and geometric squares with text in quiet zone" },
+    { image: "toc01-illustrated-section-grid.png", title: "TOC — Illustrated Section Grid", alt: "Two-page spread with vignette columns and project metadata" },
+    { image: "toc02-multi-column-text-index.png", title: "TOC — Multi-Column Text Index", alt: "Three-column typographic layout with cascading metadata" },
+    { image: "toc03-thumbnail-gallery-row.png", title: "TOC — Thumbnail Gallery Row", alt: "Horizontal row of equally-sized project thumbnails" },
+    { image: "toc04-literary-chapter-index.png", title: "TOC — Literary Chapter Index", alt: "Oversized serif numerals with letterspaced headings" },
+    { image: "toc05-bold-number-column-cards.png", title: "TOC — Bold Number Column Cards", alt: "Vertical card columns with oversized numbers and thumbnails" },
+    { image: "toc06-narrative-list-hybrid.png", title: "TOC — Narrative + List Hybrid", alt: "Essay spread with drawing paired with structured contents list" },
   ],
   12: [
     { component: DiagramChecklist, title: "Four-Level Audit Framework" },
     { component: DiagramExportStandards, title: "File Export Standards" },
+    { image: "diagram-color-strategy.svg", title: "Color Palette Strategies", alt: "Three strategies: Monochrome, Accent, and Project-coded" },
   ],
   casestudy: [
     { component: DiagramImageMapping, title: "Image Type Mapping Across Spreads" },
@@ -941,18 +972,31 @@ function InteractiveChecklist({ moduleId }) {
 function DiagramGalleryItem({ diagram, index, total, moduleLabel }) {
   const [hovered, setHovered] = useState(false);
   const DiagramComp = diagram.component;
+  const isImage = !!diagram.image;
+  const basePath = import.meta.env.BASE_URL || "/";
   return (
     <div
       style={{ position: "relative", marginBottom: index < total - 1 ? 64 : 0 }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <div style={{
-        background: T.bgAlt, border: `1px solid ${T.border}`, padding: "32px 24px",
-        transition: "opacity 0.2s ease",
-      }}>
-        <DiagramComp />
-      </div>
+      {isImage ? (
+        <div style={{ transition: "opacity 0.2s ease" }}>
+          <img
+            src={`${basePath}images/${diagram.image}`}
+            alt={diagram.alt || diagram.title}
+            loading="lazy"
+            style={{ width: "100%", height: "auto", display: "block" }}
+          />
+        </div>
+      ) : DiagramComp ? (
+        <div style={{
+          background: T.bgAlt, border: `1px solid ${T.border}`, padding: "32px 24px",
+          transition: "opacity 0.2s ease",
+        }}>
+          <DiagramComp />
+        </div>
+      ) : null}
       <div style={{
         position: "absolute", bottom: -28, left: 0, right: 0,
         display: "flex", justifyContent: "space-between", alignItems: "baseline",
