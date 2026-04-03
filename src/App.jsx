@@ -898,17 +898,17 @@ Every architecture portfolio shares a common anatomy: cover page (identity), tab
     id: 2,
     title: "Narrative Structure & the Three-Act Framework",
     part: "Narrative",
-    overview: `Narrative is a design problem, not a writing task. Film and theatre have long understood that audiences process information through structure. The three-act framework — setup, confrontation, synthesis — is not a formula. It is a pattern of expectations that audiences already carry. Portfolios that follow this pattern feel clear. Portfolios that ignore it feel scattered, regardless of the quality of the work.
+    overview: `Narrative is a design problem, not a writing task. Film and theatre have long understood that audiences process information through structure. The three-act framework (setup, confrontation, synthesis) is not a formula. It is a pattern of expectations that audiences already carry. Portfolios that follow this pattern feel clear. Portfolios that ignore it feel scattered, regardless of the quality of the work.
 
-Five elements define a strong portfolio narrative. Focus — commit to one idea, not many. Structure — order each spread so it advances the argument. Curation — every image earns its place through communicative purpose. Lens — present a point of view, not a summary. Closure — resolve the arc so a reviewer leaves knowing what you stand for.
+Five elements define a strong portfolio narrative: Focus (commit to one idea, not many), Structure (order each spread so it advances the argument), Curation (every image earns its place through communicative purpose), Lens (present a point of view, not a summary), and Closure (resolve the arc so a reviewer leaves knowing what you stand for).
 
-Setup: The opening spread establishes context — who you are as a designer, what territory your work occupies, and what questions drive it. This is the overture. A strong setup creates a lens through which a reviewer reads everything that follows.
+Setup: The opening spread establishes context (who you are as a designer, what territory your work occupies, and what questions drive it). This is the overture. A strong setup creates a lens through which a reviewer reads everything that follows.
 
 Confrontation: The middle projects develop your case. Each one should introduce a new dimension of your thinking, not simply repeat the same strength. Repetition without development signals a limited range.
 
 Synthesis: The closing projects demonstrate convergence. Technical resolution, professional awareness, and design maturity come together. A reviewer should leave the final spread with a sense of direction, not just skill.
 
-Constructing a narrative follows three steps. First, write a statement — your design position in one sentence. Second, outline — map your projects to the narrative arc, deciding which serves as setup, which develops complexity, and which resolves. Third, organize images — sequence them within each project to support the argument. This process converts a vague sense of what your work is about into an explicit, editable structure.`,
+Constructing a narrative follows three steps. First, write a statement: your design position in one sentence. Second, outline: map your projects to the narrative arc, deciding which serves as setup, which develops complexity, and which resolves. Third, organize images: sequence them within each project to support the argument. This process converts a vague sense of what your work is about into an explicit, editable structure.`,
     keyInsight: `"The narrative arc determines what a viewer encounters. The grid determines how each encounter is constructed on the page."`,
   },
   {
@@ -919,7 +919,7 @@ Constructing a narrative follows three steps. First, write a statement — your 
 
 Concept: The diagram, collage, or sketch that captures the governing idea. It tells a reviewer what you were thinking before you started drawing plans. Concept images belong early in a project sequence.
 
-Process: Iterations, massing studies, model photographs. Process images are evidence of thinking — tested, reconsidered, and refined.
+Process: Iterations, massing studies, model photographs. Process images are evidence of thinking, tested, reconsidered, and refined.
 
 Outcome: The final rendering, the technical drawing, the detail section. Outcome images prove feasibility and demonstrate professional fluency.
 
@@ -934,32 +934,32 @@ The sequence matters. Concept first. Context second. Process and Outcome weave t
     part: "Narrative",
     overview: `The strongest work goes first. The most resonant work goes last. The middle builds complexity.
 
-This violates chronological thinking, which is why so many portfolios fail. Chronological portfolios place the earliest, weakest studio exercise first and bury the thesis project at page twenty. That arrangement is a buried lede — a journalism term for burying the most newsworthy information below the fold.
+This violates chronological thinking, which is why so many portfolios fail. Chronological portfolios place the earliest, weakest studio exercise first and bury the thesis project at page twenty. That arrangement is a buried lede (a journalism term for burying the most newsworthy information below the fold).
 
 The Initials-and-Finals principle reorders work to maximize impact. The opening project should be the strongest single demonstration of your design thinking. Not your most technically accomplished work, but the work that most clearly telegraphs your position. This is the initial statement.
 
 The middle projects build case through evidence, complexity, and range. Each advances the argument without repeating it.
 
-The closing project should be the most resonant — the piece that makes viewers feel that the entire portfolio was leading to that moment. This is the final statement. A reviewer should exit the portfolio thinking "I understand what this designer cares about," not "That was a nice project."
+The closing project should be the most resonant (the piece that makes viewers feel that the entire portfolio was leading to that moment). This is the final statement. A reviewer should exit the portfolio thinking "I understand what this designer cares about," not "That was a nice project."
 
-Precedent study sharpens sequencing instincts. Award-winning portfolios — such as those recognized by the RIBA President's Medals — reveal how experienced designers apply the initials-and-finals principle intuitively. In small-group critique, examine published portfolios for narrative structure, visual consistency, project sequencing, and clarity of intent. Note which sequencing decisions land and why. That editorial eye is what you bring back to your own work.`,
+Precedent study sharpens sequencing instincts. Award-winning portfolios, such as those recognized by the RIBA President's Medals, reveal how experienced designers apply the initials-and-finals principle intuitively. In small-group critique, examine published portfolios for narrative structure, visual consistency, project sequencing, and clarity of intent. Note which sequencing decisions land and why. That editorial eye is what you bring back to your own work.`,
     keyInsight: `"The first impression sets the frame. The last impression sets the memory."`,
   },
   {
     id: 5,
     title: "The Red Thread: From Description to Position",
     part: "Narrative",
-    overview: `The Red Thread is the single organizing idea that connects all your projects into one argument. It is not a style. It is not a medium. It is a design position — a recurring question, preoccupation, or methodology that surfaces across different projects, scales, and contexts.
+    overview: `The Red Thread is the single organizing idea that connects all your projects into one argument. It is not a style. It is not a medium. It is a design position (a recurring question, preoccupation, or methodology that surfaces across different projects, scales, and contexts).
 
 The Compression Exercise uses progressive compression to move from description to position:
 
-Step 1 — One Paragraph: Write a project statement of four to six sentences covering what you explored, what problem you responded to, what method you used, and what you discovered.
+Step 1 - One Paragraph: Write a project statement of four to six sentences covering what you explored, what problem you responded to, what method you used, and what you discovered.
 
-Step 2 — One Sentence: Compress that paragraph. What survives? A weak sentence describes. A strong sentence declares.
+Step 2 - One Sentence: Compress that paragraph. What survives? A weak sentence describes. A strong sentence declares.
 
-Step 3 — One Word: Threshold. Tension. Porosity. Absence. Erosion. The word is not a label — it is a lens. It describes the design position that recurs across projects.
+Step 3 - One Word: Threshold. Tension. Porosity. Absence. Erosion. The word is not a label; it is a lens. It describes the design position that recurs across projects.
 
-Step 4 — The Thread Test: Repeat for every project. When the same word keeps surfacing, you have found your Red Thread.
+Step 4 - The Thread Test: Repeat for every project. When the same word keeps surfacing, you have found your Red Thread.
 
 When you can name your lens, you can use it to curate, sequence, and edit with precision. The compression exercise turns a vague sense of what your work is about into a single word you can test against every project in the portfolio.`,
     keyInsight: `"If the word is the same across three or more projects, the portfolio has a position. If it scatters, it needs one."`,
@@ -968,11 +968,11 @@ When you can name your lens, you can use it to curate, sequence, and edit with p
     id: 6,
     title: "Writing the Architectural Project Statement",
     part: "Narrative",
-    overview: `The project statement is not a description of what you built. It is a declaration of what you investigated and why it matters. Weak statements describe — "This project explores light." Strong statements declare — "This project tests whether a single aperture can structure an entire domestic sequence."
+    overview: `The project statement is not a description of what you built. It is a declaration of what you investigated and why it matters. Weak statements describe ("This project explores light"). Strong statements declare ("This project tests whether a single aperture can structure an entire domestic sequence").
 
 Two-paragraph format: Paragraph one covers context, intent, and thesis in four to six sentences. Paragraph two covers development and outcome with evidence. Tone should be clear, active voice. Present tense for design intent, past tense for process.
 
-The concept sentence is the compressed version: one line a reviewer reads in five seconds. This sentence should distill the position you are testing and make it specific and testable. It becomes the key insight for this project — the single claim that ties all images to one idea.
+The concept sentence is the compressed version: one line a reviewer reads in five seconds. This sentence should distill the position you are testing and make it specific and testable. It becomes the key insight for this project (the single claim that ties all images to one idea).
 
 Once written, check your statement against the Red Thread. Does this project address the same fundamental question as your other work? Does it extend the argument into new territory? If a statement describes a one-off experiment with no connection to the larger portfolio position, ask whether the project belongs in the portfolio at all.`,
     keyInsight: `"Strong statements are specific. They make a testable claim. They are worth arguing about."`,
@@ -981,7 +981,7 @@ Once written, check your statement against the Red Thread. Does this project add
     id: 7,
     title: "Storyboarding & Spread Sequencing",
     part: "Grid",
-    overview: `Now that narrative decisions are made — argument, structure, image taxonomy, and red thread — the work shifts from idea to page. Storyboarding translates project-level sequencing decisions into page-level compositions. Each spread must show what the previous one established and prepare for what comes next.
+    overview: `Now that narrative decisions are made (argument, structure, image taxonomy, and red thread), the work shifts from idea to page. Storyboarding translates project-level sequencing decisions into page-level compositions. Each spread must show what the previous one established and prepare for what comes next.
 
 Each image must introduce a new dimension of the project without repeating what the opening already established. Three project-level sequence structures govern how images unfold:
 
@@ -993,39 +993,39 @@ Thematic Narrative: Organized around a design principle rather than chronology. 
 
 Storyboarding Method: Print all project images as small thumbnails (3×5 or 4×6 inch prints). Arrange them on a large table or bulletin board. Move them around physically, testing different sequence orders. This kinesthetic approach reveals rhythm and pacing before any page layout is drafted.
 
-The Two-Track Reading System ensures the portfolio works at both speeds. Track 1 — Skim (30–90 seconds): Large images, clear hierarchy, minimal text. Track 2 — Study (5–15 minutes): Captions, process, analytical detail. Text and image should complete each other rather than duplicate. The image shows what cannot be said. The text says what cannot be shown.
+The Two-Track Reading System ensures the portfolio works at both speeds. Track 1 - Skim (30–90 seconds): Large images, clear hierarchy, minimal text. Track 2 - Study (5–15 minutes): Captions, process, analytical detail. Text and image should complete each other rather than duplicate. The image shows what cannot be said. The text says what cannot be shown.
 
-The constructing narrative exercise puts this into practice. Working with seven spreads in InDesign, arrange your strongest project as a complete visual sequence: opening spread with concept image, two to three development spreads with process and context images, and a closing spread with outcome images. This is the proof-of-concept — testing whether your storyboard holds on real pages before committing to full portfolio production.`,
+The constructing narrative exercise puts this into practice. Working with seven spreads in InDesign, arrange your strongest project as a complete visual sequence: opening spread with concept image, two to three development spreads with process and context images, and a closing spread with outcome images. This is the proof-of-concept (testing whether your storyboard holds on real pages before committing to full portfolio production).`,
     keyInsight: `"A sequence is not a collection. Each image should advance, not repeat."`,
   },
   {
     id: 8,
     title: "Grid Systems: From Structure to Page",
     part: "Grid",
-    overview: `A portfolio grid is not a graphic style or decorative choice. It is the skeletal structure beneath every page — organizing content, establishing hierarchy, and giving meaning room to read clearly. For architects, the grid is a familiar language — one of the oldest organizing principles in human civilization, from the Hippodamian plan of Alexandria to the Ken module of Japanese architecture to Le Corbusier's Modulor.
+    overview: `A portfolio grid is not a graphic style or decorative choice. It is the skeletal structure beneath every page (organizing content, establishing hierarchy, and giving meaning room to read clearly). For architects, the grid is a familiar language (one of the oldest organizing principles in human civilization, from the Hippodamian plan of Alexandria to the Ken module of Japanese architecture to Le Corbusier's Modulor).
 
 The logic connecting a building's structural grid to a page grid is direct. A structural column defines rhythm and load-bearing zones. A page column defines rhythm and content zones. Bays correspond to modules. Beam lines correspond to baselines. A building without a grid is a pile of materials; a portfolio without a grid is a collection of images.
 
-Four grid types, one decision: Manuscript Grid — single text column, simplest structure, suited for books and theses. Column Grid — vertical divisions, standard for magazines and editorial layouts. Modular Grid — columns plus horizontal flowlines, the most versatile for mixed architectural content (recommended for portfolios). Hierarchical Grid — content-driven arrangement, suited for websites and experimental posters.
+Four grid types, one decision: Manuscript Grid (single text column, simplest structure, suited for books and theses), Column Grid (vertical divisions, standard for magazines and editorial layouts), Modular Grid (columns plus horizontal flowlines, the most versatile for mixed architectural content, recommended for portfolios), and Hierarchical Grid (content-driven arrangement, suited for websites and experimental posters).
 
-The choice is not aesthetic preference — it is a structural decision that determines how the reader navigates the page. A modular grid ensures consistency while allowing flexibility. Every page should derive from the same grid logic, creating visual coherence across the portfolio.
+The choice is not aesthetic preference; it is a structural decision that determines how the reader navigates the page. A modular grid ensures consistency while allowing flexibility. Every page should derive from the same grid logic, creating visual coherence across the portfolio.
 
-The grid should be invisible. If a reviewer stops to analyze the grid structure, you have failed. The grid does not decorate a page — it structures meaning. When the grid works, a reviewer reads the argument, not the layout.
+The grid should be invisible. If a reviewer stops to analyze the grid structure, you have failed. The grid does not decorate a page; it structures meaning. When the grid works, a reviewer reads the argument, not the layout.
 
-Intentional grid breaks are a legitimate design tool when they serve the narrative. A break should signal emphasis — not confusion. If you break the grid, do so for a reason that a reviewer can understand immediately. The grid is the baseline; breaks are the exception that proves the rule.`,
+Intentional grid breaks are a legitimate design tool when they serve the narrative. A break should signal emphasis, not confusion. If you break the grid, do so for a reason that a reviewer can understand immediately. The grid is the baseline; breaks are the exception that proves the rule.`,
     keyInsight: `"A portfolio without a grid is like a building without a structural system."`,
   },
   {
     id: 9,
     title: "The 12-Point Modular System",
     part: "Grid",
-    overview: `A portfolio without a configured grid is a construction site without foundations. Building the grid is a construction phase — if the previous module was concept, analysis, and precedent, this module is execution. By the end, your InDesign file should function as a prepared construction site — cleared, measured, and structurally framed — ready to receive your architectural content.
+    overview: `A portfolio without a configured grid is a construction site without foundations. Building the grid is a construction phase (if the previous module was concept, analysis, and precedent, this module is execution). By the end, your InDesign file should function as a prepared construction site (cleared, measured, and structurally framed) ready to receive your architectural content.
 
 Every measurement derives from a single value: 12 points. Margins, gutters, column widths, row heights, and baseline increments are all multiples of 12. Nothing on the page is arbitrary.
 
-The construction sequence follows four phases. Phase 1 — Workspace Setup: Reset InDesign to Essentials, activate core panels (Pages, Layers, Links, Align, Paragraph Styles, Properties), organize the dock, and save as a custom workspace. Phase 2 — Layer Architecture: Create three layers — 01_Text (titles, descriptions, page numbers), 02_Images (drawings, renders, photos), and 03_Guides (non-printing, locked). Text sits above images; guides are hidden in export. Phase 3 — Parent Pages: Build two parent page templates — A-Intro (splash page with title area and date/location) and B-Project (content page with header, grid guides, and project title). Change a parent once and all child pages update automatically. Phase 4 — The Structural Grid: Document at 600 × 840 pt (5:7 proportion). Baseline grid starting at 0 pt, relative to top margin, incrementing every 12 pt. Margins at 36/48/36/36 pt (top/bottom/inside/outside). Six columns with 12 pt gutters. Eight rows with 12 pt gutters via Layout > Create Guides.
+The construction sequence follows four phases. Phase 1 - Workspace Setup: Reset InDesign to Essentials, activate core panels (Pages, Layers, Links, Align, Paragraph Styles, Properties), organize the dock, and save as a custom workspace. Phase 2 - Layer Architecture: Create three layers (01_Text for titles, descriptions, page numbers; 02_Images for drawings, renders, photos; 03_Guides for non-printing, locked). Text sits above images; guides are hidden in export. Phase 3 - Parent Pages: Build two parent page templates (A-Intro for splash page with title area and date/location; B-Project for content page with header, grid guides, and project title). Change a parent once and all child pages update automatically. Phase 4 - The Structural Grid: Document at 600 × 840 pt (5:7 proportion). Baseline grid starting at 0 pt, relative to top margin, incrementing every 12 pt. Margins at 36/48/36/36 pt (top/bottom/inside/outside). Six columns with 12 pt gutters. Eight rows with 12 pt gutters via Layout > Create Guides.
 
-The modular grid and baseline grid operate as complementary systems. The modular grid governs placement and proportion. The baseline grid governs the internal rhythm of text. Together, they achieve precision and clarity. Six columns and eight rows produce 48 modules per page — enough variation for any spread from a single structural foundation.
+The modular grid and baseline grid operate as complementary systems. The modular grid governs placement and proportion. The baseline grid governs the internal rhythm of text. Together, they achieve precision and clarity. Six columns and eight rows produce 48 modules per page (enough variation for any spread from a single structural foundation).
 
 This system is not restrictive. It is generative. The more tightly constrained the grid, the more creative the solutions within it.`,
     keyInsight: `"Every measurement is a multiple of 12. Nothing on the page is arbitrary."`,
@@ -1038,11 +1038,11 @@ This system is not restrictive. It is generative. The more tightly constrained t
 
 Font Pairing Principles: Choose one serif font paired with one sans-serif font, or use two weights of the same family. This creates contrast without chaos. Avoid mixing multiple serif families or multiple sans-serif families without a clear hierarchy reason.
 
-Modernist Workhorses: Helvetica, Futura, DIN, Univers — proven, neutral, versatile. Humanist and Contemporary: Avenir, Söhne, Gill Sans, Circular — warmer, more approachable. Editorial and Stylistic: Neue Montreal, GT Alpina, Minion Pro — personality with restraint.
+Modernist Workhorses: Helvetica, Futura, DIN, Univers (proven, neutral, versatile). Humanist and Contemporary: Avenir, Söhne, Gill Sans, Circular (warmer, more approachable). Editorial and Stylistic: Neue Montreal, GT Alpina, Minion Pro (personality with restraint).
 
 Size standards for print: Titles at 24/30 pt (size/leading), subtitles at 14/18 pt, body text at 10/12 pt, captions at 8/10 pt. These map to the hierarchy of information on the page, ensuring the reader encounters content in the correct order. The visual hierarchy should feel intuitive, not arbitrary.
 
-In InDesign, define these as Paragraph Styles (Window > Styles > Paragraph Styles). The critical setting is Indents and Spacing > Align to Grid: All Lines. This locks every line of text to the 12-point baseline grid, ensuring lines align across columns — the hallmark of professional typographic control. Without baseline alignment, text drifts between grid increments and the portfolio loses structural precision.
+In InDesign, define these as Paragraph Styles (Window > Styles > Paragraph Styles). The critical setting is Indents and Spacing > Align to Grid: All Lines. This locks every line of text to the 12-point baseline grid, ensuring lines align across columns (the hallmark of professional typographic control). Without baseline alignment, text drifts between grid increments and the portfolio loses structural precision.
 
 Line spacing (leading) matters for readability. Body text leading at 12 pt matches the baseline grid increment exactly. Tighter leading (100–120%) works for captions and headlines; looser leading (150%+) works for display text. Proper line spacing creates visual breathing room and prevents the portfolio from feeling dense.
 
@@ -1055,13 +1055,13 @@ Typography reinforces the portfolio argument. Choose typefaces that align with t
     part: "Grid",
     overview: `The cover is the first design decision a reviewer encounters. Seven cover typologies range from Pure Minimal (whitespace as primary element, text under 8% of page area) to Abstract Line compositions with freeform curves and stroke weight hierarchy.
 
-Each typology suits a different portfolio personality. Pure Minimal signals restraint and focus — appropriate for portfolios where the work speaks without ornament. Dark Ground provides a frame and controls the viewer's entry. Hero Image leads with a single defining moment. Bleed + Band creates motion through layering. Collage suggests complexity and multiplicity. Grid Pattern implies systems thinking. Abstract Line conveys refinement and gesture.
+Each typology suits a different portfolio personality. Pure Minimal signals restraint and focus (appropriate for portfolios where the work speaks without ornament). Dark Ground provides a frame and controls the viewer's entry. Hero Image leads with a single defining moment. Bleed + Band creates motion through layering. Collage suggests complexity and multiplicity. Grid Pattern implies systems thinking. Abstract Line conveys refinement and gesture.
 
-The choice of cover should reinforce the same design position that runs through the entire portfolio — another expression of the Red Thread. A minimalist architect's cover should feel architectural. A designer interested in systems should choose a cover that demonstrates systematic thinking.
+The choice of cover should reinforce the same design position that runs through the entire portfolio (another expression of the Red Thread). A minimalist architect's cover should feel architectural. A designer interested in systems should choose a cover that demonstrates systematic thinking.
 
-The Table of Contents should match the cover in visual language. The TOC is not decorative — it is informational architecture. How you organize and present the contents signals to a reviewer what you value and how you think.
+The Table of Contents should match the cover in visual language. The TOC is not decorative; it is informational architecture. How you organize and present the contents signals to a reviewer what you value and how you think.
 
-TOC Format Options: Thumbnail TOC uses small images of each project spread alongside project titles, showing the viewer what to expect. Text-Only TOC lists project titles and page numbers without images, maintaining a clean, legible format. Hybrid TOC combines a select set of key project images with supporting text. Choose based on portfolio scope — if the portfolio is under 30 pages, thumbnails work well. If larger, text-only TOC prevents overwhelming the viewer.
+TOC Format Options: Thumbnail TOC uses small images of each project spread alongside project titles, showing the viewer what to expect. Text-Only TOC lists project titles and page numbers without images, maintaining a clean, legible format. Hybrid TOC combines a select set of key project images with supporting text. Choose based on portfolio scope (if the portfolio is under 30 pages, thumbnails work well; if larger, text-only TOC prevents overwhelming the viewer).
 
 Page Numbering: Number pages from the cover onward (cover is page 1) for academic portfolios, or begin numbering after the cover and TOC for professional portfolios. Consistency matters more than the choice itself. Roman numerals (i, ii, iii) are traditional for front matter; Arabic numerals (1, 2, 3) for project pages.`,
     keyInsight: `"The cover is the first design decision a reviewer encounters."`,
@@ -1076,13 +1076,13 @@ Nature-Grounded: Terracotta, sage, sand, warm gray. These palettes ground the wo
 
 Muted Contemporary: Pale cyan, lavender, coral. Softer palettes that create visual interest without competing with project images.
 
-Industrial Neutrals: Deep grays, charcoals, blacks. The most common choice — it disappears and lets the work speak.
+Industrial Neutrals: Deep grays, charcoals, blacks. The most common choice (it disappears and lets the work speak).
 
-Tonal unity across spreads matters. When images from different projects sit side by side, their differences can distract. A consistent color treatment — whether desaturation, unified white balance, or limited tonal palette — binds disparate images into a single visual language. Studio work photographed under different lighting conditions (warm tungsten, cool fluorescent, variable daylight) creates visual discord. Desaturation as a unifying device helps. Alternatively, apply a consistent color cast that equalizes temperature variation.
+Tonal unity across spreads matters. When images from different projects sit side by side, their differences can distract. A consistent color treatment (whether desaturation, unified white balance, or limited tonal palette) binds disparate images into a single visual language. Studio work photographed under different lighting conditions (warm tungsten, cool fluorescent, variable daylight) creates visual discord. Desaturation as a unifying device helps. Alternatively, apply a consistent color cast that equalizes temperature variation.
 
-Use color when it advances the argument. Suppress it when it distracts. Every color choice should be deliberate — if you cannot explain why a color is there, remove it. Update images in post-production to ensure consistent color families across projects.
+Use color when it advances the argument. Suppress it when it distracts. Every color choice should be deliberate; if you cannot explain why a color is there, remove it. Update images in post-production to ensure consistent color families across projects.
 
-Diagnostic Test: Print your portfolio in grayscale. If the visual hierarchy — emphasis, rhythm, sequencing — still reads clearly without color, then your color is supporting rather than supplanting structure. If the portfolio falls apart in grayscale, the color is doing too much work and structure needs strengthening.`,
+Diagnostic Test: Print your portfolio in grayscale. If the visual hierarchy (emphasis, rhythm, sequencing) still reads clearly without color, then your color is supporting rather than supplanting structure. If the portfolio falls apart in grayscale, the color is doing too much work and structure needs strengthening.`,
     keyInsight: `"Tonal consistency provides chromatic unity across the grid."`,
   },
   {
@@ -1097,7 +1097,7 @@ Portfolio-Level: Demonstrates range without losing coherence · Clear logic gove
 
 Visual and Production Quality: 300 DPI minimum for print · Typography consistency · Cohesive color palette · Spelling and proofreading complete.
 
-Final Production: Separate optimized PDFs — print (300 DPI, CMYK) and digital (150 DPI, RGB, under 10 MB) · All fonts embedded · Website portfolio live and updated · File naming: Lastname_Portfolio_Year.pdf (e.g., DiLeo_Portfolio_2025.pdf).
+Final Production: Separate optimized PDFs (print at 300 DPI, CMYK and digital at 150 DPI, RGB, under 10 MB) · All fonts embedded · Website portfolio live and updated · File naming: Lastname_Portfolio_Year.pdf (e.g., DiLeo_Portfolio_2025.pdf).
 
 Peer Review: Before finalizing, have two to three trusted colleagues or mentors review the portfolio. Ask them to spend thirty seconds on an initial scan, then take five minutes for deeper reading. Ask: "What story do you think this designer cares about?" Their answer should match your intended position. If not, the portfolio is not yet communicating clearly. Revise and test again.`,
     keyInsight: `"The audit is not the last step. It is the first honest reading of your own work."`,
@@ -1120,13 +1120,13 @@ Word: Erosion.
 
 Five spreads map the narrative arc across image types. Each image returns to the single word. That is the Red Thread.
 
-Spread 1 (Setup): Terrain model — Concept image. Landscape as raw material.
-Spread 2: Site map + detail — Context image. Alpine erosion at macro scale.
-Spread 3 (Confrontation): Section drawing — Process image. Building carves into ground. Winter site photo (Context) + night rendering of ramped entrance (Outcome).
-Spread 4: Full-width building section embedded into mountainside — Process. Erosion made accessible.
+Spread 1 (Setup): Terrain model (Concept image). Landscape as raw material.
+Spread 2: Site map + detail (Context image). Alpine erosion at macro scale.
+Spread 3 (Confrontation): Section drawing (Process image). Building carves into ground. Winter site photo (Context) + night rendering of ramped entrance (Outcome).
+Spread 4: Full-width building section embedded into mountainside (Process). Erosion made accessible.
 Spread 5 (Synthesis): Interior gallery rendering (Outcome) + floor plans (Process). Erosion made inhabitable.
 
-Every image in this portfolio — terrain models, carved sections, embedded galleries — returns to this single word. That is the Red Thread. Every design decision, from the site section to the material palette to the graphic hierarchy, reinforces the same idea. That is how a portfolio argues.`,
+Every image in this portfolio (terrain models, carved sections, embedded galleries) returns to this single word. That is the Red Thread. Every design decision, from the site section to the material palette to the graphic hierarchy, reinforces the same idea. That is how a portfolio argues.`,
   keyInsight: `"Every image should return to the single word. That is the Red Thread."`,
 };
 
@@ -1149,9 +1149,9 @@ function navigate(hash) {
 /* ─── About content ─── */
 const ABOUT_TEXT = [
   "Portfolio as Narrative is the companion resource for ARCH 66995: Portfolio, a studio-style course at Kent State University's College of Architecture and Environmental Design. The course guides architecture students in developing academic portfolios that synthesize design concepts and communicate architectural thinking to faculty and professional audiences.",
-  "The guide covers thirteen modules across three parts — content curation, visual storytelling, and narrative structure (Narrative); grid systems, typography, and composition strategies (Grid); and color systems, technical production, and self-editing protocols (Production). Each module pairs pedagogical text with reference diagrams drawn from real student portfolios and professional practice.",
+  "The guide covers thirteen modules across three parts: content curation, visual storytelling, and narrative structure (Narrative); grid systems, typography, and composition strategies (Grid); and color systems, technical production, and self-editing protocols (Production). Each module pairs pedagogical text with reference diagrams drawn from real student portfolios and professional practice.",
   "The course follows a fifteen-week cumulative structure, from portfolio foundations and audience analysis through storyboarding, grid application, and typographic systems, to final production, peer critique, and portfolio presentation. Assignments build progressively toward a fully resolved academic portfolio.",
-  "Whether you are preparing for graduate school applications, professional interviews, or scholarship reviews, the framework here applies. A portfolio is not a binder. It is an argument — and this guide shows you how to build one.",
+  "Whether you are preparing for graduate school applications, professional interviews, or scholarship reviews, the framework here applies. A portfolio is not a binder. It is an argument, and this guide shows you how to build one.",
 ];
 
 /* ─── Interactive Checklist ─── */
