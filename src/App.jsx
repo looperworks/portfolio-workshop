@@ -1248,7 +1248,7 @@ export default function PortfolioGuide() {
               <p style={{ fontSize: 10, color: T.textLight, margin: 0, lineHeight: 1.7, letterSpacing: "0.01em" }}>
                 Seth Looper<br />
                 Kent State University · College of Architecture and Environmental Design<br />
-                <a href="mailto:seth@thresholdarch.com" style={{ color: T.textMuted, textDecoration: "none" }}>seth@thresholdarch.com</a>
+                <a href="mailto:slooper@kent.edu" style={{ color: T.textMuted, textDecoration: "none" }}>slooper@kent.edu</a>
               </p>
             </div>
           </div>
