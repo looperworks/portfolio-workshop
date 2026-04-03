@@ -904,7 +904,7 @@ Every architecture portfolio shares a common anatomy: cover, table of contents, 
 
 **Development:** the middle projects build your case. Each one should introduce a new dimension of your thinking: a new scale, method, or constraint. Repeating the same strength without adding complexity signals a limited range.
 
-**Resolution:** the closing projects demonstrate convergence. Technical precision and design maturity converge. A reviewer should leave the final spread with a clear sense of your direction, not just your skill.
+**Resolution:** the closing projects demonstrate that your thinking has arrived somewhere. The work should feel resolved: technically precise, professionally aware, and intentionally positioned. A reviewer should leave the final spread with a clear sense of your direction, not just your skill.
 
 Building a narrative takes three steps. First, write a position statement: your design point of view in one sentence. Second, map your projects to the arc, deciding which opens, which develops complexity, and which resolves. Third, sequence images within each project so they advance the argument spread by spread. The result is an explicit, editable structure you can test, revise, and defend.`,
     keyInsight: null,
