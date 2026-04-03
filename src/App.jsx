@@ -1315,12 +1315,12 @@ function DiagramSlideshow({ diagrams, moduleLabel, backHash }) {
               onMouseEnter={() => setHovered(i)}
               onMouseLeave={() => setHovered(null)}
             >
-              {/* Uniform grey card */}
+              {/* Minimal card */}
               <div style={{
                 width: "85vh", height: "65vh",
-                background: T.bgAlt,
+                background: T.bg, border: `1px solid ${T.border}`,
                 display: "flex", alignItems: "center", justifyContent: "center",
-                padding: 24, boxSizing: "border-box",
+                padding: 8, boxSizing: "border-box",
                 overflow: "hidden",
               }}>
                 {isImage ? (
