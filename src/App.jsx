@@ -889,8 +889,8 @@ A portfolio is read at two speeds. At skim speed, the cover, image hierarchy, an
 
 Different audiences read for different evidence. An academic reviewer looks for process: sketches, diagrams, and failed iterations that reveal how you think through a problem. A large firm looks for resolution: polished deliverables and technical range that demonstrate you can produce at a professional standard. A boutique studio looks for alignment: a design sensibility and point of view that signal you would be a collaborator, not just a pair of hands. Knowing what each audience evaluates for is the difference between a page that documents and a page that argues.
 
-Every architecture portfolio shares a common anatomy: cover, table of contents, project spreads, and supplemental material. Within each project spread, four image types perform distinct roles: concept, process, outcome, and context. Later modules develop these categories and their sequencing in detail. The principle that governs this entire course is straightforward: once you can name the role each element plays, you stop arranging by habit and start composing by intent.`,
-    keyInsight: `"The portfolio speaks first. Make sure it says what you mean."`,
+Every architecture portfolio shares a common anatomy: cover, table of contents, project spreads, and supplemental material. Within each project spread, four image types perform distinct roles: concept, process, outcome, and context. Later modules develop these categories and their sequencing in detail. Design the reading, not just the work.`,
+    keyInsight: null,
   },
   {
     id: 2,
