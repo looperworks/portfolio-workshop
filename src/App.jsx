@@ -532,6 +532,115 @@ function DiagramInitialsAndFinals() {
   );
 }
 
+function DiagramFiveNarrativeElements() {
+  const elements = [
+    { label: "Focus", subtitle: "One idea, not many", color: T.navy },
+    { label: "Structure", subtitle: "Intentional order", color: T.accent },
+    { label: "Curation", subtitle: "Every image earns its place", color: T.coral },
+    { label: "Lens", subtitle: "A point of view, not a summary", color: T.gold },
+    { label: "Closure", subtitle: "Resolution, not just ending", color: T.textMid },
+  ];
+  return (
+    <svg viewBox="0 0 420 120" style={{ width: "100%", height: "auto" }}>
+      {elements.map((e, i) => {
+        const x = 8 + i * 82;
+        return (
+          <g key={i}>
+            <rect x={x} y="8" width="78" height="78" rx="3" fill="#fff" stroke={e.color} strokeWidth="1.5" />
+            <text x={x + 39} y="35" textAnchor="middle" fontSize="8" fontFamily={T.sans} fontWeight="600" fill={e.color} letterSpacing="0.08em">{e.label}</text>
+            <text x={x + 39} y="55" textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fill={T.textLight}>{e.subtitle}</text>
+          </g>
+        );
+      })}
+      <text x="210" y="108" textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fill={T.textMuted} fontStyle="italic">Narrative is a design problem — not a writing task</text>
+    </svg>
+  );
+}
+
+function DiagramNarrativeConstruction() {
+  const steps = [
+    { num: "1", label: "Statement", desc: "Write your design position in one sentence" },
+    { num: "2", label: "Outline", desc: "Map projects to narrative arc" },
+    { num: "3", label: "Organize", desc: "Sequence images to support argument" },
+  ];
+  let x = 30;
+  return (
+    <svg viewBox="0 0 420 120" style={{ width: "100%", height: "auto" }}>
+      {steps.map((s, i) => {
+        const cx = x + 70;
+        const el = (
+          <g key={i}>
+            <rect x={x} y="20" width="140" height="60" rx="3" fill="#fff" stroke={T.navy} strokeWidth="1.5" />
+            <circle cx={x + 20} cy="32" r="8" fill={T.navy} />
+            <text x={x + 20} y="37" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill="#fff">{s.num}</text>
+            <text x={cx} y="42" textAnchor="middle" fontSize="8" fontFamily={T.sans} fontWeight="600" fill={T.navy}>{s.label}</text>
+            <text x={cx} y="60" textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fill={T.textLight}>{s.desc}</text>
+            {i < 2 && <text x={x + 150} y="52" textAnchor="middle" fontSize="14" fill={T.textFaint}>→</text>}
+          </g>
+        );
+        x += 170;
+        return el;
+      })}
+      <text x="30" y="102" fontSize="6.5" fontFamily={T.sans} fill={T.textMuted} fontStyle="italic">From intuition to intentional structure</text>
+    </svg>
+  );
+}
+
+function DiagramLayerArchitecture() {
+  const layers = [
+    { num: "01_Text", desc: "Titles, descriptions, page #s", color: T.navy, y: 20 },
+    { num: "02_Images", desc: "Drawings, renders, photos", color: T.coral, y: 58 },
+    { num: "03_Guides", desc: "Non-printing, locked", color: T.textLight, y: 96 },
+  ];
+  return (
+    <svg viewBox="0 0 420 140" style={{ width: "100%", height: "auto" }}>
+      <text x="210" y="14" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={T.textMid} letterSpacing="0.12em">INDESIGN LAYER STACKING</text>
+      {layers.map((l, i) => (
+        <g key={i}>
+          <rect x="20" y={l.y} width="340" height="30" rx="3" fill="#fff" stroke={l.color} strokeWidth="1.5" />
+          <circle cx="32" cy={l.y + 15} r="4" fill={l.color} />
+          <text x="48" y={l.y + 10} fontSize="7" fontFamily={T.sans} fontWeight="600" fill={l.color} letterSpacing="0.08em">{l.num}</text>
+          <text x="48" y={l.y + 22} fontSize="6.5" fontFamily={T.sans} fill={T.textLight}>{l.desc}</text>
+          <text x="380" y={l.y + 18} textAnchor="middle" fontSize="6" fontFamily={T.sans} fill={T.textMuted} fontWeight="500">{i === 0 ? "TOP" : i === 1 ? "MIDDLE" : "BOTTOM"}</text>
+        </g>
+      ))}
+      <text x="210" y="138" textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fill={T.textMuted} fontStyle="italic">Text above images · Guides hidden in export</text>
+    </svg>
+  );
+}
+
+function DiagramParentPages() {
+  return (
+    <svg viewBox="0 0 420 130" style={{ width: "100%", height: "auto" }}>
+      <text x="210" y="14" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={T.textMid} letterSpacing="0.12em">PARENT PAGE ARCHITECTURE</text>
+      {/* A-Intro box */}
+      <rect x="20" y="28" width="170" height="70" rx="3" fill="#fff" stroke={T.navy} strokeWidth="1.5" />
+      <text x="105" y="48" textAnchor="middle" fontSize="8" fontFamily={T.sans} fontWeight="600" fill={T.navy}>A-Intro (Splash)</text>
+      <text x="105" y="63" textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fill={T.textLight}>Title area, date/location,</text>
+      <text x="105" y="73" textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fill={T.textLight}>page #</text>
+      {/* Arrow */}
+      <text x="210" y="68" textAnchor="middle" fontSize="14" fill={T.textFaint}>→</text>
+      {/* B-Project box */}
+      <rect x="230" y="28" width="170" height="70" rx="3" fill="#fff" stroke={T.accent} strokeWidth="1.5" />
+      <text x="315" y="48" textAnchor="middle" fontSize="8" fontFamily={T.sans} fontWeight="600" fill={T.accent}>B-Project (Content)</text>
+      <text x="315" y="63" textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fill={T.textLight}>Header, grid guides,</text>
+      <text x="315" y="73" textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fill={T.textLight}>project title, page #</text>
+      {/* Child pages indicator */}
+      <g>
+        <line x1="105" y1="106" x2="105" y2="118" stroke={T.border} strokeWidth="1" />
+        <rect x="95" y="118" width="20" height="8" rx="1" fill={T.accentLight} stroke={T.textFaint} strokeWidth="0.5" />
+        <text x="105" y="123" textAnchor="middle" fontSize="5" fontFamily={T.sans} fill={T.textMuted}>child</text>
+      </g>
+      <g>
+        <line x1="315" y1="106" x2="315" y2="118" stroke={T.border} strokeWidth="1" />
+        <rect x="305" y="118" width="20" height="8" rx="1" fill={T.accentLight} stroke={T.textFaint} strokeWidth="0.5" />
+        <text x="315" y="123" textAnchor="middle" fontSize="5" fontFamily={T.sans} fill={T.textMuted}>child</text>
+      </g>
+      <text x="210" y="110" textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fill={T.textMuted} fontStyle="italic">Change parent once → all child pages update</text>
+    </svg>
+  );
+}
+
 /* ─── Diagram map: moduleId → [{component, title}] ─── */
 const DIAGRAM_MAP = {
   1: [
@@ -543,6 +652,8 @@ const DIAGRAM_MAP = {
   2: [
     { component: DiagramNarrativeArc, title: "Three-Act Narrative Arc" },
     { component: DiagramChronVsNarrative, title: "Chronological vs. Narrative" },
+    { component: DiagramFiveNarrativeElements, title: "Five Narrative Elements" },
+    { component: DiagramNarrativeConstruction, title: "Narrative Construction Process" },
     { image: "example-narrative-sequence.jpg", title: "Narrative Sequence Example", alt: "Portfolio spread showing sequential facade analysis diagrams" },
   ],
   3: [
@@ -577,10 +688,16 @@ const DIAGRAM_MAP = {
     { image: "01-grid-anatomy-overview.svg", title: "Grid Anatomy — Columns, Gutters, Modules", alt: "Grid anatomy showing columns, gutters, modules, margins, and baselines" },
     { image: "02-historical-grid-comparison.svg", title: "Historical Grid Comparison", alt: "Greek urban grid, Japanese Ken module, modern page grid" },
     { image: "03-structural-vs-page-grid.svg", title: "Structural vs. Page Grid", alt: "Building structural grid vs page modular grid — same logic" },
+    { image: "class-pdf/class4-p7-img1.jpeg", title: "Building Plan vs. Page Layout", alt: "Structural column grid compared to modular page grid — same logic of rhythm, structure, and zones" },
+    { image: "class-pdf/class4-p8-img1.jpeg", title: "The Design Analogy: Facade & Structure", alt: "Concrete facade split to reveal underlying grid — primary frame, secondary alignment, content containers, baseline, margins" },
     { image: "06-consistency-across-spreads.svg", title: "Consistency Across Spreads", alt: "Same grid applied across three different spread types" },
   ],
   9: [
     { component: Diagram12Point, title: "Document Setup — 12-Point System" },
+    { component: DiagramLayerArchitecture, title: "InDesign Layer Architecture" },
+    { component: DiagramParentPages, title: "Parent Page Architecture" },
+    { image: "class-pdf/class4-p11-img1.jpeg", title: "Two Systems, One Goal", alt: "Baseline grid for text precision and modular grid for content organization — combined for rigorous alignment within flexible structure" },
+    { image: "class-pdf/class4-p17-img1.png", title: "Technical Execution: The Atomic Unit", alt: "Four-step InDesign setup — document, baseline grid, margins and columns, modular grid rows — with dialog box reference" },
     { image: "07-modular-baseline-overlay.svg", title: "Modular + Baseline Overlay", alt: "Modular grid overlaid with baseline grid" },
     { image: "12-baseline-math.svg", title: "Baseline Math", alt: "840pt page divided by 12pt gives 70 baseline lines" },
     { image: "13-module-anatomy.svg", title: "Module Anatomy", alt: "Module anatomy showing content lines, gutter zone, and 12pt increments" },
@@ -624,26 +741,32 @@ const MODULES = [
     id: 1,
     title: "The Portfolio as Critical Argument",
     part: "Narrative",
-    overview: `A portfolio is not a binder of coursework or a personal design journal. It is a curatorial act and a communication tool. Every decision you make about what to include, how to sequence it, and where to place it on the page is an act of design. The portfolio is not separate from your work. It is your work, reframed for an audience.
+    overview: `A portfolio is not a binder of coursework or a personal design journal. It is a curatorial act and a communication tool — simultaneously a mirror of your growth and a map for your future. Every decision you make about what to include, how to sequence it, and where to place it on the page is an act of design. The portfolio is not separate from your work. It is your work, reframed for an audience.
 
 A portfolio operates on two tracks simultaneously. At skim speed — thirty seconds — the image hierarchy, cover, and sequencing must tell a story. At read speed — two to five minutes — the project statements, captions, and visual details must deepen that story without contradicting it.
 
 Portfolio content should shift based on audience type. An academic reviewer prioritizes sketches, diagrams, and dead ends that reveal process depth. A professional reviewer at a large firm leads with resolved, publication-quality work and technical proficiency. A boutique firm values design sensibility and philosophical alignment. Knowing these roles is the difference between a page that documents and a page that argues.
 
-Before you walk into a review, an interview, or a scholarship committee, your portfolio has already made its case. Reviewers often spend thirty seconds on an initial scan. In that window, the sequencing of images, the hierarchy of information, and the clarity of layout have either earned deeper attention or lost it. The best portfolios tell a story about how you design, not just what you designed.`,
+Before you walk into a review, an interview, or a scholarship committee, your portfolio has already made its case. Reviewers often spend thirty seconds on an initial scan. In that window, the sequencing of images, the hierarchy of information, and the clarity of layout have either earned deeper attention or lost it. The best portfolios tell a story about how you design, not just what you designed.
+
+Understanding portfolio anatomy matters. Every architecture portfolio shares a common structure: the cover page establishes identity, the table of contents signals organization, project spreads carry the argument, and supplemental material (resume, skills, contact) closes the document. Within each project spread, four image types — concept, process, outcome, and context — perform distinct communicative roles. Recognizing these roles transforms a collection of images into a designed sequence.`,
     keyInsight: `"A portfolio is not an archive. It is an argument."`,
   },
   {
     id: 2,
     title: "Narrative Structure & the Three-Act Framework",
     part: "Narrative",
-    overview: `Film and theatre have long understood that audiences process information through structure. The three-act framework — setup, confrontation, synthesis — is not a formula. It is a pattern of expectations that audiences already carry. Portfolios that follow this pattern feel clear. Portfolios that ignore it feel scattered, regardless of the quality of the work.
+    overview: `Narrative is a design problem, not a writing task. Film and theatre have long understood that audiences process information through structure. The three-act framework — setup, confrontation, synthesis — is not a formula. It is a pattern of expectations that audiences already carry. Portfolios that follow this pattern feel clear. Portfolios that ignore it feel scattered, regardless of the quality of the work.
+
+Five elements define a strong portfolio narrative. Focus means committing to one idea, not many. Structure means intentional order — each spread advancing the argument. Curation means every image earns its place through communicative purpose. Lens means presenting a point of view, not a summary. Closure means resolution — the reviewer leaves knowing what you stand for.
 
 Setup: The opening spread establishes context — who you are as a designer, what territory your work occupies, and what questions drive it. This is the overture. A strong setup creates a lens through which a reviewer reads everything that follows.
 
 Confrontation: The middle projects develop your case. Each one should introduce a new dimension of your thinking, not simply repeat the same strength. Repetition without development signals a limited range.
 
-Synthesis: The closing projects demonstrate convergence. Technical resolution, professional awareness, and design maturity come together. A reviewer should leave the final spread with a sense of direction, not just skill.`,
+Synthesis: The closing projects demonstrate convergence. Technical resolution, professional awareness, and design maturity come together. A reviewer should leave the final spread with a sense of direction, not just skill.
+
+Constructing a narrative follows three steps. First, write a statement — your design position in one sentence. Second, outline — map your projects to the narrative arc, deciding which serves as setup, which develops complexity, and which resolves. Third, organize images — sequence them within each project to support the argument. This process moves you from intuition to intentional structure.`,
     keyInsight: `"The narrative arc determines what a viewer encounters. The grid determines how each encounter is constructed on the page."`,
   },
   {
@@ -675,7 +798,9 @@ The Initials-and-Finals principle reorders work to maximize impact. The opening 
 
 The middle projects build case through evidence, complexity, and range. Each advances the argument without repeating it.
 
-The closing project should be the most resonant — the piece that makes viewers feel that the entire portfolio was leading to that moment. This is the final statement. A reviewer should exit the portfolio thinking "I understand what this designer cares about," not "That was a nice project."`,
+The closing project should be the most resonant — the piece that makes viewers feel that the entire portfolio was leading to that moment. This is the final statement. A reviewer should exit the portfolio thinking "I understand what this designer cares about," not "That was a nice project."
+
+Precedent study sharpens sequencing instincts. Studying award-winning portfolios — such as those recognized by the RIBA President's Medals — reveals how experienced designers use the initials-and-finals principle intuitively. In small-group critique, examine published portfolios for narrative structure, visual consistency, project sequencing, and clarity of intent. Note which sequencing decisions feel effective and why. This critical observation practice builds the editorial judgment needed to sequence your own work.`,
     keyInsight: `"The first impression sets the frame. The last impression sets the memory."`,
   },
   {
@@ -692,7 +817,9 @@ Step 2 — One Sentence: Compress that paragraph. What survives? A weak sentence
 
 Step 3 — One Word: Threshold. Tension. Porosity. Absence. Erosion. The word is not a label — it is a lens. It describes the design position that recurs across projects.
 
-Step 4 — The Thread Test: Repeat for every project. When the same word keeps surfacing, you have found your Red Thread.`,
+Step 4 — The Thread Test: Repeat for every project. When the same word keeps surfacing, you have found your Red Thread.
+
+Most designers begin with intuition — a vague sense of what their work is about. The compression exercise transforms that intuition into explicit structure. The word you arrive at is not a label or a theme. It is a lens — a way of seeing that recurs across projects, scales, and contexts. When you can name your lens, you can use it to curate, sequence, and edit with precision.`,
     keyInsight: `"If the word is the same across three or more projects, the portfolio has a position. If it scatters, it needs one."`,
   },
   {
@@ -724,20 +851,24 @@ Thematic Narrative: Organized around a design principle rather than chronology. 
 
 Storyboarding Method: Print all project images as small thumbnails (3×5 or 4×6 inch prints). Arrange them on a large table or bulletin board. Move them around physically, testing different sequence orders. This kinesthetic approach reveals rhythm and pacing before any page layout is drafted.
 
-The Two-Track Reading System ensures the portfolio works at both speeds. Track 1 — Skim (30–90 seconds): Large images, clear hierarchy, minimal text. Track 2 — Study (5–15 minutes): Captions, process, analytical detail. Text and image should complete each other rather than duplicate. The image shows what cannot be said. The text says what cannot be shown.`,
+The Two-Track Reading System ensures the portfolio works at both speeds. Track 1 — Skim (30–90 seconds): Large images, clear hierarchy, minimal text. Track 2 — Study (5–15 minutes): Captions, process, analytical detail. Text and image should complete each other rather than duplicate. The image shows what cannot be said. The text says what cannot be shown.
+
+The constructing narrative exercise puts this into practice. Working with seven spreads in InDesign, arrange your strongest project as a complete visual sequence: opening spread with concept image, two to three development spreads with process and context images, and a closing spread with outcome images. This exercise tests whether your storyboard decisions hold when translated to actual page layouts — before committing to the full portfolio production.`,
     keyInsight: `"A sequence is not a collection. Each image should advance, not repeat."`,
   },
   {
     id: 8,
     title: "Grid Systems: From Structure to Page",
     part: "Grid",
-    overview: `A building's structural grid organizes load and space. A page grid organizes information and attention. The logic is the same.
+    overview: `A portfolio grid is not a graphic style or decorative choice. It is the invisible skeletal structure that organizes content, establishes hierarchy, and allows meaning to emerge clearly across pages. For architects, the grid is a familiar language — one of the oldest organizing principles in human civilization, from the Hippodamian plan of Alexandria to the Ken module of Japanese architecture to Le Corbusier's Modulor.
 
-Four grid types, one decision: Manuscript Grid — single text block, simplest structure. Column Grid — two to four columns, standard for print portfolios. Modular Grid — columns plus horizontal flowlines, the most versatile for mixed content. Hierarchical Grid — intuitive arrangement customized to content, sacrifices regularity for responsiveness.
+The logic connecting a building's structural grid to a page grid is direct. A structural column defines rhythm and load-bearing zones. A page column defines rhythm and content zones. Bays correspond to modules. Beam lines correspond to baselines. A building without a grid is a pile of materials; a portfolio without a grid is a collection of images.
+
+Four grid types, one decision: Manuscript Grid — single text column, simplest structure, suited for books and theses. Column Grid — vertical divisions, standard for magazines and editorial layouts. Modular Grid — columns plus horizontal flowlines, the most versatile for mixed architectural content (recommended for portfolios). Hierarchical Grid — content-driven arrangement, suited for websites and experimental posters.
 
 The choice is not aesthetic preference — it is a structural decision that determines how the reader navigates the page. A modular grid ensures consistency while allowing flexibility. Every page should derive from the same grid logic, creating visual coherence across the portfolio.
 
-The grid should be invisible. If a reviewer stops to analyze the grid structure, you have failed. The grid should support the argument without announcing itself. It is the skeleton that gives the portfolio posture and clarity.
+The grid should be invisible. If a reviewer stops to analyze the grid structure, you have failed. The grid does not decorate a page — it structures meaning. It transforms a simple collection of images into a coherent, professional system. The grid should support the argument without announcing itself.
 
 Intentional grid breaks are a legitimate design tool when they serve the narrative. A break should signal emphasis — not confusion. If you break the grid, do so for a reason that a reviewer can understand immediately. The grid is the baseline; breaks are the exception that proves the rule.`,
     keyInsight: `"A portfolio without a grid is like a building without a structural system."`,
@@ -746,15 +877,15 @@ Intentional grid breaks are a legitimate design tool when they serve the narrati
     id: 9,
     title: "The 12-Point Modular System",
     part: "Grid",
-    overview: `A grid is only as coherent as its underlying mathematics. Every measurement derives from a single value: 12 points. Margins, gutters, column widths, row heights, and baseline increments are all multiples of 12. Nothing on the page is arbitrary.
+    overview: `A portfolio without a configured grid is a construction site without foundations. Building the grid is a construction phase — if the previous module was concept, analysis, and precedent, this module is execution. By the end, your InDesign file should function as a prepared construction site — cleared, measured, and structurally framed — ready to receive your architectural content.
 
-Document Setup: Page size 600 × 840 pt (a 5:7 proportion — proportionally similar to standard printed portfolios at larger scale, offering enough horizontal space for two-column layouts while maintaining vertical legibility). Margins at 48/60/48/36 pt (top, bottom, inside, outside). Six columns with 12 pt gutters. Eight rows with 12 pt gutters. Baseline grid at 12 pt increments.
+Every measurement derives from a single value: 12 points. Margins, gutters, column widths, row heights, and baseline increments are all multiples of 12. Nothing on the page is arbitrary.
 
-Setup in InDesign: Create a new document at 600 × 840 pt. Set margins and create guides at 12 pt intervals. Activate the baseline grid in Type > Show Hidden Characters, then View > Grids and Guides > Show Baseline Grid. In Figma: Create a frame at 600 × 840 px. Use the grid settings to establish 12 px columns and rows, then enable the baseline grid for text alignment.
+The construction sequence follows four phases. Phase 1 — Workspace Setup: Reset InDesign to Essentials, activate core panels (Pages, Layers, Links, Align, Paragraph Styles, Properties), organize the dock, and save as a custom workspace. Phase 2 — Layer Architecture: Create three layers — 01_Text (titles, descriptions, page numbers), 02_Images (drawings, renders, photos), and 03_Guides (non-printing, locked). Text sits above images; guides are hidden in export. Phase 3 — Parent Pages: Build two parent page templates — A-Intro (splash page with title area and date/location) and B-Project (content page with header, grid guides, and project title). Change a parent once and all child pages update automatically. Phase 4 — The Structural Grid: Document at 600 × 840 pt (5:7 proportion). Baseline grid starting at 0 pt, relative to top margin, incrementing every 12 pt. Margins at 36/48/36/36 pt (top/bottom/inside/outside). Six columns with 12 pt gutters. Eight rows with 12 pt gutters via Layout > Create Guides.
 
 The modular grid and baseline grid operate as complementary systems. The modular grid governs placement and proportion. The baseline grid governs the internal rhythm of text. Together, they achieve precision and clarity. Six columns and eight rows produce 48 modules per page — limitless layout possibilities from a single structural foundation.
 
-This system is not restrictive. It is generative. The more tightly constrained the grid, the more creative the solutions within it. Designers working on a 12-point system find endless variation through careful composition.`,
+This system is not restrictive. It is generative. The more tightly constrained the grid, the more creative the solutions within it.`,
     keyInsight: `"Every measurement is a multiple of 12. Nothing on the page is arbitrary."`,
   },
   {
@@ -767,9 +898,11 @@ Font Pairing Principles: Choose one serif font paired with one sans-serif font, 
 
 Modernist Workhorses: Helvetica, Futura, DIN, Univers — proven, neutral, versatile. Humanist and Contemporary: Avenir, Söhne, Gill Sans, Circular — warmer, more approachable. Editorial and Stylistic: Neue Montreal, GT Alpina, Minion Pro — personality with restraint.
 
-Size standards for print: Titles at 24–48 pt, subheadings at 14–20 pt, body text at 9–11 pt, captions at 7–8 pt. These map to the hierarchy of information on the page, ensuring the reader encounters content in the correct order. The visual hierarchy should feel intuitive, not arbitrary.
+Size standards for print: Titles at 24/30 pt (size/leading), subtitles at 14/18 pt, body text at 10/12 pt, captions at 8/10 pt. These map to the hierarchy of information on the page, ensuring the reader encounters content in the correct order. The visual hierarchy should feel intuitive, not arbitrary.
 
-Line spacing (leading) matters for readability. Set body text leading at 130–150% of the font size. For 10 pt body text, use 13–15 pt leading. Tighter leading (100–120%) works for captions and headlines; looser leading (150%+) works for display text. Proper line spacing creates visual breathing room and prevents the portfolio from feeling dense.
+In InDesign, define these as Paragraph Styles (Window > Styles > Paragraph Styles). The critical setting is Indents and Spacing > Align to Grid: All Lines. This locks every line of text to the 12-point baseline grid, ensuring lines align across columns — the hallmark of professional typographic control. Without baseline alignment, text drifts between grid increments and the portfolio loses structural precision.
+
+Line spacing (leading) matters for readability. Body text leading at 12 pt matches the baseline grid increment exactly. Tighter leading (100–120%) works for captions and headlines; looser leading (150%+) works for display text. Proper line spacing creates visual breathing room and prevents the portfolio from feeling dense.
 
 Typography reinforces the portfolio argument. Choose typefaces that align with the design position. A minimalist architect should choose typography that feels restrained. A designer interested in craft should choose typefaces with history and detail.`,
     keyInsight: `"Typography is how your portfolio speaks when you are not in the room."`,
