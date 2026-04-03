@@ -970,103 +970,130 @@ function InteractiveChecklist({ moduleId }) {
 
 /* ─── Diagram Gallery Item with hover title ─── */
 function DiagramSlideshow({ diagrams, moduleLabel, backHash }) {
+  const scrollRef = useRef(null);
   const [current, setCurrent] = useState(0);
-  const [fade, setFade] = useState(true);
-  const [hovered, setHovered] = useState(false);
   const basePath = import.meta.env.BASE_URL || "/";
   const total = diagrams.length;
-  const diagram = diagrams[current];
-  const DiagramComp = diagram?.component;
-  const isImage = !!diagram?.image;
 
-  const goTo = (idx) => {
-    if (idx === current || idx < 0 || idx >= total) return;
-    setFade(false);
-    setTimeout(() => { setCurrent(idx); setFade(true); }, 180);
-  };
+  // Track which slide is in view via IntersectionObserver
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+    const slides = container.querySelectorAll("[data-slide]");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setCurrent(Number(entry.target.dataset.slide));
+          }
+        });
+      },
+      { root: container, threshold: 0.6 }
+    );
+    slides.forEach((s) => observer.observe(s));
+    return () => observer.disconnect();
+  }, [diagrams]);
 
+  // Keyboard nav
   useEffect(() => {
     const onKey = (e) => {
-      if (e.key === "ArrowRight" || e.key === " ") { e.preventDefault(); goTo(current < total - 1 ? current + 1 : 0); }
-      if (e.key === "ArrowLeft") { e.preventDefault(); goTo(current > 0 ? current - 1 : total - 1); }
+      const container = scrollRef.current;
+      if (!container) return;
+      if (e.key === "ArrowDown" || e.key === " ") {
+        e.preventDefault();
+        const next = Math.min(current + 1, total - 1);
+        container.children[next]?.scrollIntoView({ behavior: "smooth" });
+      }
+      if (e.key === "ArrowUp") {
+        e.preventDefault();
+        const prev = Math.max(current - 1, 0);
+        container.children[prev]?.scrollIntoView({ behavior: "smooth" });
+      }
       if (e.key === "Escape") navigate(backHash);
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [current, total, backHash]);
 
-  if (!diagram) return null;
-
   return (
-    <div
-      style={{
-        position: "fixed", inset: 0, background: T.bg, zIndex: 100,
-        display: "flex", flexDirection: "column", fontFamily: T.sans,
-        cursor: current < total - 1 ? "e-resize" : "default",
-      }}
-      onClick={(e) => {
-        if (e.target.closest("button") || e.target.closest("a")) return;
-        const rect = e.currentTarget.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        if (x < rect.width * 0.35) goTo(current > 0 ? current - 1 : total - 1);
-        else goTo(current < total - 1 ? current + 1 : 0);
-      }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
-      {/* Top bar */}
+    <div style={{ position: "fixed", inset: 0, zIndex: 100, fontFamily: T.sans, background: T.bg }}>
+      {/* Scroll-snap container */}
+      <div
+        ref={scrollRef}
+        style={{
+          position: "absolute", inset: 0,
+          overflowY: "auto", overflowX: "hidden",
+          scrollSnapType: "y mandatory",
+          WebkitOverflowScrolling: "touch",
+        }}
+      >
+        {diagrams.map((diagram, i) => {
+          const DiagramComp = diagram.component;
+          const isImage = !!diagram.image;
+          return (
+            <div
+              key={i}
+              data-slide={i}
+              style={{
+                width: "100%", height: "100vh",
+                scrollSnapAlign: "start",
+                scrollSnapStop: "always",
+                display: "flex", alignItems: "center", justifyContent: "center",
+                padding: "60px 60px",
+                boxSizing: "border-box",
+              }}
+            >
+              <div style={{ maxWidth: 720, width: "100%" }}>
+                {isImage ? (
+                  <img
+                    src={`${basePath}images/${diagram.image}`}
+                    alt={diagram.alt || diagram.title}
+                    style={{ width: "100%", height: "auto", display: "block", maxHeight: "calc(100vh - 140px)", objectFit: "contain" }}
+                  />
+                ) : DiagramComp ? (
+                  <div style={{ background: T.bgAlt, border: `1px solid ${T.border}`, padding: "32px 24px" }}>
+                    <DiagramComp />
+                  </div>
+                ) : null}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Fixed overlay: back + counter (top) */}
       <div style={{
+        position: "fixed", top: 0, left: 0, right: 0,
         display: "flex", justifyContent: "space-between", alignItems: "baseline",
-        padding: "20px 40px", flexShrink: 0,
-        opacity: hovered ? 1 : 0, transition: "opacity 0.3s ease",
+        padding: "20px 40px", pointerEvents: "none", zIndex: 101,
       }}>
-        <button onClick={(e) => { e.stopPropagation(); navigate(backHash); }} style={{
+        <button onClick={() => navigate(backHash)} style={{
           background: "none", border: "none", fontSize: 10, color: T.textMuted, cursor: "pointer",
           fontFamily: T.sans, letterSpacing: "0.06em", textTransform: "uppercase", padding: 0,
+          pointerEvents: "auto",
         }}>← {moduleLabel}</button>
         <span style={{ fontSize: 9, color: T.textFaint, letterSpacing: "0.06em" }}>
           {current + 1} / {total}
         </span>
       </div>
 
-      {/* Image area */}
+      {/* Fixed overlay: title + dots (bottom) */}
       <div style={{
-        flex: 1, display: "flex", alignItems: "center", justifyContent: "center",
-        padding: "0 60px", overflow: "hidden", minHeight: 0,
-      }}>
-        <div style={{
-          maxWidth: 720, width: "100%",
-          opacity: fade ? 1 : 0, transition: "opacity 0.18s ease",
-        }}>
-          {isImage ? (
-            <img
-              src={`${basePath}images/${diagram.image}`}
-              alt={diagram.alt || diagram.title}
-              style={{ width: "100%", height: "auto", display: "block", maxHeight: "calc(100vh - 160px)", objectFit: "contain" }}
-            />
-          ) : DiagramComp ? (
-            <div style={{ background: T.bgAlt, border: `1px solid ${T.border}`, padding: "32px 24px" }}>
-              <DiagramComp />
-            </div>
-          ) : null}
-        </div>
-      </div>
-
-      {/* Bottom bar */}
-      <div style={{
-        display: "flex", justifyContent: "space-between", alignItems: "baseline",
-        padding: "20px 40px", flexShrink: 0,
-        opacity: hovered ? 1 : 0, transition: "opacity 0.3s ease",
+        position: "fixed", bottom: 0, left: 0, right: 0,
+        display: "flex", justifyContent: "space-between", alignItems: "center",
+        padding: "20px 40px", pointerEvents: "none", zIndex: 101,
       }}>
         <span style={{ fontSize: 10, color: T.textLight, letterSpacing: "0.01em" }}>
-          {diagram.title}
+          {diagrams[current]?.title}
         </span>
-        <div style={{ display: "flex", gap: 6 }}>
+        <div style={{ display: "flex", gap: 6, pointerEvents: "auto" }}>
           {diagrams.map((_, i) => (
-            <div key={i} onClick={(e) => { e.stopPropagation(); goTo(i); }} style={{
+            <div key={i} onClick={() => {
+              scrollRef.current?.children[i]?.scrollIntoView({ behavior: "smooth" });
+            }} style={{
               width: i === current ? 16 : 6, height: 1.5,
               background: i === current ? T.text : T.border,
-              transition: "all 0.2s ease", cursor: "pointer",
+              transition: "all 0.25s ease", cursor: "pointer",
             }} />
           ))}
         </div>
