@@ -1019,7 +1019,7 @@ The grid should be invisible. When it works, a reviewer reads the argument, not 
   },
   {
     id: 9,
-    title: "The 12-Point Module",
+    title: "Building the Grid",
     part: "Grid",
     overview: `The grid concept becomes a grid system when every measurement derives from a single value. In this course, that value is twelve points. Margins, gutters, column widths, row heights, and baseline increments are all multiples of twelve. Nothing on the page is arbitrary. The document opens at 600 × 840 points, a 5:7 proportion that echoes the Golden Section without forcing it. The baseline grid begins at the top margin and increments every twelve points, locking text to a consistent vertical rhythm across every page.
 
