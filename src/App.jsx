@@ -1075,7 +1075,7 @@ Line spacing matters more than most students expect. Tight leading works for cap
   },
   {
     id: 11,
-    title: "Cover and Information Architecture",
+    title: "Cover and Table of Contents",
     part: "Grid",
     overview: `The cover is the first design decision a reviewer encounters, and it frames every page that follows. A cover does not decorate; it declares. It announces the portfolio's design position before the first project appears through typography, image selection, composition, and restraint. Seven cover typologies recur across professional and academic portfolios: Pure Minimal, Dark Ground, Hero Image, Bleed + Band, Collage, Grid Pattern, and Abstract Line. Each suits a different portfolio personality. Pure Minimal signals focus and confidence. Hero Image leads with a single defining moment. Grid Pattern implies systems thinking. The choice should reinforce the same Red Thread that runs through the project sequence.
 
@@ -1101,17 +1101,17 @@ The diagnostic test: print the portfolio in grayscale. If the visual hierarchy s
     id: 13,
     title: "The Self-Editing Audit",
     part: "Production",
-    overview: `Before submission, audit your portfolio at four levels. Use this checklist to catch oversights and strengthen weak areas.
+    overview: `Before submission, audit your portfolio across five categories. Use this checklist to catch oversights and strengthen weak areas.
 
-Project-Level: Clear project statement · Narrative-driven sequencing · Each image serves a communicative function · Captions provide non-visual information.
+**1. InDesign Setup.** Workspace is customized and organized for portfolio layout. Essential panels are visible and accessible (Pages, Layers, Styles, Swatches). Baseline grid is set up with appropriate increment value. Body text snaps to baseline grid consistently. Margins and columns are defined consistently across all pages. Gutters are consistent and appropriately sized. Text frames are aligned to the modular grid. Overset text is resolved (no red plus icons). Layers are organized and clearly named (Images, Text, Background). Content is placed on the correct layers. Parent pages are created for recurring layout elements. Page numbers, headers, or footers are on parent pages. Paragraph styles are created for all text types (headings, body, captions). Styles are applied consistently with no local overrides (no + indicators).
 
-Portfolio-Level: Demonstrates range without losing coherence · Clear logic governing project order · Functions at both skim and study speeds · Red Thread visible across projects.
+**2. Narrative Design.** Portfolio has a clear beginning, middle, and end. Each spread communicates one specific idea or project phase. The sequence of spreads tells a logical, compelling story.
 
-Visual and Production Quality: 300 DPI minimum for print · Typography consistency · Cohesive color palette · Spelling and proofreading complete.
+**3. Grid Compliance.** All text aligns to the baseline grid. Images and graphics snap to the modular grid. Margins and column alignment are consistent across every spread. White space is used intentionally and follows the grid. Any grid breaks are clearly purposeful, not accidental.
 
-Final Production: Separate optimized PDFs (print at 300 DPI, CMYK and digital at 150 DPI, RGB, under 10 MB) · All fonts embedded · Website portfolio live and updated · File naming: Lastname_Portfolio_Year.pdf (e.g., Lastname_Portfolio_2025.pdf).
+**4. Visual Hierarchy and Contrast.** Each spread has a clear focal point or visual entry point. Headings are noticeably larger or bolder than body text. Color or tonal contrast helps distinguish content levels. Image sizes vary to create emphasis. Hierarchy feels consistent from spread to spread.
 
-Skill Coverage: Map each project against the skills it demonstrates — design development, technical resolution, digital fabrication, hand drawing, research, writing. If an entire skill column is empty, either add a project that covers it or acknowledge the gap intentionally. The matrix makes visible what the portfolio argues about your range as a designer.
+**5. Typography and Personality.** At least two distinct typefaces are used (serif plus sans-serif). Typeface choices reflect the desired portfolio personality and tone. Typeface pairing creates effective contrast without clashing. Body typeface is highly legible at small sizes. Type sizes, weights, and styles are used consistently throughout. Letter-spacing and line-height are refined for readability.
 
 Peer Review: Before finalizing, have two to three trusted colleagues or mentors review the portfolio. Ask them to spend thirty seconds on an initial scan, then take five minutes for deeper reading. Ask: "What story do you think this designer cares about?" Their answer should match your intended position. If not, the portfolio is not yet communicating clearly. Revise and test again.`,
     keyInsight: `The audit is not the last step. It is the first honest reading of your own work.`,
@@ -1236,24 +1236,66 @@ const ABOUT_TEXT = [
 function InteractiveChecklist({ moduleId }) {
   const checklistData = [
     {
-      level: "Project-Level",
+      level: "InDesign Setup",
       color: T.accent,
-      items: ["Clear project statement with a testable claim", "Narrative-driven image sequencing", "Each image serves a named function (concept, process, outcome, context)", "Captions provide information the image cannot show"]
+      items: [
+        "Workspace customized with essential panels visible (Pages, Layers, Styles, Swatches)",
+        "Baseline grid set up with appropriate increment value",
+        "Body text snaps to baseline grid consistently",
+        "Margins and columns defined consistently across all pages",
+        "Gutters consistent and appropriately sized",
+        "Text frames aligned to the modular grid",
+        "Overset text resolved (no red plus icons)",
+        "Layers organized and clearly named (Images, Text, Background)",
+        "Content placed on the correct layers",
+        "Parent pages created for recurring layout elements",
+        "Page numbers, headers, or footers on parent pages",
+        "Paragraph styles created for all text types (headings, body, captions)",
+        "Styles applied consistently; no local overrides (no + indicators)",
+      ]
     },
     {
-      level: "Portfolio-Level",
+      level: "Narrative Design",
       color: T.navy,
-      items: ["Demonstrates range without losing coherence", "Clear logic governing project order", "Functions at both skim and study speeds", "Red Thread visible across projects"]
+      items: [
+        "Portfolio has a clear beginning, middle, and end",
+        "Each spread communicates one specific idea or project phase",
+        "The sequence of spreads tells a logical, compelling story",
+      ]
     },
     {
-      level: "Visual / Production",
+      level: "Grid Compliance",
       color: T.coral,
-      items: ["300 DPI minimum for print", "Consistent typography across all spreads", "Cohesive color palette with normalized white balance", "Spelling and proofreading complete"]
+      items: [
+        "All text aligns to the baseline grid",
+        "Images and graphics snap to the modular grid",
+        "Margins and column alignment consistent across every spread",
+        "White space used intentionally and follows the grid",
+        "Any grid breaks are clearly purposeful, not accidental",
+      ]
     },
     {
-      level: "Final Production",
+      level: "Visual Hierarchy & Contrast",
       color: T.gold,
-      items: ["Each project contains all four image types", "File named clearly (Lastname_Portfolio_Year.pdf)", "Separate PDFs for print (CMYK) and digital (RGB)", "All fonts embedded"]
+      items: [
+        "Each spread has a clear focal point or visual entry point",
+        "Headings noticeably larger or bolder than body text",
+        "Color or tonal contrast distinguishes content levels",
+        "Image sizes vary to create emphasis",
+        "Hierarchy feels consistent from spread to spread",
+      ]
+    },
+    {
+      level: "Typography & Personality",
+      color: T.steel || "#5a7d9a",
+      items: [
+        "At least two distinct typefaces used (serif + sans-serif)",
+        "Typeface choices reflect desired portfolio personality and tone",
+        "Typeface pairing creates effective contrast without clashing",
+        "Body typeface highly legible at small sizes",
+        "Type sizes, weights, and styles used consistently throughout",
+        "Letter-spacing and line-height refined for readability",
+      ]
     },
   ];
 
