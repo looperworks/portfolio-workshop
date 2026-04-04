@@ -34,7 +34,7 @@ const PARTS = {
   },
   part3: {
     title: "Production",
-    modules: [10, 11, 12, 13],
+    modules: [11, 10, 12, 13],
   },
 };
 
