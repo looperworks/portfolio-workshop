@@ -960,8 +960,11 @@ const DIAGRAM_MAP = {
     { image: "diagram-skill-matrix.svg", title: "Project–Skill Coverage Matrix", alt: "Project–skill coverage matrix showing how projects map to different competencies" },
   ],
   casestudy: [
-    { component: DiagramImageMapping, title: "Image Type Mapping Across Spreads" },
-    { component: DiagramCompression, title: "The Compression Exercise" },
+    { image: "class-pdf/casestudy-spread-1.jpg", title: "Spread 1 — Exposition", alt: "Terrain model and project abstract", caption: "Keyword: 'eroding terrain.' Act I: exposition. Image type: concept. The terrain model opens the storyboard — at skim speed, a reviewer knows this project is about ground shaped by force." },
+    { image: "class-pdf/casestudy-spread-2.jpg", title: "Spread 2 — Rising Action", alt: "Aerial site photo and detail terrain model", caption: "Keywords: 'Alpine,' 'terrain.' Act II: rising action. Image types: context + process. The aerial photograph establishes scale; the detail model introduces the method of working with erosion." },
+    { image: "class-pdf/casestudy-spread-3.jpg", title: "Spread 3 — Climax", alt: "Winter renderings and building section", caption: "Keywords: 'embeds into,' 'eroding terrain.' Act III: climax. Image types: outcome + process. The section reveals the extreme slope; the rendering shows the environment the design must survive." },
+    { image: "class-pdf/casestudy-spread-4.jpg", title: "Spread 4 — Falling Action", alt: "Model photo, approach rendering, and section", caption: "Keywords: 'embeds,' 'spatial experience.' Act IV: falling action. Image types: process + outcome. Massing, sequence, and structure — each drawing answers a question the portfolio already asked." },
+    { image: "class-pdf/casestudy-spread-5.jpg", title: "Spread 5 — Resolution", alt: "Gallery interiors and floor plans", caption: "Keywords: 'museum,' 'spatial experience.' Act V: resolution. Image type: outcome. Interior views prove inhabitation; plans prove program. Every claim in the statement has been drawn." },
   ],
 };
 
