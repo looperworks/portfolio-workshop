@@ -784,6 +784,10 @@ Every grid break should pass one test: can a reviewer see that the break is inte
     keyInsight: `A grid that produces the same layout on every page is not disciplined. It is monotonous.`,
   },
 ];
+// Sort MODULES to match PARTS display order (nav bar, prev/next)
+const _PARTS_ORDER = Object.values(PARTS).flatMap(p => p.modules);
+MODULES.sort((a, b) => _PARTS_ORDER.indexOf(a.id) - _PARTS_ORDER.indexOf(b.id));
+
 // Case study content
 const CASE_STUDY = {
   id: "casestudy",
@@ -1333,7 +1337,7 @@ export default function PortfolioGuide() {
               }}
               onMouseEnter={(e) => { e.currentTarget.style.color = T.text; }}
               onMouseLeave={(e) => { e.currentTarget.style.color = T.textFaint; }}
-              >{String(m.id).padStart(2, "0")}</button>
+              >{String(MODULE_POSITION[m.id]).padStart(2, "0")}</button>
             ))}
           </div>
         </header>
@@ -1352,7 +1356,13 @@ export default function PortfolioGuide() {
           <div style={{ width: 24, height: 1, background: T.text, marginBottom: 32 }} />
 
           {paragraphs.map((p, i) => (
-            <p key={i} style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>{p}</p>
+            <p key={i} style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>
+              {p.split(/(\*\*[^*]+\*\*)/).map((seg, j) =>
+                seg.startsWith("**") && seg.endsWith("**")
+                  ? <strong key={j} style={{ color: T.text, fontWeight: 600 }}>{seg.slice(2, -2)}</strong>
+                  : seg
+              )}
+            </p>
           ))}
 
           {CASE_STUDY.keyInsight && (
@@ -1382,17 +1392,17 @@ export default function PortfolioGuide() {
 
           {/* Prev / Next */}
           <div style={{ display: "flex", justifyContent: "space-between", marginTop: 48, paddingTop: 20, borderTop: `1px solid ${T.border}` }}>
-            <button onClick={() => handleNavClick(MODULES[MODULES.length - 1])} style={{
+            <button onClick={() => navigate(`#/module/${PARTS.part1.modules[PARTS.part1.modules.length - 1]}`)} style={{
               background: "none", border: "none", fontSize: 10, color: T.textMuted, cursor: "pointer", fontFamily: T.sans, padding: 0, textAlign: "left", letterSpacing: "0.02em",
             }}>
               <span style={{ display: "block", fontSize: 8, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 3, color: T.textFaint }}>Previous</span>
-              {String(MODULES[MODULES.length - 1].id).padStart(2, "0")}: {MODULES[MODULES.length - 1].title}
+              {String(MODULE_POSITION[PARTS.part1.modules[PARTS.part1.modules.length - 1]]).padStart(2, "0")}: {MODULES.find(m => m.id === PARTS.part1.modules[PARTS.part1.modules.length - 1])?.title}
             </button>
-            <button onClick={() => handleNavClick(MODULES[0])} style={{
+            <button onClick={() => navigate(`#/module/${PARTS.part2.modules[0]}`)} style={{
               background: "none", border: "none", fontSize: 10, color: T.textMuted, cursor: "pointer", fontFamily: T.sans, padding: 0, textAlign: "right", letterSpacing: "0.02em",
             }}>
               <span style={{ display: "block", fontSize: 8, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 3, color: T.textFaint }}>Next</span>
-              {String(MODULES[0].id).padStart(2, "0")}: {MODULES[0].title}
+              {String(MODULE_POSITION[PARTS.part2.modules[0]]).padStart(2, "0")}: {MODULES.find(m => m.id === PARTS.part2.modules[0])?.title}
             </button>
           </div>
         </div>
@@ -1431,7 +1441,7 @@ export default function PortfolioGuide() {
               }}
               onMouseEnter={(e) => { e.currentTarget.style.color = T.text; }}
               onMouseLeave={(e) => { e.currentTarget.style.color = T.textFaint; }}
-              >{String(m.id).padStart(2, "0")}</button>
+              >{String(MODULE_POSITION[m.id]).padStart(2, "0")}</button>
             ))}
           </div>
         </header>
@@ -1450,7 +1460,13 @@ export default function PortfolioGuide() {
           <div style={{ width: 24, height: 1, background: T.text, marginBottom: 32 }} />
 
           {paragraphs.map((p, i) => (
-            <p key={i} style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>{p}</p>
+            <p key={i} style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>
+              {p.split(/(\*\*[^*]+\*\*)/).map((seg, j) =>
+                seg.startsWith("**") && seg.endsWith("**")
+                  ? <strong key={j} style={{ color: T.text, fontWeight: 600 }}>{seg.slice(2, -2)}</strong>
+                  : seg
+              )}
+            </p>
           ))}
 
           {CASE_STUDY_2.keyInsight && (
@@ -1550,7 +1566,7 @@ export default function PortfolioGuide() {
             }}
             onMouseEnter={(e) => { if (m.id !== mod.id) e.currentTarget.style.color = T.text; }}
             onMouseLeave={(e) => { if (m.id !== mod.id) e.currentTarget.style.color = T.textFaint; }}
-            >{String(m.id).padStart(2, "0")}</button>
+            >{String(MODULE_POSITION[m.id]).padStart(2, "0")}</button>
           ))}
         </div>
       </header>
@@ -1598,7 +1614,7 @@ export default function PortfolioGuide() {
               onMouseEnter={(e) => { e.currentTarget.style.color = T.steelLight; e.currentTarget.style.borderColor = `${T.steelLight}`; }}
               onMouseLeave={(e) => { e.currentTarget.style.color = T.steel; e.currentTarget.style.borderColor = `${T.steel}40`; }}
             >
-              Diagram {String(mod.id).padStart(2, "0")}: {diagrams.map((d) => d.title).join(", ")}
+              Diagram {String(MODULE_POSITION[mod.id]).padStart(2, "0")}: {diagrams.map((d) => d.title).join(", ")}
             </span>
           </div>
         )}
@@ -1635,13 +1651,13 @@ export default function PortfolioGuide() {
                 background: "none", border: "none", fontSize: 10, color: T.textMuted, cursor: "pointer", fontFamily: T.sans, padding: 0, textAlign: "left", letterSpacing: "0.02em",
               }}>
                 <span style={{ display: "block", fontSize: 8, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 3, color: T.textFaint }}>Previous</span>
-                {String(prevMod.id).padStart(2, "0")}: {prevMod.title}
+                {String(MODULE_POSITION[prevMod.id]).padStart(2, "0")}: {prevMod.title}
               </button>
               <button onClick={() => handleNavClick(nextMod)} style={{
                 background: "none", border: "none", fontSize: 10, color: T.textMuted, cursor: "pointer", fontFamily: T.sans, padding: 0, textAlign: "right", letterSpacing: "0.02em",
               }}>
                 <span style={{ display: "block", fontSize: 8, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 3, color: T.textFaint }}>Next</span>
-                {String(nextMod.id).padStart(2, "0")}: {nextMod.title}
+                {String(MODULE_POSITION[nextMod.id]).padStart(2, "0")}: {nextMod.title}
               </button>
             </div>
           );
