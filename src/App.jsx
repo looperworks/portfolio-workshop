@@ -30,7 +30,7 @@ const PARTS = {
   },
   part2: {
     title: "Grid",
-    modules: [8, 9, 14, 15],
+    modules: [8, 9, 16, 14, 15],
   },
   part3: {
     title: "Production",
@@ -855,22 +855,24 @@ const DIAGRAM_MAP = {
   9: [
     { image: "07-modular-baseline-overlay.svg", title: "Modular + Baseline Overlay", alt: "Modular grid with baseline grid overlay showing alignment system", caption: "The modular grid defines content zones. The baseline grid locks text to a repeating twelve-point increment. Together they form a dual system: the module is the concrete, the baseline is the rebar. Neither works as well alone." },
     { image: "08-baseline-drift-mistake.svg", title: "Baseline Drift", alt: "Common mistake showing text drifting off baseline grid", caption: "When text is not locked to the baseline, lines drift across columns. By the bottom of the page, left-column text and right-column text sit at different vertical positions. The misalignment is subtle but cumulative, and a trained reviewer will notice it immediately." },
+    { image: "slide16-phase2-atomic-unit.svg", title: "The 12-Point Atomic Unit", alt: "Diagram showing 12pt as the atomic unit for all grid decisions", caption: "Twelve points is the atomic unit. Leading is one unit. Margins are multiples of the unit. Page height is 70 units. Every spatial decision in the portfolio must resolve as a whole-number multiple of 12. This constraint eliminates guesswork and guarantees vertical alignment." },
     { image: "11-page-measurements.svg", title: "Page Measurements", alt: "Page dimensions and margin measurements in points", caption: "All measurements in points, never millimeters or inches. An 840-point page height divided by a 12-point baseline yields exactly 70 baseline units. Margins are set as multiples of 12: 36 points top, 48 points bottom. Every number resolves cleanly." },
     { image: "12-baseline-math.svg", title: "Baseline Grid Math", alt: "Mathematical breakdown of 840pt page height divided by 12pt baseline", caption: "840 divided by 12 equals 70 lines. The top margin consumes 3 lines, the bottom margin consumes 4. The remaining 63 lines are the active text area. This arithmetic is not arbitrary; it guarantees that every element on the page aligns to a common vertical measure." },
-    { image: "slide16-phase2-atomic-unit.svg", title: "The 12-Point Atomic Unit", alt: "Diagram showing 12pt as the atomic unit for all grid decisions", caption: "Twelve points is the atomic unit. Leading is one unit. Margins are multiples of the unit. Page height is 70 units. Every spatial decision in the portfolio must resolve as a whole-number multiple of 12. This constraint eliminates guesswork and guarantees vertical alignment." },
     { image: "13-module-anatomy.svg", title: "Module Anatomy", alt: "Detailed anatomy of a single grid module with dimensions", caption: "A module is the smallest rectangular unit of the grid, defined by column width and flowline height. Content snaps to module boundaries. Understanding the module's internal dimensions, including its relationship to baseline increments, is essential before placing any content." },
-    { image: "09-indesign-workspace.svg", title: "InDesign Workspace", alt: "InDesign interface showing grid setup panels and workspace", caption: "The InDesign workspace is where grid logic becomes operational. Pages, Layers, Paragraph Styles, and the Properties panel each control a different dimension of the grid. Knowing where each setting lives saves hours of production time." },
-    { image: "10-panel-closeups.svg", title: "Panel Closeups", alt: "Detailed views of InDesign grid configuration panels", caption: "Paragraph Styles enforce consistent type specifications across every text frame. The Pages panel manages spread sequence. These two panels together ensure that grid logic, once established, propagates automatically through the entire document." },
-    { image: "14-indesign-setup-steps.svg", title: "InDesign Setup Steps", alt: "Step-by-step InDesign document and grid setup procedure", caption: "Three configuration steps: set the baseline grid to start at zero points relative to the top of the page with a 12-point increment; define margins as multiples of 12; create columns and rows in the Margins and Columns dialog. The order matters because each step depends on the previous one." },
-    { image: "15-shortcut-reference.svg", title: "Keyboard Shortcuts", alt: "Essential InDesign keyboard shortcuts for grid management", caption: "Preview mode, baseline grid visibility, guide toggling, snap-to-guides, and fit-spread-in-window are the five shortcuts that eliminate mouse travel during grid-based layout. Memorize these before the first production session." },
-    { image: "17-leading-closeup.svg", title: "Leading Closeup", alt: "Detailed view of text leading and baseline alignment", caption: "Leading is the vertical distance from one baseline to the next. At 12 points, it matches the baseline grid increment exactly. The relationship between font size and leading, typically 10 over 12, is the typographic foundation that makes the grid system work." },
-    { component: Diagram12Point, title: "Document Setup: 12-Point System" },
-    { component: DiagramLayerArchitecture, title: "InDesign Layer Architecture" },
-    { component: DiagramParentPages, title: "Parent Page Architecture" },
+    { image: "class-pdf/class4-p11-img1.jpeg", title: "Two Systems, One Goal", alt: "Baseline grid for text precision and modular grid for content organization, combined for rigorous alignment within flexible structure" },
     { image: "class-pdf/casestudy2-spread-2.jpg", title: "Spread 2: Column Structure and Baseline Alignment", alt: "Rendering and ground floor plan with text", caption: "Rendering snaps to the left column group; the plan fills the right. Caption text aligns to the baseline grid below the rendering. The twelve-point system governs every element: image placement, text position, margin clearance." },
     { image: "class-pdf/casestudy2-spread-5.jpg", title: "Spread 5: Modular Placement: Unit Plans + Model", alt: "Three unit floor plans and sectional model photograph", caption: "Three unit plan types occupy precise grid modules on the left, each with a caption aligned to the baseline. The sectional model photograph fills the right page. Forty-eight modules per page, but every image lands in the same structural framework." },
     { image: "class-pdf/casestudy2-spread-9.jpg", title: "Spread 9: Complex Content Within Grid Framework", alt: "Interior model photo and two floor plans with legends", caption: "A model interior on the left, two floor plans with color-coded legends on the right. Dense information organized by the same six-column, eight-row grid. The baseline grid keeps plan labels, legends, and captions vertically aligned." },
-    { image: "class-pdf/class4-p11-img1.jpeg", title: "Two Systems, One Goal", alt: "Baseline grid for text precision and modular grid for content organization, combined for rigorous alignment within flexible structure" },
+  ],
+  16: [
+    { image: "09-indesign-workspace.svg", title: "InDesign Workspace", alt: "InDesign interface showing grid setup panels and workspace", caption: "The InDesign workspace is where grid logic becomes operational. Pages, Layers, Paragraph Styles, and the Properties panel each control a different dimension of the grid. Knowing where each setting lives saves hours of production time." },
+    { image: "10-panel-closeups.svg", title: "Panel Closeups", alt: "Detailed views of InDesign grid configuration panels", caption: "Paragraph Styles enforce consistent type specifications across every text frame. The Pages panel manages spread sequence. These two panels together ensure that grid logic, once established, propagates automatically through the entire document." },
+    { component: Diagram12Point, title: "Document Setup: 12-Point System" },
+    { component: DiagramLayerArchitecture, title: "InDesign Layer Architecture" },
+    { component: DiagramParentPages, title: "Parent Page Architecture" },
+    { image: "14-indesign-setup-steps.svg", title: "InDesign Setup Steps", alt: "Step-by-step InDesign document and grid setup procedure", caption: "Three configuration steps: set the baseline grid to start at zero points relative to the top of the page with a 12-point increment; define margins as multiples of 12; create columns and rows in the Margins and Columns dialog. The order matters because each step depends on the previous one." },
+    { image: "17-leading-closeup.svg", title: "Leading Closeup", alt: "Detailed view of text leading and baseline alignment", caption: "Leading is the vertical distance from one baseline to the next. At 12 points, it matches the baseline grid increment exactly. The relationship between font size and leading, typically 10 over 12, is the typographic foundation that makes the grid system work." },
+    { image: "15-shortcut-reference.svg", title: "Keyboard Shortcuts", alt: "Essential InDesign keyboard shortcuts for grid management", caption: "Preview mode, baseline grid visibility, guide toggling, snap-to-guides, and fit-spread-in-window are the five shortcuts that eliminate mouse travel during grid-based layout. Memorize these before the first production session." },
     { image: "class-pdf/class4-p17-img1.png", title: "Technical Execution: The Atomic Unit", alt: "Four-step InDesign setup: document, baseline grid, margins and columns, modular grid rows, with dialog box reference" },
   ],
   14: [
@@ -1018,16 +1020,18 @@ The grid should be invisible. When it works, a reviewer reads the argument, not 
   },
   {
     id: 9,
-    title: "Building the Grid",
+    title: "Building the Grid: Concepts",
     part: "Grid",
-    overview: `The grid concept becomes a grid system when every measurement derives from a single value. In this course, that value is twelve points. Margins, gutters, column widths, row heights, and baseline increments are all multiples of twelve. Nothing on the page is arbitrary. The document opens at 600 × 840 points, a 5:7 proportion that echoes the Golden Section without forcing it. The baseline grid begins at the top margin and increments every twelve points, locking text to a consistent vertical rhythm across every page.
+    overview: `The grid concept becomes a grid system when every measurement derives from a single value. In this course, that value is twelve points. Margins, gutters, column widths, row heights, and baseline increments are all multiples of twelve. Nothing on the page is arbitrary.
 
-The construction sequence moves through four phases. First, reset the InDesign workspace to Essentials and activate the panels you will use daily: Pages, Layers, Links, Paragraph Styles, and Align. Second, build a layer architecture: text above images, guides on a separate locked layer hidden in export. This prevents accidental selection and keeps the file navigable as it grows. Third, create parent page templates: one for project introductions and one for content spreads. Editing a parent once updates every child page, eliminating the repetitive formatting that consumes hours in unstructured files.
+Two grids work together. The modular grid divides the page into columns and rows, creating rectangular modules where content is placed. Think of it as the concrete structure of a building: it defines where walls and floors go. The baseline grid is a set of evenly spaced horizontal lines, twelve points apart, that lock text to a consistent vertical rhythm. Think of it as the rebar inside the concrete: invisible but essential for alignment. The modular grid governs placement. The baseline grid governs the internal rhythm of text. Together, they produce the alignment that separates a professional portfolio from an assembled one.
 
-Fourth, build the structural grid itself. Six columns with twelve-point gutters. Eight rows with twelve-point gutters. This produces forty-eight modules per page, enough variation for any spread from a single structural foundation. The modular grid governs placement and proportion. The baseline grid governs the internal rhythm of text. Together, they achieve the alignment that separates a professional portfolio from an assembled one. The Case Study 2 portfolio demonstrates this: unit plans, renderings, sections, and model photographs all sit within the same modular framework, each spread visually distinct but structurally unified.
+The document opens at 600 × 840 points, a 5:7 proportion that echoes the Golden Section without forcing it. Six columns with twelve-point gutters. Eight rows with twelve-point gutters. This produces forty-eight modules per page, enough variation for any spread from a single structural foundation. The baseline grid begins at the top of the page and increments every twelve points, ensuring that body text, captions, and headings all lock to the same vertical measure.
 
-The system is not restrictive. It is generative. The tighter the constraint, the more disciplined the solutions within it, for the same reason a sonnet is more demanding and more rewarding than free verse. Build the grid first. Fill it after.`,
-    keyInsight: `Every measurement is a multiple of twelve. Nothing on the page is arbitrary.`,
+When baseline alignment breaks, the result is subtle but cumulative. By the bottom of a spread, left-column text and right-column text sit at different vertical positions. A trained reviewer notices immediately. The twelve-point system prevents this: every spatial decision resolves as a whole-number multiple of twelve, and the math guarantees alignment.
+
+The Case Study 2 portfolio demonstrates these concepts in practice. Unit plans, renderings, sections, and model photographs all sit within the same modular framework. Each spread is visually distinct but structurally unified. The grid is not restrictive. It is generative. The tighter the constraint, the more disciplined the solutions within it, for the same reason a sonnet is more demanding and more rewarding than free verse. Build the grid first. Fill it after.`,
+    keyInsight: `Two grids work together: the modular grid governs placement, the baseline grid governs rhythm.`,
   },
   {
     id: 10,
@@ -1082,6 +1086,23 @@ Final Production: Separate optimized PDFs (print at 300 DPI, CMYK and digital at
 
 Peer Review: Before finalizing, have two to three trusted colleagues or mentors review the portfolio. Ask them to spend thirty seconds on an initial scan, then take five minutes for deeper reading. Ask: "What story do you think this designer cares about?" Their answer should match your intended position. If not, the portfolio is not yet communicating clearly. Revise and test again.`,
     keyInsight: `The audit is not the last step. It is the first honest reading of your own work.`,
+  },
+  {
+    id: 16,
+    title: "Building the Grid: Setup",
+    part: "Grid",
+    overview: `The previous module established why every measurement derives from twelve points. This module walks through how to build that system in InDesign, step by step.
+
+Start by resetting the workspace. Go to Window > Workspace > Essentials, then activate the five panels you will use daily: Pages, Layers, Links, Paragraph Styles, and Align. Close everything else. A cluttered workspace slows production and hides the panels that matter.
+
+Next, build a layer architecture. Create three layers: Guides (top, locked, hidden in export), Text (middle), and Images (bottom). This order prevents accidental selection of images when editing text, and keeps construction guides out of the exported PDF. As the file grows past twenty pages, a clean layer structure is the difference between a navigable file and an unmanageable one.
+
+Third, create parent page templates. A parent page is a master layout that automatically applies to every child page assigned to it. Build two: one for project title pages and one for content spreads. Set margins, columns, and placeholder frames on the parent. When you edit a parent, every child page updates instantly. This eliminates the repetitive formatting that consumes hours in unstructured files. Students who skip parent pages spend the final week before deadline reformatting fifty pages by hand.
+
+Fourth, build the structural grid. In Layout > Margins and Columns, set six columns with twelve-point gutters. Then add eight rows with twelve-point gutters via Layout > Create Guides. This produces forty-eight modules per page. Set the baseline grid to start at zero points relative to the top of the page, incrementing every twelve points. The order matters: baseline grid first, then margins, then columns and rows, because each step depends on the previous one.
+
+Finally, memorize five keyboard shortcuts before your first production session: Preview mode (W), baseline grid visibility (Ctrl/Cmd + Alt + '), guide toggling (Ctrl/Cmd + ;), snap-to-guides (Ctrl/Cmd + Shift + ;), and fit-spread-in-window (Ctrl/Cmd + Alt + 0). These eliminate the mouse travel that slows layout work to a crawl.`,
+    keyInsight: `Build the grid in order: baseline grid, margins, columns, rows. Each step depends on the one before it.`,
   },
   {
     id: 14,
