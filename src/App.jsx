@@ -484,6 +484,7 @@ const DIAGRAM_MAP = {
     { image: "class-pdf/casestudy2-spread-11.jpg", title: "Decision 2: Left-Right", alt: "Physical model and exterior rendering side by side", caption: "Western readers enter from the upper left. Physical model on the left: process, how the massing was resolved. Digital rendering on the right: outcome, the finished corner. Reading direction becomes narrative structure: from process to outcome. Reversing this order forces the viewer to work backward." },
     { image: "class-pdf/casestudy2-spread-3.jpg", title: "Decision 3: Scaling", alt: "Residential floor plan filling the spread", caption: "Scale is hierarchy. The floor plan claims the entire spread. No subordinate images compete. A full-bleed drawing declares importance through size alone. The architectural grid becomes the page grid. Compare this to the 2×2 quadrant on Spread 8: same grid, opposite scaling strategy, each an argument about what matters most." },
     { image: "class-pdf/casestudy2-spread-1.jpg", title: "Decision 4: Whitespace", alt: "Generative Housing project title page with generous empty space", caption: "Whitespace is not leftover space. Title, subtitle, one hero image, and deliberate emptiness. The grid is present but mostly unfilled. What is left out argues as loudly as what remains. Compare this to Spread 8: same grid, opposite density. A spread that uses thirty percent of its modules is not wasting space. It is making a compositional argument through absence." },
+    { image: "casestudy3-spread-2.png", title: "Decision 5: Composite Logic", alt: "Chuchu Qi, WashU ARCH 311: cast unit iterations, massing studies, geometric diagrams, and form generation on one spread", caption: "Four media types on one surface: cast concrete units (material evidence), massing study photographs (physical process), geometric iteration diagrams (analytical logic), and form generation sequences (design development). Each image type carries different information, but the grid unifies them into a single argument about how a cast unit becomes architecture. This is composite logic: not a collage of images but an orchestration of evidence types." },
   ],
   15: [
     { image: "class-pdf/casestudy2-spread-7.jpg", title: "Pacing: Compression", alt: "Four axonometric model views and interior rendering", caption: "A dense spread. Four process models in a 2×2 grid plus one large rendering. Every grid module is occupied. High information, high density. This spread compresses. The next spread must release. Pin thumbnails to the wall: if every spread looks like this, the pacing is flat." },
@@ -755,11 +756,11 @@ Finally, memorize five keyboard shortcuts before your first production session: 
   },
   {
     id: 14,
-    title: "Spread Composition",
+    title: "Spread Composition and Composite Logic",
     part: "Grid",
     overview: `The spread is the fundamental unit of portfolio composition. A reviewer never sees a single page in isolation. Every spread presents a left-right pair, a visual weight distribution, and a hierarchy of elements that either advances the argument or stalls it. The grid establishes where things can go. Spread composition determines what goes where and why.
 
-Four decisions govern every spread.
+Five decisions govern every spread.
 
 The first is dominance. One element should anchor the viewer's eye and claim at least forty percent of the spread area. Everything else is subordinate: it supports, explains, or contextualizes the dominant. A spread without a clear dominant reads as a catalog, equal-weight images competing for attention, none winning. In the Case Study 2 portfolio, the full-bleed floor plan on Spread 3 is unmistakable. The architectural grid becomes the page grid, and no other element competes.
 
@@ -767,7 +768,9 @@ The second is the left-right relationship. Western readers enter from the upper 
 
 The third is image scaling. Scale is hierarchy. A full-bleed image declares importance through size. An inset image, framed by whitespace, declares importance through isolation. A quadrant layout (four images per spread) implies comparison or sequence. Your six-column modular grid accommodates a two-thirds/one-third split, a 50/50 mirror, or a full-bleed with caption overlay. Each is an argument about what matters most on that spread.
 
-The fourth is whitespace. Whitespace is not leftover space. It is a designed element: margins establish tension between content and edge, gutters separate content zones, and deliberate voids give the eye a place to rest. In an architecture portfolio, whitespace around a section drawing gives the drawing room to be read as architecture rather than as a graphic element. Crowding images to the margins weakens every drawing's legibility.`,
+The fourth is whitespace. Whitespace is not leftover space. It is a designed element: margins establish tension between content and edge, gutters separate content zones, and deliberate voids give the eye a place to rest. In an architecture portfolio, whitespace around a section drawing gives the drawing room to be read as architecture rather than as a graphic element. Crowding images to the margins weakens every drawing's legibility.
+
+The fifth is composite logic. A composite spread layers multiple media types on a single surface: physical model photographs alongside analytical line drawings, massing studies next to geometric diagrams, hand-cast artifacts beside digital iterations. The challenge is not filling the grid but orchestrating different kinds of visual evidence so they read as a unified argument rather than a collage. Each image type carries different information: a photograph proves materiality, a diagram explains geometry, an iteration sequence proves rigor. When they share a spread, the viewer reads across media types, synthesizing evidence the way a juror synthesizes testimony. The grid organizes placement; composite logic organizes meaning. A spread with four images of the same type is a comparison. A spread with four images of different types is an argument.`,
     keyInsight: `The spread is the unit of argument. Every left-right pair should advance a single claim.`,
   },
   {
