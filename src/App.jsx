@@ -563,7 +563,7 @@ The modules that follow build the tools for constructing that argument: first th
   },
   {
     id: 2,
-    title: "Position and Statement",
+    title: "The Red Thread and Project Statement",
     part: "Narrative",
     overview: `The Red Thread is the single organizing idea that connects all your projects into one argument. It is not a style. It is not a medium. It is a design position: a recurring question, preoccupation, or methodology that surfaces across different projects, scales, and contexts. Most second-year students can talk about their projects at length. They cannot yet say, in one sentence, what their work is about. The Compression Exercise uses progressive reduction to move from description to position.
 
@@ -642,7 +642,7 @@ Three sequence structures govern how images unfold across spreads: linear narrat
   },
   {
     id: 8,
-    title: "Grid Systems",
+    title: "Grid Types and Structural Logic",
     part: "Grid",
     overview: `The narrative is set. Now the question is how to build the page that carries it. By the end of Part II, your InDesign file should contain a working six-column modular grid with baseline alignment, parent pages for title and content spreads, and at least one project laid out across seven spreads.
 
@@ -659,7 +659,7 @@ The grid should be invisible. When it works, a reviewer reads the argument, not 
   },
   {
     id: 9,
-    title: "Building the Grid: Concepts",
+    title: "Building the Grid: The 12-Point Unit",
     part: "Grid",
     overview: `The grid concept becomes a grid system when every measurement derives from a single value. In this course, that value is twelve points. Margins, gutters, column widths, row heights, and baseline increments are all multiples of twelve. Nothing on the page is arbitrary.
 
@@ -676,7 +676,7 @@ The Case Study 2 portfolio demonstrates these concepts in practice. Unit plans, 
   },
   {
     id: 10,
-    title: "Typographic Systems",
+    title: "Typography and Type Hierarchy",
     part: "Grid",
     overview: `Typography is how your portfolio speaks when you are not in the room. Before a reviewer reads a single word, the typeface, size hierarchy, and spacing have already communicated discipline or disorder. Limit the palette to two (at most three) complementary fonts. A serif paired with a sans-serif, or two weights of a single family, creates contrast without chaos. Mixing multiple serif families or multiple display faces signals indecision, not range. The typeface should reinforce the design position: a minimalist architect chooses restrained, geometric forms; a designer invested in material craft chooses typefaces with history and tactile character.
 
@@ -740,7 +740,7 @@ Peer Review: Before finalizing, have two to three trusted colleagues or mentors 
   },
   {
     id: 16,
-    title: "Building the Grid: Setup",
+    title: "Building the Grid: InDesign Setup",
     part: "Grid",
     overview: `The previous module established why every measurement derives from twelve points. This module walks through how to build that system in InDesign, step by step.
 
@@ -757,7 +757,7 @@ Finally, memorize five keyboard shortcuts before your first production session: 
   },
   {
     id: 14,
-    title: "Spread Composition and Composite Logic",
+    title: "Spread Composition",
     part: "Grid",
     overview: `The spread is the fundamental unit of portfolio composition. A reviewer never sees a single page in isolation. Every spread presents a left-right pair, a visual weight distribution, and a hierarchy of elements that either advances the argument or stalls it. The grid establishes where things can go. Spread composition determines what goes where and why.
 
@@ -778,7 +778,7 @@ Composite logic operates in two ways. The first is compositing across images: di
   },
   {
     id: 15,
-    title: "Variation and Pacing",
+    title: "Pacing and Grid Breaks",
     part: "Grid",
     overview: `A grid that produces the same layout on every page is not disciplined. It is monotonous. The Spread Composition module taught how to compose a single spread. This module teaches how to sequence spreads across the portfolio so the rhythm of dense and open, compressed and released, sustains attention from first page to last.
 
