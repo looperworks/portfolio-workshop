@@ -214,7 +214,7 @@ function Diagram12Point() {
       <text x="210" y="14" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={T.textMid} letterSpacing="0.12em">DOCUMENT SETUP: 12-POINT SYSTEM</text>
       {[
         { param: "Page Size", value: "600 × 840 pt" },
-        { param: "Margins (T/B/I/O)", value: "48 / 60 / 48 / 36 pt" },
+        { param: "Margins (T/B/I/O)", value: "36 / 48 / 36 / 36 pt" },
         { param: "Columns", value: "6" },
         { param: "Column Gutter", value: "12 pt" },
         { param: "Rows", value: "8" },
