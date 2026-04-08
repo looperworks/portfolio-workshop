@@ -726,7 +726,7 @@ The grid should be invisible. When it works, a reviewer reads the argument, not 
 
 Two grids work together. The modular grid divides the page into columns and rows, creating rectangular modules where content is placed. Think of it as the concrete structure of a building: it defines where walls and floors go. The baseline grid is a set of evenly spaced horizontal lines, twelve points apart, that lock text to a consistent vertical rhythm. Think of it as the rebar inside the concrete: invisible but essential for alignment. The modular grid governs placement. The baseline grid governs the internal rhythm of text. Together, they produce the alignment that separates a professional portfolio from an assembled one.
 
-The page proportion for this course is 5:7, a ratio that echoes the Golden Section without forcing it. Columns and rows subdivide that rectangle into a field of modules, the smallest rectangular units where content is placed. The more modules per page, the more layout variation the grid supports. The exact specifications (page size, column count, gutter widths, row count) are covered in [Building the Grid: InDesign Setup](#/module/13). What matters here is the concept: every measurement derives from a single value, and every element on the page resolves to a whole-number multiple of that value.
+The page proportion for this course is 5:7, a ratio that echoes the Golden Section without forcing it. Columns and rows subdivide that rectangle into a field of modules, the smallest rectangular units where content is placed. The more modules per page, the more layout variation the grid supports. The exact specifications (page size, column count, gutter widths, row count) are covered in [Building the Grid: InDesign Setup](#/module/9). What matters here is the concept: every measurement derives from a single value, and every element on the page resolves to a whole-number multiple of that value.
 
 When baseline alignment breaks, the result is subtle but cumulative. By the bottom of a spread, left-column text and right-column text sit at different vertical positions. A trained reviewer notices immediately. The twelve-point system prevents this: every spatial decision resolves as a whole-number multiple of twelve, and the math guarantees alignment.
 
@@ -754,7 +754,7 @@ Line spacing matters more than most students expect. Tight leading works for cap
     id: 11,
     title: "Cover and Table of Contents",
     part: "Grid",
-    overview: `With your [typographic system](#/module/9) and [color palette](#/module/11) established, the cover becomes the first surface where those decisions appear. The cover is the first design decision a reviewer encounters, and it frames every page that follows. A cover does not decorate; it declares. It announces the portfolio's design position before the first project appears through typography, image selection, composition, and restraint. Seven cover typologies recur across professional and academic portfolios: Pure Minimal, Dark Ground, Hero Image, Bleed + Band, Collage, Grid Pattern, and Abstract Line. Each suits a different portfolio personality. Pure Minimal signals focus and confidence. Hero Image leads with a single defining moment. Grid Pattern implies systems thinking. The choice should reinforce the same Red Thread that runs through the project sequence.
+    overview: `With your [typographic system](#/module/12) and [color palette](#/module/13) established, the cover becomes the first surface where those decisions appear. The cover is the first design decision a reviewer encounters, and it frames every page that follows. A cover does not decorate; it declares. It announces the portfolio's design position before the first project appears through typography, image selection, composition, and restraint. Seven cover typologies recur across professional and academic portfolios: Pure Minimal, Dark Ground, Hero Image, Bleed + Band, Collage, Grid Pattern, and Abstract Line. Each suits a different portfolio personality. Pure Minimal signals focus and confidence. Hero Image leads with a single defining moment. Grid Pattern implies systems thinking. The choice should reinforce the same Red Thread that runs through the project sequence.
 
 The table of contents extends the cover's visual language into informational architecture. How you organize and present the contents signals what you value: visual richness, textual clarity, or a balance of both. Thumbnail formats pair small images with project titles, giving reviewers a visual preview (see the Illustrated Section Grid, Thumbnail Gallery Row, and Bold Number Column Cards types below). Text-only formats maintain clean legibility, suited for portfolios exceeding thirty pages (see the Multi-Column Text Index and Literary Chapter Index types). Hybrid formats combine selected images with structured text (see the Narrative + List Hybrid type). The TOC is not filler between cover and content; it is the reader's first act of navigation, and its design teaches the reviewer how to move through your work.
 
@@ -847,7 +847,7 @@ Composite logic operates in two ways. The first is compositing across images: di
     id: 15,
     title: "Pacing and Grid Breaks",
     part: "Grid",
-    overview: `A grid that produces the same layout on every page is not disciplined. It is monotonous. The [Spread Composition](#/module/14) module taught how to compose a single spread. This module teaches how to sequence spreads across the portfolio so the rhythm of dense and open, compressed and released, sustains attention from first page to last.
+    overview: `A grid that produces the same layout on every page is not disciplined. It is monotonous. The [Spread Composition](#/module/10) module taught how to compose a single spread. This module teaches how to sequence spreads across the portfolio so the rhythm of dense and open, compressed and released, sustains attention from first page to last.
 
 **Pacing.** Pacing is the alternation of density across sequential spreads. Five consecutive image-heavy spreads exhaust the viewer before the argument lands. The fix is alternation: a dense technical spread (plans, sections, details filling the grid) followed by a spread with a single image and generous whitespace. In [Case Study 02](#/casestudy2), Spread 7 compresses: four axonometric views plus one large rendering, every grid module occupied. Spread 1, the project opener that follows, releases: one title, one hero image, mostly empty grid. That compression-release pair is pacing in action. Test it by printing thumbnail spreads and pinning them to the wall. If the sequence reads as a flat gray band of equal density, the pacing needs work. If it reads as a rhythm of tension and release, the grid is doing its job.
 
@@ -893,7 +893,7 @@ const CASE_STUDY_2 = {
   id: "casestudy2",
   title: "Case Study 02: Grid Systems in Practice",
   part: "Part II Conclusion",
-  overview: `This portfolio contains two projects across twelve spreads. What follows is a reading of those spreads through the five modules of Part II, showing how [grid systems](#/module/7), [composition](#/module/14), and [pacing](#/module/15) operate in a real portfolio.
+  overview: `This portfolio contains two projects across twelve spreads. What follows is a reading of those spreads through the five modules of Part II, showing how [grid systems](#/module/7), [composition](#/module/10), and [pacing](#/module/11) operate in a real portfolio.
 
 **Grid Systems.** The portfolio uses a six-column, eight-row modular grid with a twelve-point baseline. Every spread in the portfolio obeys this structure. Spread 1, the Generative Housing title page, demonstrates the full typographic hierarchy: project title in bold serif, italic subtitle, body text at reading size, and credits stepped down to caption scale. Spread 6 repeats the identical system for the second project, Flexible Framework. The repetition is the proof: the grid is not a one-time decision but a rule applied across the entire document. Margins, column widths, and gutter dimensions remain constant from the first page to the last.
 
@@ -926,7 +926,7 @@ function navigate(hash) {
 /* ─── About content ─── */
 const ABOUT_TEXT = [
   "Portfolio as Narrative is the companion resource for ARCH 66995: Portfolio, a studio-style course at Kent State University's College of Architecture and Environmental Design. The course guides architecture students in developing academic portfolios that synthesize design concepts and communicate architectural thinking to faculty and professional audiences.",
-  "The guide covers fifteen modules across three parts. [Part I (Narrative)](#/module/1) teaches position statements, keyword-driven graphic outlines, the three-act narrative arc (setup, confrontation, resolution), four image types as evidence (concept, context, process, outcome), and storyboarding. [Part II (Grid)](#/module/7) covers grid systems, the twelve-point modular grid, InDesign setup, spread composition, and variation and pacing. [Part III (Production)](#/module/11) addresses typographic systems, color and tonal unity, cover and table of contents design, and a six-category self-editing audit. [Two case studies](#/casestudy) (one tracing a Harvard GSD project through all Part I principles, another analyzing a twelve-spread portfolio through Part II's grid and composition framework) provide extended worked examples.",
+  "The guide covers fifteen modules across three parts. [Part I (Narrative)](#/module/1) teaches position statements, keyword-driven graphic outlines, the three-act narrative arc (setup, confrontation, resolution), four image types as evidence (concept, context, process, outcome), and storyboarding. [Part II (Grid)](#/module/7) covers grid systems, the twelve-point modular grid, InDesign setup, spread composition, and variation and pacing. [Part III (Production)](#/module/12) addresses typographic systems, color and tonal unity, cover and table of contents design, and a six-category self-editing audit. [Two case studies](#/casestudy) (one tracing a Harvard GSD project through all Part I principles, another analyzing a twelve-spread portfolio through Part II's grid and composition framework) provide extended worked examples.",
   "Every module pairs instructional prose with captioned reference diagrams and concludes with a hands-on activity prompt. The course follows a fifteen-week cumulative structure, from portfolio foundations and audience analysis through storyboarding, grid application, and typographic systems, to final production, peer critique, and portfolio presentation. Assignments build progressively toward a fully resolved academic portfolio.",
   "Whether you are preparing for graduate school applications, professional interviews, or scholarship reviews, the framework here applies. A portfolio is not a binder. It is an argument, and this guide shows you how to build one.",
 ];
@@ -1347,7 +1347,7 @@ function WorksheetView({ visible, handleBack, backLabel }) {
 
         <WSection>
           <StepHeader num={4} title="From Keywords to Outline" />
-          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Go back to your concept sentence. Identify every keyword. Each one points to a drawing you'll need in the portfolio. Map them below, and tag each with an image type (<a href="#/module/6" style={{ color: T.text, textDecoration: "underline", textUnderlineOffset: 2 }}>Module 06</a>).</p>
+          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Go back to your concept sentence. Identify every keyword. Each one points to a drawing you'll need in the portfolio. Map them below, and tag each with an image type (<a href="#/module/5" style={{ color: T.text, textDecoration: "underline", textUnderlineOffset: 2 }}>Module 05</a>).</p>
           <Example label="Case Study 01"><em>"embeds into eroding terrain"</em> → terrain models, site sections<br /><em>"Alpine"</em> → site context photos, aerial views<br /><em>"climate change"</em> → environmental overlays, seasonal renderings<br /><em>"spatial experience"</em> → interior renderings, circulation diagrams</Example>
           <table style={{ width: "100%", borderCollapse: "collapse", margin: "16px 0 8px" }}>
             <thead><tr>{["Keyword", "Drawing / Image Needed", "Image Type"].map((h, i) => (<th key={i} style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textMuted, fontFamily: T.sans, padding: "8px 8px", textAlign: "left", borderBottom: `1px solid ${T.text}` }}>{h}</th>))}</tr></thead>
@@ -1358,7 +1358,7 @@ function WorksheetView({ visible, handleBack, backLabel }) {
 
         <WSection>
           <StepHeader num={5} title="Image Type Audit" />
-          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Look at the image types you just assigned in the table above. Count them up. A portfolio heavy on Outcome images but light on Process is a common gap. For academic review, Process is where reviewers spend the most time. Not sure what these types mean? See <a href="#/module/6" style={{ color: T.text, textDecoration: "underline", textUnderlineOffset: 2 }}>Module 06</a>.</p>
+          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Look at the image types you just assigned in the table above. Count them up. A portfolio heavy on Outcome images but light on Process is a common gap. For academic review, Process is where reviewers spend the most time. Not sure what these types mean? See <a href="#/module/5" style={{ color: T.text, textDecoration: "underline", textUnderlineOffset: 2 }}>Module 05</a>.</p>
           <Example label="Case Study 01"><em>Concept: 1 · Context: 2 · Process: 2 · Outcome: 2.</em> Balanced, with Process and Context supporting the argument.</Example>
           <table style={{ width: "100%", borderCollapse: "collapse", margin: "16px 0" }}>
             <thead><tr>{["Image Type", "Count", "Which Images?"].map((h, i) => (<th key={i} style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textMuted, fontFamily: T.sans, padding: "8px 8px", textAlign: "left", borderBottom: `1px solid ${T.text}` }}>{h}</th>))}</tr></thead>
@@ -1371,7 +1371,7 @@ function WorksheetView({ visible, handleBack, backLabel }) {
 
         <WSection>
           <StepHeader num={6} title="Sequence the Narrative Arc" />
-          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>The arc tells you what order. Step 7 will tell you what fits on each page. For now, assign your images to acts based on what they argue, not where they were produced. See <a href="#/module/7" style={{ color: T.text, textDecoration: "underline", textUnderlineOffset: 2 }}>Module 07</a>.</p>
+          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>The arc tells you what order. Step 7 will tell you what fits on each page. For now, assign your images to acts based on what they argue, not where they were produced. See <a href="#/module/6" style={{ color: T.text, textDecoration: "underline", textUnderlineOffset: 2 }}>Module 06</a>.</p>
           <Example label="Case Study 01"><strong style={{ color: T.text, fontWeight: 600 }}>Act I:</strong> Terrain model (Concept). Landscape as raw material.<br /><strong style={{ color: T.text, fontWeight: 600 }}>Act II:</strong> Aerial (Context) + erosion detail + winter rendering + section. Tension builds.<br /><strong style={{ color: T.text, fontWeight: 600 }}>Act III:</strong> Summer rendering (Outcome) + plan (Process). Building inhabits landscape.<br /><strong style={{ color: T.text, fontWeight: 600 }}>Technical Proof:</strong> Details, material specs, structural logic.</Example>
           {[["Act I — Setup", "actI", "What images open your project? What world are you establishing?"],
             ["Act II — Confrontation", "actII", "What makes the problem feel real? Where does tension build?"],
@@ -1484,7 +1484,7 @@ function Exercise02View({ visible, handleBack, backLabel }) {
 
         <WSection>
           <StepHeader num={2} title="Margins" />
-          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Margins set the distance between content and page edge. Every value is a multiple of 12. The bottom margin is larger than the top. This grounds content on the page. See <Ref mod={13} label="Module 13: InDesign Setup" />.</p>
+          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Margins set the distance between content and page edge. Every value is a multiple of 12. The bottom margin is larger than the top. This grounds content on the page. See <Ref mod={9} label="Module 09: InDesign Setup" />.</p>
           <Example label="Case Study 02"><em>Top: 36 pt (3 × 12). Bottom: 48 pt (4 × 12). Inside: 36 pt. Outside: 36 pt.</em> The inside margin accounts for binding. The bottom margin is heavier to ground the content.</Example>
           <div style={{ margin: "16px 0" }}>
             <Check id="margin-top">Top margin: 36 pt</Check>
@@ -1511,7 +1511,7 @@ function Exercise02View({ visible, handleBack, backLabel }) {
 
         <WSection>
           <StepHeader num={4} title="Layer Architecture" />
-          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Layers separate content types. You will not accidentally select an image when editing text. Three layers, strict stacking order. See <Ref mod={13} label="Module 13: InDesign Setup" />.</p>
+          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Layers separate content types. You will not accidentally select an image when editing text. Three layers, strict stacking order. See <Ref mod={9} label="Module 09: InDesign Setup" />.</p>
           <Example label="Case Study 02"><em>01_Text (top). 02_Images (middle). 03_Guides (bottom, locked, non-printing).</em> The guides layer holds placeholder frames and alignment aids that never appear in the exported PDF.</Example>
           <div style={{ margin: "16px 0" }}>
             <Check id="layer-text">Create layer: 01_Text (topmost)</Check>
@@ -1525,7 +1525,7 @@ function Exercise02View({ visible, handleBack, backLabel }) {
 
         <WSection>
           <StepHeader num={5} title="Parent Pages" />
-          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>A parent page is a master layout that applies to every child page assigned to it. Build two: one for splash pages, one for content spreads. When you edit a parent, every child page updates instantly. See <Ref mod={13} label="Module 13: InDesign Setup" />.</p>
+          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>A parent page is a master layout that applies to every child page assigned to it. Build two: one for splash pages, one for content spreads. When you edit a parent, every child page updates instantly. See <Ref mod={9} label="Module 09: InDesign Setup" />.</p>
           <Example label="Case Study 02"><em>A-Intro:</em> title area, date, page number. Used for project openers and section dividers.<br /><em>B-Project:</em> running header, column grid guides, project title placeholder, binding margin. Used for all content spreads.</Example>
           <div style={{ margin: "16px 0" }}>
             <Check id="parent-intro">Create parent page A-Intro (title area, date, page number)</Check>
@@ -1537,7 +1537,7 @@ function Exercise02View({ visible, handleBack, backLabel }) {
 
         <WSection>
           <StepHeader num={6} title="Paragraph Styles" />
-          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Four styles cover the full type hierarchy. The critical setting: Align to Grid must be set to All Lines for every style. This locks text to the 12-point baseline. Without it, columns drift out of alignment by the bottom of the spread. See <Ref mod={9} label="Module 09: Typography" />.</p>
+          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Four styles cover the full type hierarchy. The critical setting: Align to Grid must be set to All Lines for every style. This locks text to the 12-point baseline. Without it, columns drift out of alignment by the bottom of the spread. See <Ref mod={12} label="Module 12: Typography" />.</p>
           <Example label="Case Study 02"><em>Title: 24/30 pt. Subtitle: 14/18 pt. Body Text: 10/12 pt. Captions: 8/10 pt.</em> Two typefaces max. Serif for body, sans-serif for headings, or two weights of one family.</Example>
           <div style={{ margin: "16px 0 24px" }}>
             <span style={labelStyle}>Your Typeface Choices</span>
@@ -1569,7 +1569,7 @@ function Exercise02View({ visible, handleBack, backLabel }) {
 
         <WSection last>
           <StepHeader num={7} title="Verify Everything" />
-          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Before placing any content, confirm the grid is correct. Every measurement should resolve as a whole-number multiple of 12. If anything is off, the error will cascade through every spread. See <Ref mod={15} label="Module 15: Pacing and Grid Breaks" /> for when to break the grid intentionally.</p>
+          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Before placing any content, confirm the grid is correct. Every measurement should resolve as a whole-number multiple of 12. If anything is off, the error will cascade through every spread. See <Ref mod={11} label="Module 11: Pacing and Grid Breaks" /> for when to break the grid intentionally.</p>
           <div style={{ margin: "16px 0" }}>
             <Check id="verify-baseline">Baseline grid is visible (Cmd + Alt + ')</Check>
             <Check id="verify-guides">Guides are visible (Cmd + ;)</Check>
