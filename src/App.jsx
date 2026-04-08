@@ -1456,8 +1456,8 @@ function Exercise02View({ visible, handleBack }) {
         <div style={{ marginBottom: 40 }}>
           <div style={{ fontSize: 9, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textFaint, fontWeight: 400, marginBottom: 10 }}>Exercise</div>
           <h1 style={{ fontSize: 16, fontWeight: 500, lineHeight: 1.4, color: T.text, margin: "0 0 8px", letterSpacing: "0.01em" }}>Build Your Grid</h1>
-          <p style={{ fontSize: 12, color: T.textMid, margin: "0 0 14px", letterSpacing: "0.01em", lineHeight: 1.7 }}>This exercise walks you through setting up your InDesign file from scratch. By the end, you will have a working modular grid, layer architecture, parent pages, and paragraph styles ready for layout.</p>
-          <p style={{ fontSize: 12, color: T.textMid, margin: "0 0 20px", letterSpacing: "0.01em", lineHeight: 1.7 }}>Open InDesign and work through each step with the application in front of you. Check off each item as you complete it. If you need to revisit the concepts behind any step, the module links will take you there and back.</p>
+          <p style={{ fontSize: 12, color: T.textMid, margin: "0 0 14px", letterSpacing: "0.01em", lineHeight: 1.7 }}>This exercise is a step-by-step setup for your InDesign file. When you finish, your file will have a working modular grid, layer architecture, parent pages, and paragraph styles.</p>
+          <p style={{ fontSize: 12, color: T.textMid, margin: "0 0 20px", letterSpacing: "0.01em", lineHeight: 1.7 }}>Open InDesign and work through each step with the application in front of you. Check off each item as you complete it. If you need to revisit the concepts behind any step, the module links point to the relevant content.</p>
           <div style={{ width: 24, height: 1, background: T.text, marginBottom: 24 }} />
           <div style={{ fontSize: 11, color: T.textMid, fontFamily: T.sans, letterSpacing: "0.01em" }}>
             Progress: <strong style={{ color: T.text }}>{totalChecks}</strong> / {totalItems} steps complete
@@ -1478,7 +1478,7 @@ function Exercise02View({ visible, handleBack }) {
 
         <WSection>
           <StepHeader num={2} title="Margins" />
-          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Margins define the breathing room between content and page edge. Every value is a multiple of 12. The bottom margin is larger than the top to anchor content visually. See <Ref mod={8} label="Module 08" />.</p>
+          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Margins set the distance between content and page edge. Every value is a multiple of 12. The bottom margin is larger than the top. This grounds content on the page. See <Ref mod={13} label="Module 13: InDesign Setup" />.</p>
           <Example label="Case Study 2"><em>Top: 36 pt (3 × 12). Bottom: 48 pt (4 × 12). Inside: 36 pt. Outside: 36 pt.</em> The inside margin accounts for binding. The bottom margin is heavier to ground the content.</Example>
           <div style={{ margin: "16px 0" }}>
             <Check id="margin-top">Top margin: 36 pt</Check>
@@ -1491,7 +1491,7 @@ function Exercise02View({ visible, handleBack }) {
 
         <WSection>
           <StepHeader num={3} title="Columns and Rows" />
-          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Columns divide the page vertically. Rows (flowlines) divide it horizontally. Together they create modules: the smallest rectangular unit where content is placed. More modules means more layout variation. See <Ref mod={13} label="Module 13: InDesign Setup" />.</p>
+          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Columns divide the page vertically. Rows (flowlines) divide it horizontally. Together they create modules: the smallest rectangular unit where content is placed. The more modules per page, the more layout options the grid supports. See <Ref mod={13} label="Module 13: InDesign Setup" />.</p>
           <Example label="Case Study 2"><em>6 columns, 12 pt gutters. 8 rows, 12 pt gutters.</em> This produces 48 modules per page. The same grid accommodates a full-bleed floor plan, a rendering paired with a site plan, and a set of unit types beside a sectional model.</Example>
           <div style={{ margin: "16px 0" }}>
             <Check id="col-count">Set 6 columns in Layout → Margins and Columns</Check>
@@ -1504,7 +1504,7 @@ function Exercise02View({ visible, handleBack }) {
 
         <WSection>
           <StepHeader num={4} title="Layer Architecture" />
-          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Layers separate content types so you never accidentally select an image when editing text. Three layers, strict stacking order. See <Ref mod={13} label="Module 13: InDesign Setup" />.</p>
+          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Layers separate content types. You will not accidentally select an image when editing text. Three layers, strict stacking order. See <Ref mod={13} label="Module 13: InDesign Setup" />.</p>
           <Example label="Case Study 2"><em>01_Text (top). 02_Images (middle). 03_Guides (bottom, locked, non-printing).</em> The guides layer holds placeholder frames and alignment aids that never appear in the exported PDF.</Example>
           <div style={{ margin: "16px 0" }}>
             <Check id="layer-text">Create layer: 01_Text (topmost)</Check>
@@ -1556,7 +1556,7 @@ function Exercise02View({ visible, handleBack }) {
 
         <WSection last>
           <StepHeader num={7} title="Verify Everything" />
-          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Before placing any content, confirm the grid is airtight. Every measurement should resolve as a whole-number multiple of 12. If anything is off, the error will cascade through every spread. See <Ref mod={15} label="Module 15: Pacing and Grid Breaks" /> for when to break the grid intentionally.</p>
+          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Before placing any content, confirm the grid is correct. Every measurement should resolve as a whole-number multiple of 12. If anything is off, the error will cascade through every spread. See <Ref mod={15} label="Module 15: Pacing and Grid Breaks" /> for when to break the grid intentionally.</p>
           <div style={{ margin: "16px 0" }}>
             <Check id="verify-baseline">Baseline grid is visible (Cmd + Alt + ')</Check>
             <Check id="verify-guides">Guides are visible (Cmd + ;)</Check>
@@ -1567,7 +1567,7 @@ function Exercise02View({ visible, handleBack }) {
             <Check id="verify-layers">All content is on the correct layer</Check>
             <Check id="verify-parents">Parent page elements appear on child pages</Check>
           </div>
-          <p style={{ fontSize: 12, lineHeight: 1.7, color: T.textMid, margin: "16px 0 0", letterSpacing: "0.01em" }}>Once everything checks out, your file is ready for layout. Return to <a href="#/exercise" style={{ color: T.text, textDecoration: "underline", textUnderlineOffset: 2 }}>Exercise 01</a> for your spread outline, then start placing content.</p>
+          <p style={{ fontSize: 12, lineHeight: 1.7, color: T.textMid, margin: "16px 0 0", letterSpacing: "0.01em" }}>When every item is confirmed, your file is ready for layout. Return to <a href="#/exercise" style={{ color: T.text, textDecoration: "underline", textUnderlineOffset: 2 }}>Exercise 01</a> for your spread outline, then start placing content.</p>
         </WSection>
 
       </div>
