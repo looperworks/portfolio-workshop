@@ -1495,6 +1495,7 @@ export default function PortfolioGuide() {
                 })}
                 {/* Case Study after Part I */}
                 {partKey === "part1" && (
+                  <>
                   <div
                     onClick={() => navigate("#/casestudy")}
                     style={{
@@ -1511,6 +1512,23 @@ export default function PortfolioGuide() {
                       {CASE_STUDY.title}
                     </span>
                   </div>
+                  <div
+                    onClick={() => navigate("#/exercise")}
+                    style={{
+                      display: "flex", alignItems: "baseline", gap: 14,
+                      padding: "9px 0", borderBottom: `1px solid ${T.border}`,
+                      cursor: "pointer", transition: "opacity 0.2s ease",
+                      fontStyle: "italic",
+                    }}
+                    onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.5"; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}
+                  >
+                    <span style={{ fontSize: 10, color: T.textFaint, minWidth: 20, fontWeight: 400, letterSpacing: "0.02em" }}></span>
+                    <span style={{ fontSize: 12, color: T.text, fontWeight: 400, letterSpacing: "0.01em" }}>
+                      Exercise 01: From Thread to Spread
+                    </span>
+                  </div>
+                  </>
                 )}
                 {/* Case Study 2 after Part II */}
                 {partKey === "part2" && (
@@ -1534,23 +1552,7 @@ export default function PortfolioGuide() {
               </div>
             ))}
 
-            {/* Worksheet link */}
-            <div style={{ marginTop: 28 }}>
-              <span style={{ fontSize: 9, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textFaint, fontWeight: 500, marginBottom: 0, display: "block" }}>Exercise</span>
-              <div
-                onClick={() => navigate("#/exercise")}
-                style={{
-                  display: "flex", alignItems: "baseline", gap: 14,
-                  padding: "9px 0", borderBottom: `1px solid ${T.border}`,
-                  cursor: "pointer", transition: "opacity 0.2s ease",
-                }}
-                onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.5"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}
-              >
-                <span style={{ fontSize: 10, color: T.textFaint, minWidth: 20, fontWeight: 400, letterSpacing: "0.02em" }}></span>
-                <span style={{ fontSize: 12, color: T.text, fontWeight: 400, letterSpacing: "0.01em" }}>From Thread to Spread — Worksheet</span>
-              </div>
-            </div>
+
           </div>
         </div>
 
