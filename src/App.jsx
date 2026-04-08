@@ -445,7 +445,7 @@ function DiagramParentPages() {
 const DIAGRAM_MAP = {
   1: [
     { image: "class-pdf/academic-portfolio-example.jpg", title: "Academic Portfolio Example", alt: "Jiayao Li, Conceptual Box Model spread showing process diagrams, artifact scans, and analytical drawings", caption: "An academic portfolio in action: concept diagrams, process artifacts, and analytical drawings develop a sustained spatial argument across a single spread. Each image has a role: proving a claim, not filling space." },
-    { image: "class-pdf/professional-portfolio-example.jpg", title: "Professional Portfolio Example", alt: "Case Study 2: Generative Housing spread showing rendering, floor plan, and building section", caption: "A professional portfolio leads with finished work: rendering, floor plan, and building section. The layout argues competence through image quality and compositional clarity. Compare the two examples: different audiences, different evidence, same underlying logic." },
+    { image: "class-pdf/professional-portfolio-example.jpg", title: "Professional Portfolio Example", alt: "Case Study 02: Generative Housing spread showing rendering, floor plan, and building section", caption: "A professional portfolio leads with finished work: rendering, floor plan, and building section. The layout argues competence through image quality and compositional clarity. Compare the two examples: different audiences, different evidence, same underlying logic." },
     { image: "class-pdf/class1-portfolio-anatomy.png", title: "Portfolio Anatomy", alt: "Portfolio document structure: Cover, Inside Front Cover, TOC, Section Divider, Introduction Pages, Project Pages, Resume, Back Cover", caption: "The standard architecture portfolio follows a predictable sequence: cover, table of contents, section dividers, project pages, resume, back cover. Each section has a specific job. Knowing the anatomy lets you design the reading experience, not just the pages." },
   ],
   "1spreads": [
@@ -574,7 +574,7 @@ const DIAGRAM_MAP = {
   12: [
     { component: DiagramColorPalettes, title: "Three Palette Families", caption: "Three palette families. Monochrome uses one hue plus neutrals for quiet authority. Warm accent adds a single deliberate color for emphasis. Cool accent uses a cooler hue for contrast. The palette should reinforce the portfolio's Red Thread, not decorate it." },
     { image: "diagram-color-strategy.svg", title: "Color Palette Strategies", alt: "Three strategies: Monochrome, Accent, and Project-coded", caption: "Three application strategies—distinct from the palette families above. Here, warm and cool accent merge into a single Accent strategy, and project-coded color is added as a third approach. Monochrome: one hue family plus neutrals. Accent: neutral base with one deliberate color for emphasis. Project-coded: each project gets a signature color, used consistently in headers, dividers, and diagrams. Choose based on your Red Thread." },
-    { image: "class-pdf/casestudy2-spread-4.jpg", title: "Tonal Unity: Warm-Neutral Model Photography", alt: "Facade model and building section with consistent warm tone", caption: "Physical model photographs across both Case Study 2 projects share a consistent warm-neutral tone. The timber models read as part of the same portfolio because the color temperature is unified. Consistent tonal treatment across different photo sessions is what makes disparate images cohere." },
+    { image: "class-pdf/casestudy2-spread-4.jpg", title: "Tonal Unity: Warm-Neutral Model Photography", alt: "Facade model and building section with consistent warm tone", caption: "Physical model photographs across both Case Study 02 projects share a consistent warm-neutral tone. The timber models read as part of the same portfolio because the color temperature is unified. Consistent tonal treatment across different photo sessions is what makes disparate images cohere." },
     { image: "class-pdf/casestudy2-spread-11.jpg", title: "Tonal Unity: Model vs. Rendering", alt: "Physical model and exterior rendering side by side", caption: "Physical model on the left, digital rendering on the right. Different media, but the color temperature is managed: the rendering's palette does not fight the model photograph's warmth. When model photos and renderings sit on the same spread, unified tonal treatment prevents visual discord." },
   ],
   13: [
@@ -711,7 +711,7 @@ A portfolio grid is not a style choice. It is the structural system beneath ever
 
 Four grid types serve portfolio design. Manuscript grids use a single text column, the simplest structure, suited for books and theses. Column grids divide the page vertically, standard for editorial layouts. Modular grids add horizontal flowlines to columns, creating the most versatile framework for mixed architectural content and the recommended choice for portfolios. Hierarchical grids arrange content by visual weight rather than geometric rule, suited for websites and experimental formats. The choice is structural, not aesthetic: it determines how the reader navigates the page.
 
-A modular grid ensures consistency while allowing variation. Every page should derive from the same grid logic, creating coherence across the portfolio without monotony. In the [Case Study 2](#/casestudy2) Generative Housing spreads, the same six-column grid accommodates a full-bleed floor plan, a rendering paired with a site plan, and a set of unit types beside a sectional model. Different content, same underlying structure. The grid makes variety legible.
+A modular grid ensures consistency while allowing variation. Every page should derive from the same grid logic, creating coherence across the portfolio without monotony. In the [Case Study 02](#/casestudy2) Generative Housing spreads, the same six-column grid accommodates a full-bleed floor plan, a rendering paired with a site plan, and a set of unit types beside a sectional model. Different content, same underlying structure. The grid makes variety legible.
 
 The grid should be invisible. When it works, a reviewer reads the argument, not the layout. If a reviewer notices the grid, the structure is competing with the content. Intentional breaks are legitimate when they serve the narrative (a full-bleed image, a pull quote crossing a column), but a break should signal emphasis, not confusion. Break the grid for a reason a reviewer can recognize immediately.
 
@@ -730,7 +730,7 @@ The page proportion for this course is 5:7, a ratio that echoes the Golden Secti
 
 When baseline alignment breaks, the result is subtle but cumulative. By the bottom of a spread, left-column text and right-column text sit at different vertical positions. A trained reviewer notices immediately. The twelve-point system prevents this: every spatial decision resolves as a whole-number multiple of twelve, and the math guarantees alignment.
 
-The [Case Study 2](#/casestudy2) portfolio demonstrates these concepts in practice. Unit plans, renderings, sections, and model photographs all sit within the same modular framework. Each spread is visually distinct but structurally unified. Build the grid first. Fill it after.
+The [Case Study 02](#/casestudy2) portfolio demonstrates these concepts in practice. Unit plans, renderings, sections, and model photographs all sit within the same modular framework. Each spread is visually distinct but structurally unified. Build the grid first. Fill it after.
 
 **Try this now:** On a blank sheet, draw a rectangle at 5:7 proportion. Divide it into columns with gutters. Add rows. Sketch three different spread layouts using the same grid: one with a dominant image, one with a 50/50 split, one with generous whitespace. Same structure, three arguments.`,
     keyInsight: `Two grids work together: the modular grid governs placement, the baseline grid governs rhythm.`,
@@ -745,7 +745,7 @@ Three families cover most architectural portfolios. Modernist workhorses (Helvet
 
 Size hierarchy makes the page scannable. Titles at twenty-four to forty-eight points, subtitles at fourteen to twenty, body text at nine to eleven, captions at seven to eight. These sizes map directly to the [twelve-point baseline grid](#/module/8) established in Part II: body text leading at twelve points locks every line to the grid, ensuring columns align across the spread. Without baseline alignment, text drifts between increments and the portfolio loses the structural precision that distinguishes professional work. In InDesign, the critical setting is Paragraph Styles with Align to Grid set to All Lines.
 
-Line spacing matters more than most students expect. Tight leading works for captions and headlines. Looser leading gives body text room to breathe. The goal is a page that feels open, not dense, a portfolio the reviewer wants to keep reading. The [Case Study 2](#/casestudy2) title pages demonstrate this: a clear hierarchy from project title to subtitle to body to credits, each level stepping down in size and weight while maintaining baseline alignment across both pages of the spread.
+Line spacing matters more than most students expect. Tight leading works for captions and headlines. Looser leading gives body text room to breathe. The goal is a page that feels open, not dense, a portfolio the reviewer wants to keep reading. The [Case Study 02](#/casestudy2) title pages demonstrate this: a clear hierarchy from project title to subtitle to body to credits, each level stepping down in size and weight while maintaining baseline alignment across both pages of the spread.
 
 **Try this now:** Open your InDesign file. Set your body text to ten points with twelve-point leading and lock it to the baseline grid. Now set your title to thirty-six points. Can you read the hierarchy from across the room? If the title and body look similar at arm's length, the contrast is too weak.`,
     keyInsight: `Typeface choices reveal your design sensibility before any drawing appears.`,
@@ -760,7 +760,7 @@ The table of contents extends the cover's visual language into informational arc
 
 Page numbering is a small decision with outsized consequences for consistency. Academic portfolios typically number from the cover onward. Professional portfolios begin numbering after front matter. Roman numerals mark introductory pages; Arabic numerals mark project pages. The format matters less than the commitment to one system applied without exception. Inconsistent numbering signals a portfolio assembled in haste, regardless of the quality of the work inside.
 
-The [Case Study 2](#/casestudy2) portfolio demonstrates several of these principles at once: a consistent title-page format across both projects, with the same typographic system, image placement, and text structure applied to Generative Housing and Flexible Framework. The repetition is not redundancy; it is information architecture. A reviewer encountering the second project divider already knows where to find the statement, the credits, and the hero image, and can focus entirely on content rather than navigation.
+The [Case Study 02](#/casestudy2) portfolio demonstrates several of these principles at once: a consistent title-page format across both projects, with the same typographic system, image placement, and text structure applied to Generative Housing and Flexible Framework. The repetition is not redundancy; it is information architecture. A reviewer encountering the second project divider already knows where to find the statement, the credits, and the hero image, and can focus entirely on content rather than navigation.
 
 **Try this now:** Sketch three cover options for your portfolio, each using a different typology from the seven above. Which one reinforces your Red Thread? Show all three to a classmate and ask which one they would open first. Then open three architecture portfolios online and classify each table of contents by type: thumbnail gallery, text index, literary chapter, column cards, narrative hybrid, or illustrated grid. Which format best matches your portfolio's length and structure?`,
     keyInsight: `The cover is the first design decision a reviewer encounters. Make it argue.`,
@@ -771,9 +771,9 @@ The [Case Study 2](#/casestudy2) portfolio demonstrates several of these princip
     part: "Production",
     overview: `Color in a portfolio is a system, not an accent. Three palette families recur across architectural portfolios. Monochrome palettes use one hue family plus neutrals (deep grays, charcoals, blacks) for quiet authority; they remain the most common choice because they disappear and let the work speak. Warm accent palettes add a single deliberate warm color (terracotta, sand, gold) to a neutral base, tying the work to materiality and craft. Cool accent palettes introduce a cooler hue (pale cyan, slate blue, sage) for contrast without competing with project images. In application, warm and cool accent collapse into a single accent strategy (neutral base plus one deliberate color); the temperature choice depends on the design position. A separate organizational approach is project-coded color: each project receives a signature hue, used consistently in headers, dividers, and diagrams across its section. This yields three application strategies (monochrome, accent, project-coded) derived from the three palette families. The palette should connect to the design position that governs the portfolio's [Red Thread](#/module/2): a project about erosion might favor earth tones; a project about light might favor high-contrast neutrals.
 
-Tonal unity across spreads matters more than palette selection. When images from different projects sit side by side, inconsistent color temperature distracts. Studio work photographed under warm tungsten, cool fluorescent, and variable daylight produces images that clash even when the compositions are strong. A consistent color treatment (desaturation, unified white balance, or a limited tonal palette) solves this. In [Case Study 2](#/casestudy2), the physical model photographs across both projects share a consistent warm-neutral tone: the timber models in Generative Housing and Flexible Framework read as part of the same portfolio because the color temperature is unified. The renderings maintain a restrained palette that does not compete with the model photography.
+Tonal unity across spreads matters more than palette selection. When images from different projects sit side by side, inconsistent color temperature distracts. Studio work photographed under warm tungsten, cool fluorescent, and variable daylight produces images that clash even when the compositions are strong. A consistent color treatment (desaturation, unified white balance, or a limited tonal palette) solves this. In [Case Study 02](#/casestudy2), the physical model photographs across both projects share a consistent warm-neutral tone: the timber models in Generative Housing and Flexible Framework read as part of the same portfolio because the color temperature is unified. The renderings maintain a restrained palette that does not compete with the model photography.
 
-The diagnostic test: print the portfolio in grayscale. If the visual hierarchy still reads without color, the color is supporting structure. If the portfolio falls apart, the color is doing work that belongs to the grid, the typography, or the image sequencing. Strengthen those systems first, then reintroduce color as reinforcement. In Case Study 2, the grayscale test holds: the hierarchy of title pages, dense spreads, and open spreads remains legible because size, weight, and whitespace carry the argument, not color.
+The diagnostic test: print the portfolio in grayscale. If the visual hierarchy still reads without color, the color is supporting structure. If the portfolio falls apart, the color is doing work that belongs to the grid, the typography, or the image sequencing. Strengthen those systems first, then reintroduce color as reinforcement. In Case Study 02, the grayscale test holds: the hierarchy of title pages, dense spreads, and open spreads remains legible because size, weight, and whitespace carry the argument, not color.
 
 **Try this now:** Export your portfolio as a PDF and desaturate it in Preview or Photoshop. Print two spreads. Does the hierarchy still read? If any spread loses its focal point without color, that spread needs stronger size or weight contrast before you reintroduce the palette.`,
     keyInsight: `Color supports the argument. If it carries the argument, the structure needs work.`,
@@ -828,7 +828,7 @@ Finally, memorize five keyboard shortcuts before your first production session: 
 
 Five decisions govern every spread.
 
-The first is dominance. One element should anchor the viewer's eye and claim at least forty percent of the spread area. Everything else is subordinate: it supports, explains, or contextualizes the dominant. A spread without a clear dominant reads as a catalog, equal-weight images competing for attention, none winning. In the [Case Study 2](#/casestudy2) portfolio, the full-bleed floor plan on Spread 3 is unmistakable. The architectural grid becomes the page grid, and no other element competes.
+The first is dominance. One element should anchor the viewer's eye and claim at least forty percent of the spread area. Everything else is subordinate: it supports, explains, or contextualizes the dominant. A spread without a clear dominant reads as a catalog, equal-weight images competing for attention, none winning. In the [Case Study 02](#/casestudy2) portfolio, the full-bleed floor plan on Spread 3 is unmistakable. The architectural grid becomes the page grid, and no other element competes.
 
 The second is the left-right relationship. Western readers enter from the upper left. The left page sets context; the right page delivers the primary content or resolution. A site plan on the left and a building rendering on the right creates a spatial logic the eye follows naturally, from environment to intervention. Reversing this forces the viewer to work backward. The convention is not rigid, but departing from it should be intentional. A process sequence (sketches left, final model right) or a before-and-after pair (existing conditions left, proposed design right) uses reading direction as narrative structure.
 
@@ -849,13 +849,13 @@ Composite logic operates in two ways. The first is compositing across images: di
     part: "Grid",
     overview: `A grid that produces the same layout on every page is not disciplined. It is monotonous. The [Spread Composition](#/module/14) module taught how to compose a single spread. This module teaches how to sequence spreads across the portfolio so the rhythm of dense and open, compressed and released, sustains attention from first page to last.
 
-**Pacing.** Pacing is the alternation of density across sequential spreads. Five consecutive image-heavy spreads exhaust the viewer before the argument lands. The fix is alternation: a dense technical spread (plans, sections, details filling the grid) followed by a spread with a single image and generous whitespace. In [Case Study 2](#/casestudy2), Spread 7 compresses: four axonometric views plus one large rendering, every grid module occupied. Spread 1, the project opener that follows, releases: one title, one hero image, mostly empty grid. That compression-release pair is pacing in action. Test it by printing thumbnail spreads and pinning them to the wall. If the sequence reads as a flat gray band of equal density, the pacing needs work. If it reads as a rhythm of tension and release, the grid is doing its job.
+**Pacing.** Pacing is the alternation of density across sequential spreads. Five consecutive image-heavy spreads exhaust the viewer before the argument lands. The fix is alternation: a dense technical spread (plans, sections, details filling the grid) followed by a spread with a single image and generous whitespace. In [Case Study 02](#/casestudy2), Spread 7 compresses: four axonometric views plus one large rendering, every grid module occupied. Spread 1, the project opener that follows, releases: one title, one hero image, mostly empty grid. That compression-release pair is pacing in action. Test it by printing thumbnail spreads and pinning them to the wall. If the sequence reads as a flat gray band of equal density, the pacing needs work. If it reads as a rhythm of tension and release, the grid is doing its job.
 
-**Grid Break 1: The Full-Bleed Image.** A full-bleed breaks every grid rule at once: no margins, no columns, no modules. It works as punctuation: a section divider, a project opener, or a closing image. In Case Study 2, Spread 12 is a full-bleed interior rendering with no text and no captions. The break works because every preceding spread obeyed the grid. A full-bleed on the first spread is not a break; it is an absence of structure. Earn the break first.
+**Grid Break 1: The Full-Bleed Image.** A full-bleed breaks every grid rule at once: no margins, no columns, no modules. It works as punctuation: a section divider, a project opener, or a closing image. In Case Study 02, Spread 12 is a full-bleed interior rendering with no text and no captions. The break works because every preceding spread obeyed the grid. A full-bleed on the first spread is not a break; it is an absence of structure. Earn the break first.
 
-**Grid Break 2: The Oversized Element.** An oversized element crosses column or module boundaries to signal hierarchy. In Case Study 2, Spread 8 places one site axonometric across the entire right page while four small models share the left. The axonometric still aligns to column edges; it simply claims more modules than its neighbors. This is variation within the grid, not departure from it.
+**Grid Break 2: The Oversized Element.** An oversized element crosses column or module boundaries to signal hierarchy. In Case Study 02, Spread 8 places one site axonometric across the entire right page while four small models share the left. The axonometric still aligns to column edges; it simply claims more modules than its neighbors. This is variation within the grid, not departure from it.
 
-**Grid Break 3: The Deliberate Void.** A project title page with only a name, a one-line statement, and a single image uses the grid's full capacity by choosing to fill only a fraction of it. In Case Study 2, Spread 6 does this for the second project: title, subtitle, body text, one rendering, and the rest of the page is empty. Restraint is the most difficult grid decision because it requires confidence that less content communicates more authority.
+**Grid Break 3: The Deliberate Void.** A project title page with only a name, a one-line statement, and a single image uses the grid's full capacity by choosing to fill only a fraction of it. In Case Study 02, Spread 6 does this for the second project: title, subtitle, body text, one rendering, and the rest of the page is empty. Restraint is the most difficult grid decision because it requires confidence that less content communicates more authority.
 
 Every grid break should pass one test: can a reviewer see that the break is intentional? If it looks like an accident (an image drifting off the baseline, a caption floating between columns), the break undermines the argument. Break the grid for a reason the viewer can name.
 
@@ -870,7 +870,7 @@ MODULES.sort((a, b) => _PARTS_ORDER.indexOf(a.id) - _PARTS_ORDER.indexOf(b.id));
 // Case study content
 const CASE_STUDY = {
   id: "casestudy",
-  title: "Case Study 1: Erosion",
+  title: "Case Study 01: Erosion",
   part: "Part I Conclusion",
   overview: `This portfolio, from an Advanced Studio at Harvard GSD, proposes converting a decommissioned Cold War bunker at Col du Pillon into an Alpine Museum in Les Diablerets, Switzerland. Five spreads present the project. What follows is a reading of those spreads through the six modules of Part I, showing how each principle from [Part I](#/module/1) operates in practice.
 
@@ -891,7 +891,7 @@ const CASE_STUDY = {
 // Case study 2 content (Part II)
 const CASE_STUDY_2 = {
   id: "casestudy2",
-  title: "Case Study 2: Grid Systems in Practice",
+  title: "Case Study 02: Grid Systems in Practice",
   part: "Part II Conclusion",
   overview: `This portfolio contains two projects across twelve spreads. What follows is a reading of those spreads through the five modules of Part II, showing how [grid systems](#/module/7), [composition](#/module/14), and [pacing](#/module/15) operate in a real portfolio.
 
@@ -1324,7 +1324,7 @@ function WorksheetView({ visible, handleBack }) {
         <WSection>
           <StepHeader num={1} title="Choose Your Project" />
           <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Pick one studio project you want to include in your portfolio. Name it and write 2–3 sentences describing what you designed. Need help choosing? Revisit <a href="#/module/2" style={{ color: T.text, textDecoration: "underline", textUnderlineOffset: 2 }}>Module 02</a>.</p>
-          <Example label="Case Study 1"><em>Après Ski — Alpine Museum.</em> A proposal to convert a decommissioned military bunker at Col du Pillon in the Swiss Alps into an Alpine Museum. The building embeds into the mountainside, using ramped circulation and carved ground planes to connect landscape above with gallery spaces below.</Example>
+          <Example label="Case Study 01"><em>Après Ski — Alpine Museum.</em> A proposal to convert a decommissioned military bunker at Col du Pillon in the Swiss Alps into an Alpine Museum. The building embeds into the mountainside, using ramped circulation and carved ground planes to connect landscape above with gallery spaces below.</Example>
           <div style={{ marginBottom: 12 }}><span style={labelStyle}>Project title</span><input type="text" value={form.projectTitle} onChange={set("projectTitle")} placeholder="e.g., Après Ski — Alpine Museum" style={inputStyle} onFocus={e => e.target.style.borderColor = T.navy} onBlur={e => e.target.style.borderColor = T.border} /></div>
           <div><span style={labelStyle}>Brief description</span><textarea value={form.projectDesc} onChange={set("projectDesc")} placeholder="What did you design? Where? For whom?" style={taShort} onFocus={e => e.target.style.borderColor = T.navy} onBlur={e => e.target.style.borderColor = T.border} /></div>
         </WSection>
@@ -1332,7 +1332,7 @@ function WorksheetView({ visible, handleBack }) {
         <WSection>
           <StepHeader num={2} title="Write the Full Statement" />
           <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Now look at your description above. Cross out every noun that names a building element: walls, ramps, galleries, roofs. What's left is closer to what you were actually investigating. Write that as one paragraph: the question behind the project, not the project itself.</p>
-          <Example label="Case Study 1"><em>"This project investigated how existing alpine infrastructure can be repurposed to make the effects of climate change visible and publicly accessible. Situated between Gstaad and Les Diablerets in the Swiss Alps, the design converts a decommissioned military bunker at Col du Pillon into an Alpine Museum. The building embeds into the mountainside, using ramped circulation and carved ground planes to create a continuous path between the landscape above and gallery spaces below."</em></Example>
+          <Example label="Case Study 01"><em>"This project investigated how existing alpine infrastructure can be repurposed to make the effects of climate change visible and publicly accessible. Situated between Gstaad and Les Diablerets in the Swiss Alps, the design converts a decommissioned military bunker at Col du Pillon into an Alpine Museum. The building embeds into the mountainside, using ramped circulation and carved ground planes to create a continuous path between the landscape above and gallery spaces below."</em></Example>
           <span style={labelStyle}>Your project statement (one paragraph)</span>
           <textarea value={form.fullStatement} onChange={set("fullStatement")} placeholder="This project investigated how..." style={taStyle} onFocus={e => e.target.style.borderColor = T.navy} onBlur={e => e.target.style.borderColor = T.border} />
         </WSection>
@@ -1340,7 +1340,7 @@ function WorksheetView({ visible, handleBack }) {
         <WSection>
           <StepHeader num={3} title="Compress to One Sentence, One Word" />
           <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>This is the compression exercise from the workshop (<a href="#/module/4" style={{ color: T.text, textDecoration: "underline", textUnderlineOffset: 2 }}>Module 04</a>). Crush your paragraph to one sentence that argues something, not describes something. Then find the one word that keeps showing up across your projects. That's your red thread.</p>
-          <Example label="Case Study 1"><strong style={{ color: T.text, fontWeight: 600 }}>Weak:</strong> <em>"This project explores how a bunker can become a museum."</em> (Describes. Does not argue.)<br /><strong style={{ color: T.text, fontWeight: 600 }}>Strong:</strong> <em>"The Alpine Museum embeds into eroding terrain to make the invisible trajectory of climate change a spatial experience visitors move through."</em> (Argues. Every word earns its place.)<br /><strong style={{ color: T.text, fontWeight: 600 }}>One word:</strong> <em>Erosion.</em></Example>
+          <Example label="Case Study 01"><strong style={{ color: T.text, fontWeight: 600 }}>Weak:</strong> <em>"This project explores how a bunker can become a museum."</em> (Describes. Does not argue.)<br /><strong style={{ color: T.text, fontWeight: 600 }}>Strong:</strong> <em>"The Alpine Museum embeds into eroding terrain to make the invisible trajectory of climate change a spatial experience visitors move through."</em> (Argues. Every word earns its place.)<br /><strong style={{ color: T.text, fontWeight: 600 }}>One word:</strong> <em>Erosion.</em></Example>
           <div style={{ marginBottom: 12 }}><span style={labelStyle}>Concept sentence</span><textarea value={form.oneSentence} onChange={set("oneSentence")} placeholder="Not 'This project explores light.' Instead: 'The pavilion uses directed apertures to...'" style={taShort} onFocus={e => e.target.style.borderColor = T.navy} onBlur={e => e.target.style.borderColor = T.border} /></div>
           <div><span style={labelStyle}>One word (your Red Thread)</span><input type="text" value={form.oneWord} onChange={set("oneWord")} placeholder="e.g., Erosion, Threshold, Porosity" style={{ ...inputStyle, maxWidth: 240 }} onFocus={e => e.target.style.borderColor = T.navy} onBlur={e => e.target.style.borderColor = T.border} /></div>
         </WSection>
@@ -1348,7 +1348,7 @@ function WorksheetView({ visible, handleBack }) {
         <WSection>
           <StepHeader num={4} title="From Keywords to Outline" />
           <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Go back to your concept sentence. Identify every keyword. Each one points to a drawing you'll need in the portfolio. Map them below, and tag each with an image type (<a href="#/module/6" style={{ color: T.text, textDecoration: "underline", textUnderlineOffset: 2 }}>Module 06</a>).</p>
-          <Example label="Case Study 1"><em>"embeds into eroding terrain"</em> → terrain models, site sections<br /><em>"Alpine"</em> → site context photos, aerial views<br /><em>"climate change"</em> → environmental overlays, seasonal renderings<br /><em>"spatial experience"</em> → interior renderings, circulation diagrams</Example>
+          <Example label="Case Study 01"><em>"embeds into eroding terrain"</em> → terrain models, site sections<br /><em>"Alpine"</em> → site context photos, aerial views<br /><em>"climate change"</em> → environmental overlays, seasonal renderings<br /><em>"spatial experience"</em> → interior renderings, circulation diagrams</Example>
           <table style={{ width: "100%", borderCollapse: "collapse", margin: "16px 0 8px" }}>
             <thead><tr>{["Keyword", "Drawing / Image Needed", "Image Type"].map((h, i) => (<th key={i} style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textMuted, fontFamily: T.sans, padding: "8px 8px", textAlign: "left", borderBottom: `1px solid ${T.text}` }}>{h}</th>))}</tr></thead>
             <tbody>{kwRows.map((row, i) => (<tr key={i} style={{ borderBottom: `1px solid ${T.border}` }}><td><input type="text" value={row.kw} onChange={setKw(i, "kw")} placeholder="keyword" style={cellInput} onFocus={e => e.target.style.background = T.bgAlt} onBlur={e => e.target.style.background = "transparent"} /></td><td><input type="text" value={row.drawing} onChange={setKw(i, "drawing")} placeholder="drawing type" style={cellInput} onFocus={e => e.target.style.background = T.bgAlt} onBlur={e => e.target.style.background = "transparent"} /></td><td><select value={row.type} onChange={setKw(i, "type")} style={selectStyle}><option value="">—</option><option>Concept</option><option>Context</option><option>Process</option><option>Outcome</option></select></td></tr>))}</tbody>
@@ -1359,7 +1359,7 @@ function WorksheetView({ visible, handleBack }) {
         <WSection>
           <StepHeader num={5} title="Image Type Audit" />
           <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Look at the image types you just assigned in the table above. Count them up. A portfolio heavy on Outcome images but light on Process is a common gap. For academic review, Process is where reviewers spend the most time. Not sure what these types mean? See <a href="#/module/6" style={{ color: T.text, textDecoration: "underline", textUnderlineOffset: 2 }}>Module 06</a>.</p>
-          <Example label="Case Study 1"><em>Concept: 1 · Context: 2 · Process: 2 · Outcome: 2.</em> Balanced, with Process and Context supporting the argument.</Example>
+          <Example label="Case Study 01"><em>Concept: 1 · Context: 2 · Process: 2 · Outcome: 2.</em> Balanced, with Process and Context supporting the argument.</Example>
           <table style={{ width: "100%", borderCollapse: "collapse", margin: "16px 0" }}>
             <thead><tr>{["Image Type", "Count", "Which Images?"].map((h, i) => (<th key={i} style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textMuted, fontFamily: T.sans, padding: "8px 8px", textAlign: "left", borderBottom: `1px solid ${T.text}` }}>{h}</th>))}</tr></thead>
             <tbody>{["Concept", "Context", "Process", "Outcome"].map(t => (<tr key={t} style={{ borderBottom: `1px solid ${T.border}` }}><td style={{ padding: "9px 8px", fontSize: 12, fontWeight: 500, fontFamily: T.sans, width: 90 }}>{t}</td><td style={{ width: 50 }}><input type="text" value={form[`count${t}`]} onChange={set(`count${t}`)} placeholder="0" style={{ ...cellInput, textAlign: "center" }} onFocus={e => e.target.style.background = T.bgAlt} onBlur={e => e.target.style.background = "transparent"} /></td><td><input type="text" value={form[`list${t}`]} onChange={set(`list${t}`)} placeholder={`e.g., ${t === "Concept" ? "site model, diagram" : t === "Context" ? "aerial, site plan" : t === "Process" ? "section, iteration models" : "rendering, final plan"}`} style={cellInput} onFocus={e => e.target.style.background = T.bgAlt} onBlur={e => e.target.style.background = "transparent"} /></td></tr>))}</tbody>
@@ -1372,7 +1372,7 @@ function WorksheetView({ visible, handleBack }) {
         <WSection>
           <StepHeader num={6} title="Sequence the Narrative Arc" />
           <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>The arc tells you what order. Step 7 will tell you what fits on each page. For now, assign your images to acts based on what they argue, not where they were produced. See <a href="#/module/7" style={{ color: T.text, textDecoration: "underline", textUnderlineOffset: 2 }}>Module 07</a>.</p>
-          <Example label="Case Study 1"><strong style={{ color: T.text, fontWeight: 600 }}>Act I:</strong> Terrain model (Concept). Landscape as raw material.<br /><strong style={{ color: T.text, fontWeight: 600 }}>Act II:</strong> Aerial (Context) + erosion detail + winter rendering + section. Tension builds.<br /><strong style={{ color: T.text, fontWeight: 600 }}>Act III:</strong> Summer rendering (Outcome) + plan (Process). Building inhabits landscape.<br /><strong style={{ color: T.text, fontWeight: 600 }}>Technical Proof:</strong> Details, material specs, structural logic.</Example>
+          <Example label="Case Study 01"><strong style={{ color: T.text, fontWeight: 600 }}>Act I:</strong> Terrain model (Concept). Landscape as raw material.<br /><strong style={{ color: T.text, fontWeight: 600 }}>Act II:</strong> Aerial (Context) + erosion detail + winter rendering + section. Tension builds.<br /><strong style={{ color: T.text, fontWeight: 600 }}>Act III:</strong> Summer rendering (Outcome) + plan (Process). Building inhabits landscape.<br /><strong style={{ color: T.text, fontWeight: 600 }}>Technical Proof:</strong> Details, material specs, structural logic.</Example>
           {[["Act I — Setup", "actI", "What images open your project? What world are you establishing?"],
             ["Act II — Confrontation", "actII", "What makes the problem feel real? Where does tension build?"],
             ["Act III — Resolution", "actIII", "How does the design respond? What's the payoff?"],
@@ -1383,7 +1383,7 @@ function WorksheetView({ visible, handleBack }) {
         <WSection last>
           <StepHeader num={7} title="Seven-Spread Outline" />
           <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>The arc from Step 6 set the narrative order. Now assign images to physical pages. Each spread does one job.</p>
-          <Example label="Case Study 1"><strong style={{ color: T.text, fontWeight: 600 }}>1 (Setup):</strong> Terrain model — landscape as raw material<br /><strong style={{ color: T.text, fontWeight: 600 }}>2:</strong> Site map + erosion detail — alpine erosion at scale<br /><strong style={{ color: T.text, fontWeight: 600 }}>3 (Confrontation):</strong> Section + winter photo + rendering — building carves in<br /><strong style={{ color: T.text, fontWeight: 600 }}>4:</strong> Full-width embedded section — erosion made accessible<br /><strong style={{ color: T.text, fontWeight: 600 }}>5 (Resolution):</strong> Interior gallery + floor plans — erosion made inhabitable</Example>
+          <Example label="Case Study 01"><strong style={{ color: T.text, fontWeight: 600 }}>1 (Setup):</strong> Terrain model — landscape as raw material<br /><strong style={{ color: T.text, fontWeight: 600 }}>2:</strong> Site map + erosion detail — alpine erosion at scale<br /><strong style={{ color: T.text, fontWeight: 600 }}>3 (Confrontation):</strong> Section + winter photo + rendering — building carves in<br /><strong style={{ color: T.text, fontWeight: 600 }}>4:</strong> Full-width embedded section — erosion made accessible<br /><strong style={{ color: T.text, fontWeight: 600 }}>5 (Resolution):</strong> Interior gallery + floor plans — erosion made inhabitable</Example>
           <table style={{ width: "100%", borderCollapse: "collapse", margin: "16px 0" }}>
             <thead><tr><th style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textMuted, fontFamily: T.sans, padding: "8px 8px", textAlign: "center", borderBottom: `1px solid ${T.text}`, width: 36 }}>#</th><th style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textMuted, fontFamily: T.sans, padding: "8px 8px", textAlign: "left", borderBottom: `1px solid ${T.text}`, width: 110 }}>Arc Beat</th><th style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textMuted, fontFamily: T.sans, padding: "8px 8px", textAlign: "left", borderBottom: `1px solid ${T.text}` }}>Images + Narrative Job</th></tr></thead>
             <tbody>{spreadRows.map((row, i) => (<tr key={i} style={{ borderBottom: `1px solid ${T.border}` }}><td style={{ padding: "9px 8px", fontSize: 12, fontFamily: T.sans, textAlign: "center", color: T.textLight }}>{row.num}</td><td><select defaultValue="" onChange={setSpread(i, "beat")} style={selectStyle}><option value="">—</option><option>Setup</option><option>Confrontation</option><option>Turning Point</option><option>Resolution</option><option>Technical Proof</option></select></td><td><input type="text" defaultValue="" onChange={setSpread(i, "content")} placeholder="What images? What story beat?" style={cellInput} onFocus={e => e.target.style.background = T.bgAlt} onBlur={e => e.target.style.background = "transparent"} /></td></tr>))}</tbody>
@@ -1473,7 +1473,7 @@ function Exercise02View({ visible, handleBack }) {
         <WSection>
           <StepHeader num={1} title="Document Setup" />
           <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Create a new document. The page proportion is 5:7, which echoes the Golden Section. All measurements derive from a single value: 12 points. See <Ref mod={8} label="Module 08: Building the Grid" />.</p>
-          <Example label="Case Study 2"><em>600 × 840 pt.</em> Facing pages on. Intent: Print. 840 ÷ 12 = 70 baseline units per page. Every margin, gutter, and row height is a multiple of 12.</Example>
+          <Example label="Case Study 02"><em>600 × 840 pt.</em> Facing pages on. Intent: Print. 840 ÷ 12 = 70 baseline units per page. Every margin, gutter, and row height is a multiple of 12.</Example>
           <div style={{ margin: "16px 0" }}>
             <Check id="doc-size">Set page size to 600 × 840 points (or your chosen 5:7 proportion)</Check>
             <Check id="doc-facing">Turn on Facing Pages</Check>
@@ -1485,7 +1485,7 @@ function Exercise02View({ visible, handleBack }) {
         <WSection>
           <StepHeader num={2} title="Margins" />
           <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Margins set the distance between content and page edge. Every value is a multiple of 12. The bottom margin is larger than the top. This grounds content on the page. See <Ref mod={13} label="Module 13: InDesign Setup" />.</p>
-          <Example label="Case Study 2"><em>Top: 36 pt (3 × 12). Bottom: 48 pt (4 × 12). Inside: 36 pt. Outside: 36 pt.</em> The inside margin accounts for binding. The bottom margin is heavier to ground the content.</Example>
+          <Example label="Case Study 02"><em>Top: 36 pt (3 × 12). Bottom: 48 pt (4 × 12). Inside: 36 pt. Outside: 36 pt.</em> The inside margin accounts for binding. The bottom margin is heavier to ground the content.</Example>
           <div style={{ margin: "16px 0" }}>
             <Check id="margin-top">Top margin: 36 pt</Check>
             <Check id="margin-bottom">Bottom margin: 48 pt</Check>
@@ -1498,7 +1498,7 @@ function Exercise02View({ visible, handleBack }) {
         <WSection>
           <StepHeader num={3} title="Columns and Rows" />
           <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Columns divide the page vertically. Rows (flowlines) divide it horizontally. Together they create modules: the smallest rectangular unit where content is placed. Six columns give you 1/6, 1/3, 1/2, and 2/3 splits. Eight rows give enough vertical zones to separate header, body, and footnote areas. The more modules per page, the more layout options the grid supports.</p>
-          <Example label="Case Study 2"><em>6 columns, 12 pt gutters. 8 rows, 12 pt gutters.</em> This produces 48 modules per page. The same grid accommodates a full-bleed floor plan, a rendering paired with a site plan, and a set of unit types beside a sectional model.</Example>
+          <Example label="Case Study 02"><em>6 columns, 12 pt gutters. 8 rows, 12 pt gutters.</em> This produces 48 modules per page. The same grid accommodates a full-bleed floor plan, a rendering paired with a site plan, and a set of unit types beside a sectional model.</Example>
           <div style={{ margin: "16px 0" }}>
             <Check id="col-count">Set 6 columns in Layout → Margins and Columns</Check>
             <Check id="col-gutter">Set column gutter to 12 pt</Check>
@@ -1512,7 +1512,7 @@ function Exercise02View({ visible, handleBack }) {
         <WSection>
           <StepHeader num={4} title="Layer Architecture" />
           <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Layers separate content types. You will not accidentally select an image when editing text. Three layers, strict stacking order. See <Ref mod={13} label="Module 13: InDesign Setup" />.</p>
-          <Example label="Case Study 2"><em>01_Text (top). 02_Images (middle). 03_Guides (bottom, locked, non-printing).</em> The guides layer holds placeholder frames and alignment aids that never appear in the exported PDF.</Example>
+          <Example label="Case Study 02"><em>01_Text (top). 02_Images (middle). 03_Guides (bottom, locked, non-printing).</em> The guides layer holds placeholder frames and alignment aids that never appear in the exported PDF.</Example>
           <div style={{ margin: "16px 0" }}>
             <Check id="layer-text">Create layer: 01_Text (topmost)</Check>
             <Check id="layer-images">Create layer: 02_Images (middle)</Check>
@@ -1526,7 +1526,7 @@ function Exercise02View({ visible, handleBack }) {
         <WSection>
           <StepHeader num={5} title="Parent Pages" />
           <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>A parent page is a master layout that applies to every child page assigned to it. Build two: one for splash pages, one for content spreads. When you edit a parent, every child page updates instantly. See <Ref mod={13} label="Module 13: InDesign Setup" />.</p>
-          <Example label="Case Study 2"><em>A-Intro:</em> title area, date, page number. Used for project openers and section dividers.<br /><em>B-Project:</em> running header, column grid guides, project title placeholder, binding margin. Used for all content spreads.</Example>
+          <Example label="Case Study 02"><em>A-Intro:</em> title area, date, page number. Used for project openers and section dividers.<br /><em>B-Project:</em> running header, column grid guides, project title placeholder, binding margin. Used for all content spreads.</Example>
           <div style={{ margin: "16px 0" }}>
             <Check id="parent-intro">Create parent page A-Intro (title area, date, page number)</Check>
             <Check id="parent-project">Create parent page B-Project (running header, grid guides, title placeholder)</Check>
@@ -1538,7 +1538,7 @@ function Exercise02View({ visible, handleBack }) {
         <WSection>
           <StepHeader num={6} title="Paragraph Styles" />
           <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Four styles cover the full type hierarchy. The critical setting: Align to Grid must be set to All Lines for every style. This locks text to the 12-point baseline. Without it, columns drift out of alignment by the bottom of the spread. See <Ref mod={9} label="Module 09: Typography" />.</p>
-          <Example label="Case Study 2"><em>Title: 24/30 pt. Subtitle: 14/18 pt. Body Text: 10/12 pt. Captions: 8/10 pt.</em> Two typefaces max. Serif for body, sans-serif for headings, or two weights of one family.</Example>
+          <Example label="Case Study 02"><em>Title: 24/30 pt. Subtitle: 14/18 pt. Body Text: 10/12 pt. Captions: 8/10 pt.</em> Two typefaces max. Serif for body, sans-serif for headings, or two weights of one family.</Example>
           <div style={{ margin: "16px 0 24px" }}>
             <span style={labelStyle}>Your Typeface Choices</span>
             <Check id="style-font-heading">Heading typeface chosen: _______________</Check>
@@ -1737,7 +1737,7 @@ export default function PortfolioGuide() {
                   </div>
                   </>
                 )}
-                {/* Case Study 2 + Exercise 02 after Part II */}
+                {/* Case Study 02 + Exercise 02 after Part II */}
                 {partKey === "part2" && (
                   <>
                   <div
@@ -1944,7 +1944,7 @@ export default function PortfolioGuide() {
     );
   }
 
-  // ─── Case Study 2 View ───
+  // ─── Case Study 02 View ───
   if (isCaseStudy2) {
     const paragraphs = CASE_STUDY_2.overview.split("\n\n");
     const diagrams = DIAGRAM_MAP.casestudy2 || [];
@@ -2051,7 +2051,7 @@ export default function PortfolioGuide() {
     const isCaseStudy2Diagrams = diagramModuleId === "casestudy2";
     const isSpreads = diagramModuleId === "1spreads";
     const backHash = isCaseStudyDiagrams ? "#/casestudy" : isCaseStudy2Diagrams ? "#/casestudy2" : isSpreads ? "#/module/1" : `#/module/${MODULE_POSITION[diagramModuleId] || diagramModuleId}`;
-    const moduleLabel = isCaseStudyDiagrams ? "Case Study" : isCaseStudy2Diagrams ? "Case Study 2" : isSpreads ? "Case Study Spreads" : `Module ${String(MODULE_POSITION[diagramModuleId] || diagramModuleId).padStart(2, "0")}`;
+    const moduleLabel = isCaseStudyDiagrams ? "Case Study" : isCaseStudy2Diagrams ? "Case Study 02" : isSpreads ? "Case Study Spreads" : `Module ${String(MODULE_POSITION[diagramModuleId] || diagramModuleId).padStart(2, "0")}`;
 
     return (
       <DiagramSlideshow
