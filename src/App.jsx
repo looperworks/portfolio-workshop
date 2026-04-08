@@ -22,6 +22,22 @@ const T = {
   serif: "'Inter', 'Helvetica Neue', Arial, sans-serif",
 };
 
+/* ─── Text renderer: handles **bold** and [link](#/path) ─── */
+function renderText(text) {
+  // Split on **bold** and [link text](url) patterns, keeping delimiters
+  return text.split(/(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\))/).map((seg, j) => {
+    if (seg.startsWith("**") && seg.endsWith("**")) {
+      return <strong key={j} style={{ color: T.text, fontWeight: 600 }}>{seg.slice(2, -2)}</strong>;
+    }
+    const linkMatch = seg.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (linkMatch) {
+      const [, label, href] = linkMatch;
+      return <a key={j} href={href} style={{ color: T.text, textDecoration: "underline", textUnderlineOffset: 2 }}>{label}</a>;
+    }
+    return seg;
+  });
+}
+
 /* ─── Part groupings ─── */
 const PARTS = {
   part1: {
@@ -601,16 +617,16 @@ A portfolio is read at two speeds. At skim speed, the cover, image hierarchy, an
 
 Different audiences read for different evidence. An academic reviewer looks for process: sketches, diagrams, and failed iterations that reveal how you think through a problem. A large firm looks for resolution: polished deliverables and technical range that demonstrate you can produce at a professional standard. A boutique studio looks for alignment: a design sensibility and point of view that signal you would contribute to the studio's discourse, not just execute drawings. Knowing what each audience evaluates for is the difference between a page that documents and a page that argues.
 
-The modules that follow build the tools for constructing that argument: first the writing, then the structure, then the page. Throughout Part I, we return to a single portfolio (an Alpine Museum project from Harvard GSD) to show how each principle operates. The full case study appears at the end of Part I. Design the reading, not just the work.
+The modules that follow build the tools for constructing that argument: first the writing, then the structure, then the page. Throughout Part I, we return to a single portfolio (an Alpine Museum project from Harvard GSD) to show how each principle operates. The [full case study](#/casestudy) appears at the end of Part I. Design the reading, not just the work.
 
-**Try this now:** Pull up your current portfolio or your strongest project. Give it to a classmate for thirty seconds. Then ask: "What story do you think this designer cares about?" If their answer does not match your intent, the portfolio is not yet arguing. That gap is what the next five modules will close.`,
+**Try this now:** Pull up your current portfolio or your strongest project. Give it to a classmate for thirty seconds. Then ask: "What story do you think this designer cares about?" If their answer does not match your intent, the portfolio is not yet arguing. That gap is what the [next five modules](#/module/2) will close.`,
     keyInsight: `A portfolio is not an archive of everything you have produced. It is an argument.`,
   },
   {
     id: 2,
     title: "The Red Thread and Project Statement",
     part: "Narrative",
-    overview: `The Red Thread is the single organizing idea that connects all your projects into one argument. It is not a style. It is not a medium. It is a design position: a recurring question, preoccupation, or methodology that surfaces across different projects, scales, and contexts. Most second-year students can talk about their projects at length. They cannot yet say, in one sentence, what their work is about. The Compression Exercise uses progressive reduction to move from description to position.
+    overview: `The Red Thread is the single organizing idea that connects all your projects into one argument. It is not a style. It is not a medium. It is a design position: a recurring question, preoccupation, or methodology that surfaces across different projects, scales, and contexts. Most second-year students can talk about their projects at length. They cannot yet say, in one sentence, what their work is about. The [Compression Exercise](#/module/4) uses progressive reduction to move from description to position.
 
 **One Paragraph:** Write a project statement of four to six sentences covering what you explored, what problem you responded to, what method you used, and what you discovered. Do not describe the building. Describe the thinking.
 
@@ -620,7 +636,7 @@ The modules that follow build the tools for constructing that argument: first th
 
 **The Thread Test:** Repeat the exercise for every project in the portfolio. Write the core words side by side. When the same word keeps surfacing, you have found your Red Thread. When the words scatter, the portfolio lacks a unifying position and needs one.
 
-When you can name your lens, you can use it to curate, sequence, and edit with precision. The exercise turns a vague sense of what your work is about into a single word you can test against every project. The second diagram shows this exercise applied to the Alpine Museum portfolio from the case study at the end of Part I.
+When you can name your lens, you can use it to curate, sequence, and edit with precision. The exercise turns a vague sense of what your work is about into a single word you can test against every project. The second diagram shows this exercise applied to the Alpine Museum portfolio from the [case study at the end of Part I](#/casestudy).
 
 **Writing the Project Statement:** Once the compression exercise has produced your position, write it in two paragraphs. Paragraph one covers context, intent, and thesis in four to six sentences. Paragraph two covers development and outcome with evidence. Write in clear, active voice: present tense for design intent, past tense for process. The concept sentence is the compressed version: one line a reviewer reads in five seconds. It should distill the position you are testing and make it specific and testable. Weak statements describe ("This project explores light"). Strong statements declare ("This project tests whether a single aperture can structure an entire domestic sequence"). The concept sentence becomes the core claim for the project, the single idea that ties all images to one argument.`,
     keyInsight: `A position without a statement is intuition. A statement without a position is description.`,
@@ -644,7 +660,7 @@ Test the outline by reading it without the statement. If a reviewer could recons
     id: 4,
     title: "The Narrative Arc",
     part: "Narrative",
-    overview: `A graphic outline is a list. A narrative arc turns that list into a story. The difference is pacing, tension, and resolution: the same principles that make a film hold attention or a building sequence feel inevitable. Architects already understand this: a building reveals itself through a sequence of spatial experiences, from threshold to compression to release. A portfolio must do the same through a sequence of pages.
+    overview: `A graphic outline is a list. A narrative arc turns that list into a story. The difference is pacing, tension, and resolution: the same principles that make a film hold attention or a building sequence feel inevitable. (For the practical application, see [Storyboarding the Spreads](#/module/6).) Architects already understand this: a building reveals itself through a sequence of spatial experiences, from threshold to compression to release. A portfolio must do the same through a sequence of pages.
 
 The three-act structure provides the scaffold. **Act I (Setup)** introduces the project: the site, the governing concept, the stakes. The opening spreads place the project statement alongside hero images that establish the world the project inhabits and define the conditions it must address. Context images, site documentation, and the concept diagram belong here. Setup answers two questions: what is this project about, and why does it matter?
 
@@ -667,7 +683,7 @@ Concept images capture the governing idea: the parti diagram, the conceptual col
 
 Process images are evidence of thinking: iterations, massing studies, model photographs, analytical diagrams. They show how problems were solved, not just what was produced. This is where academic reviewers and boutique studios spend the most time; process reveals the designer's intelligence, not just skill. Outcome images prove feasibility and demonstrate professional fluency: the final rendering, the technical drawing, the detail section, the interior view. Outcome belongs in the closing acts, where the design responds to conflict and resolves the tension.
 
-Return to the graphic outline and label each drawing with its image type. The keyword categories from the outline (site, problem, design-move, result) name what the statement claims; the image types (concept, context, process, outcome) name what role each drawing plays as evidence. The two systems are complementary: keywords generate requirements, image types classify what you produce. A spread heavy on Outcome but missing Concept has skipped the argument. A spread full of Context but lacking Process has set the stage without performing. The ideal sequence within a project moves from Concept to Context to Process to Outcome, but the narrative arc determines exactly where each type appears across the full spread sequence.
+Return to the [graphic outline](#/module/3) and label each drawing with its image type. The keyword categories from the outline (site, problem, design-move, result) name what the statement claims; the image types (concept, context, process, outcome) name what role each drawing plays as evidence. The two systems are complementary: keywords generate requirements, image types classify what you produce. A spread heavy on Outcome but missing Concept has skipped the argument. A spread full of Context but lacking Process has set the stage without performing. The ideal sequence within a project moves from Concept to Context to Process to Outcome, but the [narrative arc](#/module/4) determines exactly where each type appears across the full spread sequence.
 
 **Try this now:** Return to your graphic outline and label each drawing C (Concept), X (Context), P (Process), or O (Outcome). Circle any type that appears fewer than twice. That is where the portfolio is thin.`,
     keyInsight: `A portfolio that leads with Outcome is a catalog. One that sequences Concept to Outcome is an argument.`,
@@ -676,7 +692,7 @@ Return to the graphic outline and label each drawing with its image type. The ke
     id: 7,
     title: "Storyboarding the Spreads",
     part: "Narrative",
-    overview: `The statement generated an outline. The narrative arc gave it structure. The image types classified the evidence. Now the work shifts from planning to page. Storyboarding is the physical act of translating a sequence that exists on paper into a sequence that holds when printed, scrolled, or projected. It is where pacing becomes visible and where problems that looked fine in a list reveal themselves as monotonous, front-loaded, or incomplete.
+    overview: `The statement generated an [outline](#/module/3). The [narrative arc](#/module/4) gave it structure. The [image types](#/module/5) classified the evidence. Now the work shifts from planning to page. Storyboarding is the physical act of translating a sequence that exists on paper into a sequence that holds when printed, scrolled, or projected. It is where pacing becomes visible and where problems that looked fine in a list reveal themselves as monotonous, front-loaded, or incomplete.
 
 Print every project image as a small thumbnail, three-by-five or four-by-six inches. Arrange them on a large table or bulletin board. Move them physically, testing different orderings. This kinesthetic approach reveals rhythm problems that are invisible on screen. A sequence that reads logically in a list often feels flat when you see the images at actual relative scale. Look for variety in image size, density, and register across adjacent spreads. If three consecutive spreads show the same type of content at the same scale, the pacing has stalled.
 
@@ -695,7 +711,7 @@ A portfolio grid is not a style choice. It is the structural system beneath ever
 
 Four grid types serve portfolio design. Manuscript grids use a single text column, the simplest structure, suited for books and theses. Column grids divide the page vertically, standard for editorial layouts. Modular grids add horizontal flowlines to columns, creating the most versatile framework for mixed architectural content and the recommended choice for portfolios. Hierarchical grids arrange content by visual weight rather than geometric rule, suited for websites and experimental formats. The choice is structural, not aesthetic: it determines how the reader navigates the page.
 
-A modular grid ensures consistency while allowing variation. Every page should derive from the same grid logic, creating coherence across the portfolio without monotony. In the Case Study 2 Generative Housing spreads, the same six-column grid accommodates a full-bleed floor plan, a rendering paired with a site plan, and a set of unit types beside a sectional model. Different content, same underlying structure. The grid makes variety legible.
+A modular grid ensures consistency while allowing variation. Every page should derive from the same grid logic, creating coherence across the portfolio without monotony. In the [Case Study 2](#/casestudy2) Generative Housing spreads, the same six-column grid accommodates a full-bleed floor plan, a rendering paired with a site plan, and a set of unit types beside a sectional model. Different content, same underlying structure. The grid makes variety legible.
 
 The grid should be invisible. When it works, a reviewer reads the argument, not the layout. If a reviewer notices the grid, the structure is competing with the content. Intentional breaks are legitimate when they serve the narrative (a full-bleed image, a pull quote crossing a column), but a break should signal emphasis, not confusion. Break the grid for a reason a reviewer can recognize immediately.
 
@@ -710,11 +726,11 @@ The grid should be invisible. When it works, a reviewer reads the argument, not 
 
 Two grids work together. The modular grid divides the page into columns and rows, creating rectangular modules where content is placed. Think of it as the concrete structure of a building: it defines where walls and floors go. The baseline grid is a set of evenly spaced horizontal lines, twelve points apart, that lock text to a consistent vertical rhythm. Think of it as the rebar inside the concrete: invisible but essential for alignment. The modular grid governs placement. The baseline grid governs the internal rhythm of text. Together, they produce the alignment that separates a professional portfolio from an assembled one.
 
-The page proportion for this course is 5:7, a ratio that echoes the Golden Section without forcing it. Columns and rows subdivide that rectangle into a field of modules, the smallest rectangular units where content is placed. The more modules per page, the more layout variation the grid supports. The exact specifications (page size, column count, gutter widths, row count) are covered in the next module, Building the Grid: Setup. What matters here is the concept: every measurement derives from a single value, and every element on the page resolves to a whole-number multiple of that value.
+The page proportion for this course is 5:7, a ratio that echoes the Golden Section without forcing it. Columns and rows subdivide that rectangle into a field of modules, the smallest rectangular units where content is placed. The more modules per page, the more layout variation the grid supports. The exact specifications (page size, column count, gutter widths, row count) are covered in [Building the Grid: InDesign Setup](#/module/13). What matters here is the concept: every measurement derives from a single value, and every element on the page resolves to a whole-number multiple of that value.
 
 When baseline alignment breaks, the result is subtle but cumulative. By the bottom of a spread, left-column text and right-column text sit at different vertical positions. A trained reviewer notices immediately. The twelve-point system prevents this: every spatial decision resolves as a whole-number multiple of twelve, and the math guarantees alignment.
 
-The Case Study 2 portfolio demonstrates these concepts in practice. Unit plans, renderings, sections, and model photographs all sit within the same modular framework. Each spread is visually distinct but structurally unified. Build the grid first. Fill it after.
+The [Case Study 2](#/casestudy2) portfolio demonstrates these concepts in practice. Unit plans, renderings, sections, and model photographs all sit within the same modular framework. Each spread is visually distinct but structurally unified. Build the grid first. Fill it after.
 
 **Try this now:** On a blank sheet, draw a rectangle at 5:7 proportion. Divide it into columns with gutters. Add rows. Sketch three different spread layouts using the same grid: one with a dominant image, one with a 50/50 split, one with generous whitespace. Same structure, three arguments.`,
     keyInsight: `Two grids work together: the modular grid governs placement, the baseline grid governs rhythm.`,
@@ -727,9 +743,9 @@ The Case Study 2 portfolio demonstrates these concepts in practice. Unit plans, 
 
 Three families cover most architectural portfolios. Modernist workhorses (Helvetica, Futura, DIN, Univers) are proven, neutral, and versatile. Humanist and contemporary faces (Avenir, Söhne, Gill Sans, Circular) feel warmer and more approachable. Editorial faces (Neue Montreal, GT Alpina, Minion Pro) carry personality without distraction. The choice is not about personal taste; it is about alignment between typography and argument.
 
-Size hierarchy makes the page scannable. Titles at twenty-four to forty-eight points, subtitles at fourteen to twenty, body text at nine to eleven, captions at seven to eight. These sizes map directly to the twelve-point baseline grid established in Part II: body text leading at twelve points locks every line to the grid, ensuring columns align across the spread. Without baseline alignment, text drifts between increments and the portfolio loses the structural precision that distinguishes professional work. In InDesign, the critical setting is Paragraph Styles with Align to Grid set to All Lines.
+Size hierarchy makes the page scannable. Titles at twenty-four to forty-eight points, subtitles at fourteen to twenty, body text at nine to eleven, captions at seven to eight. These sizes map directly to the [twelve-point baseline grid](#/module/8) established in Part II: body text leading at twelve points locks every line to the grid, ensuring columns align across the spread. Without baseline alignment, text drifts between increments and the portfolio loses the structural precision that distinguishes professional work. In InDesign, the critical setting is Paragraph Styles with Align to Grid set to All Lines.
 
-Line spacing matters more than most students expect. Tight leading works for captions and headlines. Looser leading gives body text room to breathe. The goal is a page that feels open, not dense, a portfolio the reviewer wants to keep reading. The Case Study 2 title pages demonstrate this: a clear hierarchy from project title to subtitle to body to credits, each level stepping down in size and weight while maintaining baseline alignment across both pages of the spread.
+Line spacing matters more than most students expect. Tight leading works for captions and headlines. Looser leading gives body text room to breathe. The goal is a page that feels open, not dense, a portfolio the reviewer wants to keep reading. The [Case Study 2](#/casestudy2) title pages demonstrate this: a clear hierarchy from project title to subtitle to body to credits, each level stepping down in size and weight while maintaining baseline alignment across both pages of the spread.
 
 **Try this now:** Open your InDesign file. Set your body text to ten points with twelve-point leading and lock it to the baseline grid. Now set your title to thirty-six points. Can you read the hierarchy from across the room? If the title and body look similar at arm's length, the contrast is too weak.`,
     keyInsight: `Typeface choices reveal your design sensibility before any drawing appears.`,
@@ -738,13 +754,13 @@ Line spacing matters more than most students expect. Tight leading works for cap
     id: 11,
     title: "Cover and Table of Contents",
     part: "Grid",
-    overview: `With your typographic system and color palette established, the cover becomes the first surface where those decisions appear. The cover is the first design decision a reviewer encounters, and it frames every page that follows. A cover does not decorate; it declares. It announces the portfolio's design position before the first project appears through typography, image selection, composition, and restraint. Seven cover typologies recur across professional and academic portfolios: Pure Minimal, Dark Ground, Hero Image, Bleed + Band, Collage, Grid Pattern, and Abstract Line. Each suits a different portfolio personality. Pure Minimal signals focus and confidence. Hero Image leads with a single defining moment. Grid Pattern implies systems thinking. The choice should reinforce the same Red Thread that runs through the project sequence.
+    overview: `With your [typographic system](#/module/9) and [color palette](#/module/11) established, the cover becomes the first surface where those decisions appear. The cover is the first design decision a reviewer encounters, and it frames every page that follows. A cover does not decorate; it declares. It announces the portfolio's design position before the first project appears through typography, image selection, composition, and restraint. Seven cover typologies recur across professional and academic portfolios: Pure Minimal, Dark Ground, Hero Image, Bleed + Band, Collage, Grid Pattern, and Abstract Line. Each suits a different portfolio personality. Pure Minimal signals focus and confidence. Hero Image leads with a single defining moment. Grid Pattern implies systems thinking. The choice should reinforce the same Red Thread that runs through the project sequence.
 
 The table of contents extends the cover's visual language into informational architecture. How you organize and present the contents signals what you value: visual richness, textual clarity, or a balance of both. Thumbnail formats pair small images with project titles, giving reviewers a visual preview (see the Illustrated Section Grid, Thumbnail Gallery Row, and Bold Number Column Cards types below). Text-only formats maintain clean legibility, suited for portfolios exceeding thirty pages (see the Multi-Column Text Index and Literary Chapter Index types). Hybrid formats combine selected images with structured text (see the Narrative + List Hybrid type). The TOC is not filler between cover and content; it is the reader's first act of navigation, and its design teaches the reviewer how to move through your work.
 
 Page numbering is a small decision with outsized consequences for consistency. Academic portfolios typically number from the cover onward. Professional portfolios begin numbering after front matter. Roman numerals mark introductory pages; Arabic numerals mark project pages. The format matters less than the commitment to one system applied without exception. Inconsistent numbering signals a portfolio assembled in haste, regardless of the quality of the work inside.
 
-The Case Study 2 portfolio demonstrates several of these principles at once: a consistent title-page format across both projects, with the same typographic system, image placement, and text structure applied to Generative Housing and Flexible Framework. The repetition is not redundancy; it is information architecture. A reviewer encountering the second project divider already knows where to find the statement, the credits, and the hero image, and can focus entirely on content rather than navigation.
+The [Case Study 2](#/casestudy2) portfolio demonstrates several of these principles at once: a consistent title-page format across both projects, with the same typographic system, image placement, and text structure applied to Generative Housing and Flexible Framework. The repetition is not redundancy; it is information architecture. A reviewer encountering the second project divider already knows where to find the statement, the credits, and the hero image, and can focus entirely on content rather than navigation.
 
 **Try this now:** Sketch three cover options for your portfolio, each using a different typology from the seven above. Which one reinforces your Red Thread? Show all three to a classmate and ask which one they would open first. Then open three architecture portfolios online and classify each table of contents by type: thumbnail gallery, text index, literary chapter, column cards, narrative hybrid, or illustrated grid. Which format best matches your portfolio's length and structure?`,
     keyInsight: `The cover is the first design decision a reviewer encounters. Make it argue.`,
@@ -753,9 +769,9 @@ The Case Study 2 portfolio demonstrates several of these principles at once: a c
     id: 12,
     title: "Color and Tonal Unity",
     part: "Production",
-    overview: `Color in a portfolio is a system, not an accent. Three palette families recur across architectural portfolios. Monochrome palettes use one hue family plus neutrals (deep grays, charcoals, blacks) for quiet authority; they remain the most common choice because they disappear and let the work speak. Warm accent palettes add a single deliberate warm color (terracotta, sand, gold) to a neutral base, tying the work to materiality and craft. Cool accent palettes introduce a cooler hue (pale cyan, slate blue, sage) for contrast without competing with project images. In application, warm and cool accent collapse into a single accent strategy (neutral base plus one deliberate color); the temperature choice depends on the design position. A separate organizational approach is project-coded color: each project receives a signature hue, used consistently in headers, dividers, and diagrams across its section. This yields three application strategies (monochrome, accent, project-coded) derived from the three palette families. The palette should connect to the design position that governs the portfolio's Red Thread: a project about erosion might favor earth tones; a project about light might favor high-contrast neutrals.
+    overview: `Color in a portfolio is a system, not an accent. Three palette families recur across architectural portfolios. Monochrome palettes use one hue family plus neutrals (deep grays, charcoals, blacks) for quiet authority; they remain the most common choice because they disappear and let the work speak. Warm accent palettes add a single deliberate warm color (terracotta, sand, gold) to a neutral base, tying the work to materiality and craft. Cool accent palettes introduce a cooler hue (pale cyan, slate blue, sage) for contrast without competing with project images. In application, warm and cool accent collapse into a single accent strategy (neutral base plus one deliberate color); the temperature choice depends on the design position. A separate organizational approach is project-coded color: each project receives a signature hue, used consistently in headers, dividers, and diagrams across its section. This yields three application strategies (monochrome, accent, project-coded) derived from the three palette families. The palette should connect to the design position that governs the portfolio's [Red Thread](#/module/2): a project about erosion might favor earth tones; a project about light might favor high-contrast neutrals.
 
-Tonal unity across spreads matters more than palette selection. When images from different projects sit side by side, inconsistent color temperature distracts. Studio work photographed under warm tungsten, cool fluorescent, and variable daylight produces images that clash even when the compositions are strong. A consistent color treatment (desaturation, unified white balance, or a limited tonal palette) solves this. In Case Study 2, the physical model photographs across both projects share a consistent warm-neutral tone: the timber models in Generative Housing and Flexible Framework read as part of the same portfolio because the color temperature is unified. The renderings maintain a restrained palette that does not compete with the model photography.
+Tonal unity across spreads matters more than palette selection. When images from different projects sit side by side, inconsistent color temperature distracts. Studio work photographed under warm tungsten, cool fluorescent, and variable daylight produces images that clash even when the compositions are strong. A consistent color treatment (desaturation, unified white balance, or a limited tonal palette) solves this. In [Case Study 2](#/casestudy2), the physical model photographs across both projects share a consistent warm-neutral tone: the timber models in Generative Housing and Flexible Framework read as part of the same portfolio because the color temperature is unified. The renderings maintain a restrained palette that does not compete with the model photography.
 
 The diagnostic test: print the portfolio in grayscale. If the visual hierarchy still reads without color, the color is supporting structure. If the portfolio falls apart, the color is doing work that belongs to the grid, the typography, or the image sequencing. Strengthen those systems first, then reintroduce color as reinforcement. In Case Study 2, the grayscale test holds: the hierarchy of title pages, dense spreads, and open spreads remains legible because size, weight, and whitespace carry the argument, not color.
 
@@ -787,7 +803,7 @@ Peer Review: Before finalizing, have two to three trusted colleagues or mentors 
     id: 16,
     title: "Building the Grid: InDesign Setup",
     part: "Grid",
-    overview: `The previous module established why every measurement derives from twelve points. This module walks through how to build that system in InDesign, step by step.
+    overview: `The [previous module](#/module/8) established why every measurement derives from twelve points. This module walks through how to build that system in InDesign, step by step.
 
 Start by resetting the workspace. Go to Window > Workspace > Essentials, then activate the panels you will use daily: Pages, Layers, Paragraph Styles, and Align. Close everything else. A cluttered workspace slows production and hides the panels that matter.
 
@@ -812,11 +828,11 @@ Finally, memorize five keyboard shortcuts before your first production session: 
 
 Five decisions govern every spread.
 
-The first is dominance. One element should anchor the viewer's eye and claim at least forty percent of the spread area. Everything else is subordinate: it supports, explains, or contextualizes the dominant. A spread without a clear dominant reads as a catalog, equal-weight images competing for attention, none winning. In the Case Study 2 portfolio, the full-bleed floor plan on Spread 3 is unmistakable. The architectural grid becomes the page grid, and no other element competes.
+The first is dominance. One element should anchor the viewer's eye and claim at least forty percent of the spread area. Everything else is subordinate: it supports, explains, or contextualizes the dominant. A spread without a clear dominant reads as a catalog, equal-weight images competing for attention, none winning. In the [Case Study 2](#/casestudy2) portfolio, the full-bleed floor plan on Spread 3 is unmistakable. The architectural grid becomes the page grid, and no other element competes.
 
 The second is the left-right relationship. Western readers enter from the upper left. The left page sets context; the right page delivers the primary content or resolution. A site plan on the left and a building rendering on the right creates a spatial logic the eye follows naturally, from environment to intervention. Reversing this forces the viewer to work backward. The convention is not rigid, but departing from it should be intentional. A process sequence (sketches left, final model right) or a before-and-after pair (existing conditions left, proposed design right) uses reading direction as narrative structure.
 
-The third is image scaling. Scale is hierarchy. A full-bleed image declares importance through size. An inset image, framed by whitespace, declares importance through isolation. A quadrant layout (four images per spread) implies comparison or sequence. Your six-column modular grid accommodates a two-thirds/one-third split, a 50/50 mirror, or a full-bleed with caption overlay. Each is an argument about what matters most on that spread.
+The third is image scaling. Scale is hierarchy. A full-bleed image declares importance through size. An inset image, framed by whitespace, declares importance through isolation. A quadrant layout (four images per spread) implies comparison or sequence. Your [six-column modular grid](#/module/7) accommodates a two-thirds/one-third split, a 50/50 mirror, or a full-bleed with caption overlay. Each is an argument about what matters most on that spread.
 
 The fourth is whitespace. Whitespace is not leftover space. It is a designed element: margins establish tension between content and edge, gutters separate content zones, and deliberate voids give the eye a place to rest. In an architecture portfolio, whitespace around a section drawing gives the drawing room to be read as architecture rather than as a graphic element. Crowding images to the margins weakens every drawing's legibility.
 
@@ -831,9 +847,9 @@ Composite logic operates in two ways. The first is compositing across images: di
     id: 15,
     title: "Pacing and Grid Breaks",
     part: "Grid",
-    overview: `A grid that produces the same layout on every page is not disciplined. It is monotonous. The Spread Composition module taught how to compose a single spread. This module teaches how to sequence spreads across the portfolio so the rhythm of dense and open, compressed and released, sustains attention from first page to last.
+    overview: `A grid that produces the same layout on every page is not disciplined. It is monotonous. The [Spread Composition](#/module/14) module taught how to compose a single spread. This module teaches how to sequence spreads across the portfolio so the rhythm of dense and open, compressed and released, sustains attention from first page to last.
 
-**Pacing.** Pacing is the alternation of density across sequential spreads. Five consecutive image-heavy spreads exhaust the viewer before the argument lands. The fix is alternation: a dense technical spread (plans, sections, details filling the grid) followed by a spread with a single image and generous whitespace. In Case Study 2, Spread 7 compresses: four axonometric views plus one large rendering, every grid module occupied. Spread 1, the project opener that follows, releases: one title, one hero image, mostly empty grid. That compression-release pair is pacing in action. Test it by printing thumbnail spreads and pinning them to the wall. If the sequence reads as a flat gray band of equal density, the pacing needs work. If it reads as a rhythm of tension and release, the grid is doing its job.
+**Pacing.** Pacing is the alternation of density across sequential spreads. Five consecutive image-heavy spreads exhaust the viewer before the argument lands. The fix is alternation: a dense technical spread (plans, sections, details filling the grid) followed by a spread with a single image and generous whitespace. In [Case Study 2](#/casestudy2), Spread 7 compresses: four axonometric views plus one large rendering, every grid module occupied. Spread 1, the project opener that follows, releases: one title, one hero image, mostly empty grid. That compression-release pair is pacing in action. Test it by printing thumbnail spreads and pinning them to the wall. If the sequence reads as a flat gray band of equal density, the pacing needs work. If it reads as a rhythm of tension and release, the grid is doing its job.
 
 **Grid Break 1: The Full-Bleed Image.** A full-bleed breaks every grid rule at once: no margins, no columns, no modules. It works as punctuation: a section divider, a project opener, or a closing image. In Case Study 2, Spread 12 is a full-bleed interior rendering with no text and no captions. The break works because every preceding spread obeyed the grid. A full-bleed on the first spread is not a break; it is an absence of structure. Earn the break first.
 
@@ -856,7 +872,7 @@ const CASE_STUDY = {
   id: "casestudy",
   title: "Case Study 1: Erosion",
   part: "Part I Conclusion",
-  overview: `This portfolio, from an Advanced Studio at Harvard GSD, proposes converting a decommissioned Cold War bunker at Col du Pillon into an Alpine Museum in Les Diablerets, Switzerland. Five spreads present the project. What follows is a reading of those spreads through the six modules of Part I, showing how each principle operates in practice.
+  overview: `This portfolio, from an Advanced Studio at Harvard GSD, proposes converting a decommissioned Cold War bunker at Col du Pillon into an Alpine Museum in Les Diablerets, Switzerland. Five spreads present the project. What follows is a reading of those spreads through the six modules of Part I, showing how each principle from [Part I](#/module/1) operates in practice.
 
 **The Portfolio as Constructed Argument.** This is not documentation of a studio assignment. Every spread advances a single claim: that architecture can make an invisible environmental process (glacial retreat, alpine erosion) into a spatial experience a visitor moves through. Spread 1 opens with a terrain model and the project abstract; Spread 5 closes with gallery interiors and floor plans. The sequence is not chronological. It is argumentative: ground first, then intervention, then inhabitation. The portfolio builds a case.
 
@@ -877,7 +893,7 @@ const CASE_STUDY_2 = {
   id: "casestudy2",
   title: "Case Study 2: Grid Systems in Practice",
   part: "Part II Conclusion",
-  overview: `This portfolio contains two projects across twelve spreads. What follows is a reading of those spreads through the five modules of Part II, showing how grid systems, composition, and pacing operate in a real portfolio.
+  overview: `This portfolio contains two projects across twelve spreads. What follows is a reading of those spreads through the five modules of Part II, showing how [grid systems](#/module/7), [composition](#/module/14), and [pacing](#/module/15) operate in a real portfolio.
 
 **Grid Systems.** The portfolio uses a six-column, eight-row modular grid with a twelve-point baseline. Every spread in the portfolio obeys this structure. Spread 1, the Generative Housing title page, demonstrates the full typographic hierarchy: project title in bold serif, italic subtitle, body text at reading size, and credits stepped down to caption scale. Spread 6 repeats the identical system for the second project, Flexible Framework. The repetition is the proof: the grid is not a one-time decision but a rule applied across the entire document. Margins, column widths, and gutter dimensions remain constant from the first page to the last.
 
@@ -910,7 +926,7 @@ function navigate(hash) {
 /* ─── About content ─── */
 const ABOUT_TEXT = [
   "Portfolio as Narrative is the companion resource for ARCH 66995: Portfolio, a studio-style course at Kent State University's College of Architecture and Environmental Design. The course guides architecture students in developing academic portfolios that synthesize design concepts and communicate architectural thinking to faculty and professional audiences.",
-  "The guide covers fifteen modules across three parts. Part I (Narrative) teaches position statements, keyword-driven graphic outlines, the three-act narrative arc (setup, confrontation, resolution), four image types as evidence (concept, context, process, outcome), and storyboarding. Part II (Grid) covers grid systems, the twelve-point modular grid, InDesign setup, spread composition, and variation and pacing. Part III (Production) addresses typographic systems, color and tonal unity, cover and table of contents design, and a six-category self-editing audit. Two case studies (one tracing a Harvard GSD project through all Part I principles, another analyzing a twelve-spread portfolio through Part II's grid and composition framework) provide extended worked examples.",
+  "The guide covers fifteen modules across three parts. [Part I (Narrative)](#/module/1) teaches position statements, keyword-driven graphic outlines, the three-act narrative arc (setup, confrontation, resolution), four image types as evidence (concept, context, process, outcome), and storyboarding. [Part II (Grid)](#/module/7) covers grid systems, the twelve-point modular grid, InDesign setup, spread composition, and variation and pacing. [Part III (Production)](#/module/11) addresses typographic systems, color and tonal unity, cover and table of contents design, and a six-category self-editing audit. [Two case studies](#/casestudy) (one tracing a Harvard GSD project through all Part I principles, another analyzing a twelve-spread portfolio through Part II's grid and composition framework) provide extended worked examples.",
   "Every module pairs instructional prose with captioned reference diagrams and concludes with a hands-on activity prompt. The course follows a fifteen-week cumulative structure, from portfolio foundations and audience analysis through storyboarding, grid application, and typographic systems, to final production, peer critique, and portfolio presentation. Assignments build progressively toward a fully resolved academic portfolio.",
   "Whether you are preparing for graduate school applications, professional interviews, or scholarship reviews, the framework here applies. A portfolio is not a binder. It is an argument, and this guide shows you how to build one.",
 ];
@@ -1594,7 +1610,7 @@ export default function PortfolioGuide() {
             </p>
             <div style={{ width: 24, height: 1, background: T.text, marginBottom: 28 }} />
             {ABOUT_TEXT.map((p, i) => (
-              <p key={i} style={{ fontSize: 12, lineHeight: 1.8, color: T.textMid, margin: "0 0 14px", letterSpacing: "0.01em" }}>{p}</p>
+              <p key={i} style={{ fontSize: 12, lineHeight: 1.8, color: T.textMid, margin: "0 0 14px", letterSpacing: "0.01em" }}>{renderText(p)}</p>
             ))}
             <div style={{ marginTop: 32, paddingTop: 20, borderTop: `1px solid ${T.border}` }}>
               <p style={{ fontSize: 12, color: T.textLight, margin: 0, lineHeight: 1.8, letterSpacing: "0.01em" }}>
@@ -1659,11 +1675,7 @@ export default function PortfolioGuide() {
 
           {paragraphs.map((p, i) => (
             <p key={i} style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>
-              {p.split(/(\*\*[^*]+\*\*)/).map((seg, j) =>
-                seg.startsWith("**") && seg.endsWith("**")
-                  ? <strong key={j} style={{ color: T.text, fontWeight: 600 }}>{seg.slice(2, -2)}</strong>
-                  : seg
-              )}
+              {renderText(p)}
             </p>
           ))}
 
@@ -1763,11 +1775,7 @@ export default function PortfolioGuide() {
 
           {paragraphs.map((p, i) => (
             <p key={i} style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>
-              {p.split(/(\*\*[^*]+\*\*)/).map((seg, j) =>
-                seg.startsWith("**") && seg.endsWith("**")
-                  ? <strong key={j} style={{ color: T.text, fontWeight: 600 }}>{seg.slice(2, -2)}</strong>
-                  : seg
-              )}
+              {renderText(p)}
             </p>
           ))}
 
@@ -1888,11 +1896,7 @@ export default function PortfolioGuide() {
 
         {paragraphs.map((p, i) => (
           <p key={i} style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>
-            {p.split(/(\*\*[^*]+\*\*)/).map((seg, j) =>
-              seg.startsWith("**") && seg.endsWith("**")
-                ? <strong key={j} style={{ color: T.text, fontWeight: 600 }}>{seg.slice(2, -2)}</strong>
-                : seg
-            )}
+            {renderText(p)}
           </p>
         ))}
 
