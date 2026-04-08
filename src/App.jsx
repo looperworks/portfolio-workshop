@@ -1194,6 +1194,199 @@ function DiagramSlideshow({ diagrams, moduleLabel, backHash }) {
   );
 }
 
+/* ─── Worksheet View ─── */
+function WorksheetView({ visible, handleBack }) {
+  const [form, setForm] = useState({
+    studentName: "", projectTitle: "", projectDesc: "", fullStatement: "",
+    oneSentence: "", oneWord: "",
+    actI: "", actII: "", actIII: "", techProof: "",
+    countConcept: "", countContext: "", countProcess: "", countOutcome: "",
+    listConcept: "", listContext: "", listProcess: "", listOutcome: "",
+    missingImages: "",
+  });
+  const [kwRows, setKwRows] = useState([
+    { kw: "", drawing: "", type: "" },
+    { kw: "", drawing: "", type: "" },
+    { kw: "", drawing: "", type: "" },
+    { kw: "", drawing: "", type: "" },
+    { kw: "", drawing: "", type: "" },
+  ]);
+  const [spreadRows] = useState([1,2,3,4,5,6,7].map(n => ({ num: n, beat: "", content: "" })));
+  const [exporting, setExporting] = useState(false);
+
+  const set = (k) => (e) => setForm(f => ({ ...f, [k]: e.target.value }));
+  const setKw = (i, k) => (e) => setKwRows(r => r.map((row, j) => j === i ? { ...row, [k]: e.target.value } : row));
+  const setSpread = (i, k) => (e) => { spreadRows[i][k] = e.target.value; };
+
+  const inputStyle = { fontFamily: T.sans, fontSize: 13, color: T.text, background: T.bg, border: `1px solid ${T.border}`, borderRadius: 2, padding: "10px 12px", width: "100%", boxSizing: "border-box", outline: "none" };
+  const taStyle = { ...inputStyle, resize: "vertical", minHeight: 80 };
+  const taShort = { ...taStyle, minHeight: 56 };
+  const labelStyle = { fontSize: 9, letterSpacing: "0.08em", textTransform: "uppercase", color: T.textMuted, fontWeight: 500, fontFamily: T.sans, display: "block", marginBottom: 6 };
+  const cellInput = { fontFamily: T.sans, fontSize: 12, color: T.text, background: "transparent", border: "none", padding: "9px 8px", width: "100%", boxSizing: "border-box", outline: "none" };
+
+  const downloadExcel = async () => {
+    setExporting(true);
+    try {
+      const XLSX = await import("https://cdn.sheetjs.com/xlsx-0.20.3/package/xlsx.mjs");
+      const wb = XLSX.utils.book_new();
+      const name = form.studentName || "Student";
+
+      const s1 = [["FROM THREAD TO SPREAD"], ["Student", name], ["Date", new Date().toLocaleDateString()], [],
+        ["STEP 1: PROJECT"], ["Project Title", form.projectTitle], ["Description", form.projectDesc], [],
+        ["STEP 2: FULL STATEMENT"], ["Statement", form.fullStatement], [],
+        ["STEP 3: COMPRESSION"], ["Concept Sentence", form.oneSentence], ["Red Thread Word", form.oneWord]];
+      const ws1 = XLSX.utils.aoa_to_sheet(s1); ws1["!cols"] = [{ wch: 20 }, { wch: 80 }];
+      XLSX.utils.book_append_sheet(wb, ws1, "Statement & Thread");
+
+      const s2 = [["STEP 4: KEYWORD TO OUTLINE"], [], ["Keyword", "Drawing Needed", "Image Type"]];
+      kwRows.forEach(r => { if (r.kw || r.drawing || r.type) s2.push([r.kw, r.drawing, r.type]); });
+      const ws2 = XLSX.utils.aoa_to_sheet(s2); ws2["!cols"] = [{ wch: 30 }, { wch: 40 }, { wch: 15 }];
+      XLSX.utils.book_append_sheet(wb, ws2, "Keyword Outline");
+
+      const s3 = [["STEP 5: NARRATIVE ARC"], [], ["Act", "Your Plan"],
+        ["Act I — Setup", form.actI], ["Act II — Confrontation", form.actII],
+        ["Act III — Resolution", form.actIII], ["Technical Proof", form.techProof], [],
+        ["STEP 6: IMAGE TYPE AUDIT"], [], ["Image Type", "Count", "Which Images"],
+        ["Concept", form.countConcept, form.listConcept], ["Context", form.countContext, form.listContext],
+        ["Process", form.countProcess, form.listProcess], ["Outcome", form.countOutcome, form.listOutcome],
+        [], ["What's Missing?", form.missingImages]];
+      const ws3 = XLSX.utils.aoa_to_sheet(s3); ws3["!cols"] = [{ wch: 25 }, { wch: 10 }, { wch: 60 }];
+      XLSX.utils.book_append_sheet(wb, ws3, "Arc & Image Audit");
+
+      const s4 = [["STEP 7: SEVEN-SPREAD OUTLINE"], [], ["Spread", "Arc Beat", "Images + Narrative Job"]];
+      spreadRows.forEach(r => { if (r.beat || r.content) s4.push([r.num, r.beat, r.content]); });
+      const ws4 = XLSX.utils.aoa_to_sheet(s4); ws4["!cols"] = [{ wch: 8 }, { wch: 18 }, { wch: 65 }];
+      XLSX.utils.book_append_sheet(wb, ws4, "Spread Plan");
+
+      XLSX.writeFile(wb, `From-Thread-to-Spread_${name.replace(/\s+/g, "-")}.xlsx`);
+    } catch (err) { console.error("Export failed:", err); }
+    setExporting(false);
+  };
+
+  const StepHeader = ({ num, title }) => (
+    <div style={{ marginBottom: 6 }}>
+      <span style={{ fontSize: 9, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textFaint, fontWeight: 400, fontFamily: T.sans }}>Step {String(num).padStart(2, "0")}</span>
+      <h2 style={{ fontSize: 16, fontWeight: 500, color: T.text, margin: "6px 0 0", letterSpacing: "0.01em", fontFamily: T.sans }}>{title}</h2>
+      <div style={{ width: 24, height: 1, background: T.text, marginTop: 12, marginBottom: 20 }} />
+    </div>
+  );
+
+  const Example = ({ label, children }) => (
+    <div style={{ borderLeft: `2px solid ${T.text}`, paddingLeft: 16, margin: "20px 0" }}>
+      <div style={{ fontSize: 8, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textMuted, fontWeight: 600, fontFamily: T.sans, marginBottom: 6 }}>Example — {label}</div>
+      <div style={{ fontSize: 12, lineHeight: 1.8, color: T.textMid, fontFamily: T.sans, letterSpacing: "0.01em" }}>{children}</div>
+    </div>
+  );
+
+  const WSection = ({ children, last }) => (
+    <div style={{ marginBottom: last ? 0 : 48, paddingBottom: last ? 0 : 48, borderBottom: last ? "none" : `1px solid ${T.border}` }}>{children}</div>
+  );
+
+  const selectStyle = { fontFamily: T.sans, fontSize: 11, color: T.text, background: "transparent", border: "none", padding: "9px 4px", width: "100%", cursor: "pointer", outline: "none" };
+
+  return (
+    <div style={{ minHeight: "100vh", background: T.bg, fontFamily: T.sans, display: "flex", flexDirection: "column" }}>
+      <header style={{ padding: "20px 40px", display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: `1px solid ${T.border}`, position: "sticky", top: 0, background: T.bg, zIndex: 50 }}>
+        <button onClick={handleBack} style={{ background: "none", border: "none", fontSize: 10, color: T.textMuted, cursor: "pointer", fontFamily: T.sans, letterSpacing: "0.06em", textTransform: "uppercase", padding: 0 }}>← Portfolio Workshop</button>
+        <span style={{ fontSize: 9, color: T.textFaint, letterSpacing: "0.06em", textTransform: "uppercase" }}>Worksheet</span>
+      </header>
+
+      <div style={{ flex: 1, padding: "56px 40px 120px", maxWidth: 520, width: "100%", margin: "0 auto", boxSizing: "border-box", opacity: visible ? 1 : 0, transition: "opacity 0.22s ease" }}>
+
+        <div style={{ marginBottom: 40 }}>
+          <div style={{ fontSize: 9, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textFaint, fontWeight: 400, marginBottom: 10 }}>Workshop Exercise</div>
+          <h1 style={{ fontSize: 16, fontWeight: 500, lineHeight: 1.4, color: T.text, margin: "0 0 8px", letterSpacing: "0.01em" }}>From Thread to Spread</h1>
+          <p style={{ fontSize: 12, color: T.textLight, margin: "0 0 20px", letterSpacing: "0.01em", lineHeight: 1.6 }}>Building your portfolio argument — from a project idea to a sequenced, image-mapped outline.</p>
+          <div style={{ width: 24, height: 1, background: T.text, marginBottom: 24 }} />
+          <div>
+            <span style={labelStyle}>Your Name</span>
+            <input type="text" value={form.studentName} onChange={set("studentName")} placeholder="First Last" style={{ ...inputStyle, maxWidth: 280 }} onFocus={e => e.target.style.borderColor = T.navy} onBlur={e => e.target.style.borderColor = T.border} />
+          </div>
+        </div>
+
+        <WSection>
+          <StepHeader num={1} title="Choose Your Project" />
+          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Pick one studio project you want to include in your portfolio. Name it and write 2–3 sentences describing what you designed.</p>
+          <Example label="Case Study 1"><em>Après Ski — Alpine Museum.</em> A proposal to convert a decommissioned military bunker at Col du Pillon in the Swiss Alps into an Alpine Museum. The building embeds into the mountainside, using ramped circulation and carved ground planes to connect landscape above with gallery spaces below.</Example>
+          <div style={{ marginBottom: 12 }}><span style={labelStyle}>Project title</span><input type="text" value={form.projectTitle} onChange={set("projectTitle")} placeholder="e.g., Après Ski — Alpine Museum" style={inputStyle} onFocus={e => e.target.style.borderColor = T.navy} onBlur={e => e.target.style.borderColor = T.border} /></div>
+          <div><span style={labelStyle}>Brief description</span><textarea value={form.projectDesc} onChange={set("projectDesc")} placeholder="What did you design? Where? For whom?" style={taShort} onFocus={e => e.target.style.borderColor = T.navy} onBlur={e => e.target.style.borderColor = T.border} /></div>
+        </WSection>
+
+        <WSection>
+          <StepHeader num={2} title="Write the Full Statement" />
+          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>In one paragraph, describe what you were actually investigating — not what you built, but what question drove the design.</p>
+          <Example label="Case Study 1"><em>"This project investigated how existing alpine infrastructure can be repurposed to make the effects of climate change visible and publicly accessible. Situated between Gstaad and Les Diablerets in the Swiss Alps, the design converts a decommissioned military bunker at Col du Pillon into an Alpine Museum. The building embeds into the mountainside, using ramped circulation and carved ground planes to create a continuous path between the landscape above and gallery spaces below."</em></Example>
+          <span style={labelStyle}>Your project statement (one paragraph)</span>
+          <textarea value={form.fullStatement} onChange={set("fullStatement")} placeholder="This project investigated how..." style={taStyle} onFocus={e => e.target.style.borderColor = T.navy} onBlur={e => e.target.style.borderColor = T.border} />
+        </WSection>
+
+        <WSection>
+          <StepHeader num={3} title="Compress" />
+          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Distill your paragraph into a single sentence that makes a claim. Then find the one word that recurs across your work.</p>
+          <Example label="Case Study 1"><strong style={{ color: T.text, fontWeight: 600 }}>One sentence:</strong> <em>"The Alpine Museum embeds into eroding terrain to make the invisible trajectory of climate change a spatial experience visitors move through."</em><br /><strong style={{ color: T.text, fontWeight: 600 }}>One word:</strong> <em>Erosion.</em></Example>
+          <div style={{ marginBottom: 12 }}><span style={labelStyle}>Concept sentence</span><textarea value={form.oneSentence} onChange={set("oneSentence")} placeholder="Not 'This project explores light.' Instead: 'The pavilion uses directed apertures to...'" style={taShort} onFocus={e => e.target.style.borderColor = T.navy} onBlur={e => e.target.style.borderColor = T.border} /></div>
+          <div><span style={labelStyle}>One word (your Red Thread)</span><input type="text" value={form.oneWord} onChange={set("oneWord")} placeholder="e.g., Erosion, Threshold, Porosity" style={{ ...inputStyle, maxWidth: 240 }} onFocus={e => e.target.style.borderColor = T.navy} onBlur={e => e.target.style.borderColor = T.border} /></div>
+        </WSection>
+
+        <WSection>
+          <StepHeader num={4} title="From Keywords to Outline" />
+          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Go back to your concept sentence. Circle every keyword. Each one demands a specific drawing type. Map them below.</p>
+          <Example label="Case Study 1"><em>"embeds into eroding terrain"</em> → terrain models, site sections<br /><em>"Alpine"</em> → site context photos, aerial views<br /><em>"climate change"</em> → environmental overlays, seasonal renderings<br /><em>"spatial experience"</em> → interior renderings, circulation diagrams</Example>
+          <table style={{ width: "100%", borderCollapse: "collapse", margin: "16px 0 8px" }}>
+            <thead><tr>{["Keyword", "Drawing / Image Needed", "Image Type"].map((h, i) => (<th key={i} style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textMuted, fontFamily: T.sans, padding: "8px 8px", textAlign: "left", borderBottom: `1px solid ${T.text}` }}>{h}</th>))}</tr></thead>
+            <tbody>{kwRows.map((row, i) => (<tr key={i} style={{ borderBottom: `1px solid ${T.border}` }}><td><input type="text" value={row.kw} onChange={setKw(i, "kw")} placeholder="keyword" style={cellInput} onFocus={e => e.target.style.background = T.bgAlt} onBlur={e => e.target.style.background = "transparent"} /></td><td><input type="text" value={row.drawing} onChange={setKw(i, "drawing")} placeholder="drawing type" style={cellInput} onFocus={e => e.target.style.background = T.bgAlt} onBlur={e => e.target.style.background = "transparent"} /></td><td><select value={row.type} onChange={setKw(i, "type")} style={selectStyle}><option value="">—</option><option>Concept</option><option>Context</option><option>Process</option><option>Outcome</option></select></td></tr>))}</tbody>
+          </table>
+          <button onClick={() => setKwRows(r => [...r, { kw: "", drawing: "", type: "" }])} style={{ background: "none", border: `1px dashed ${T.border}`, fontSize: 10, color: T.textMuted, fontFamily: T.sans, padding: "6px 14px", borderRadius: 2, cursor: "pointer", letterSpacing: "0.04em" }}>+ Add row</button>
+        </WSection>
+
+        <WSection>
+          <StepHeader num={5} title="Sequence the Narrative Arc" />
+          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Arrange your images into the three-act structure. What should the viewer feel at each stage?</p>
+          <Example label="Case Study 1"><strong style={{ color: T.text, fontWeight: 600 }}>Act I:</strong> Terrain model (Concept). Landscape as raw material.<br /><strong style={{ color: T.text, fontWeight: 600 }}>Act II:</strong> Aerial (Context) + erosion detail + winter rendering + section. Tension builds.<br /><strong style={{ color: T.text, fontWeight: 600 }}>Act III:</strong> Summer rendering (Outcome) + plan (Process). Building inhabits landscape.<br /><strong style={{ color: T.text, fontWeight: 600 }}>Technical Proof:</strong> Details, material specs, structural logic.</Example>
+          {[["Act I — Setup", "actI", "What images open your project? What world are you establishing?"],
+            ["Act II — Confrontation", "actII", "What makes the problem feel real? Where does tension build?"],
+            ["Act III — Resolution", "actIII", "How does the design respond? What's the payoff?"],
+            ["Technical Proof", "techProof", "What proves feasibility? Details, materials, systems?"]
+          ].map(([label, key, ph]) => (<div key={key} style={{ marginBottom: 16 }}><span style={{ ...labelStyle, color: T.textLight }}>{label}</span><textarea value={form[key]} onChange={set(key)} placeholder={ph} style={taShort} onFocus={e => e.target.style.borderColor = T.navy} onBlur={e => e.target.style.borderColor = T.border} /></div>))}
+        </WSection>
+
+        <WSection>
+          <StepHeader num={6} title="Image Type Audit" />
+          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Count how many images fall into each type. A balanced academic portfolio should be heaviest on Process.</p>
+          <Example label="Case Study 1"><em>Concept: 1 · Context: 2 · Process: 2 · Outcome: 2</em> — balanced, with Process and Context supporting the argument.</Example>
+          <table style={{ width: "100%", borderCollapse: "collapse", margin: "16px 0" }}>
+            <thead><tr>{["Image Type", "Count", "Which Images?"].map((h, i) => (<th key={i} style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textMuted, fontFamily: T.sans, padding: "8px 8px", textAlign: "left", borderBottom: `1px solid ${T.text}` }}>{h}</th>))}</tr></thead>
+            <tbody>{["Concept", "Context", "Process", "Outcome"].map(t => (<tr key={t} style={{ borderBottom: `1px solid ${T.border}` }}><td style={{ padding: "9px 8px", fontSize: 12, fontWeight: 500, fontFamily: T.sans, width: 90 }}>{t}</td><td style={{ width: 50 }}><input type="text" value={form[`count${t}`]} onChange={set(`count${t}`)} placeholder="0" style={{ ...cellInput, textAlign: "center" }} onFocus={e => e.target.style.background = T.bgAlt} onBlur={e => e.target.style.background = "transparent"} /></td><td><input type="text" value={form[`list${t}`]} onChange={set(`list${t}`)} placeholder={`e.g., ${t === "Concept" ? "site model, diagram" : t === "Context" ? "aerial, site plan" : t === "Process" ? "section, iteration models" : "rendering, final plan"}`} style={cellInput} onFocus={e => e.target.style.background = T.bgAlt} onBlur={e => e.target.style.background = "transparent"} /></td></tr>))}</tbody>
+          </table>
+          <span style={labelStyle}>What's missing?</span>
+          <textarea value={form.missingImages} onChange={set("missingImages")} placeholder="e.g., I have no Process images — need to add iteration models." style={taShort} onFocus={e => e.target.style.borderColor = T.navy} onBlur={e => e.target.style.borderColor = T.border} />
+        </WSection>
+
+        <WSection last>
+          <StepHeader num={7} title="Seven-Spread Outline" />
+          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>If this project gets seven spreads, what goes on each one? Each spread is a beat in the story.</p>
+          <Example label="Case Study 1"><strong style={{ color: T.text, fontWeight: 600 }}>1 (Setup):</strong> Terrain model — landscape as raw material<br /><strong style={{ color: T.text, fontWeight: 600 }}>2:</strong> Site map + erosion detail — alpine erosion at scale<br /><strong style={{ color: T.text, fontWeight: 600 }}>3 (Confrontation):</strong> Section + winter photo + rendering — building carves in<br /><strong style={{ color: T.text, fontWeight: 600 }}>4:</strong> Full-width embedded section — erosion made accessible<br /><strong style={{ color: T.text, fontWeight: 600 }}>5 (Resolution):</strong> Interior gallery + floor plans — erosion made inhabitable</Example>
+          <table style={{ width: "100%", borderCollapse: "collapse", margin: "16px 0" }}>
+            <thead><tr><th style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textMuted, fontFamily: T.sans, padding: "8px 8px", textAlign: "center", borderBottom: `1px solid ${T.text}`, width: 36 }}>#</th><th style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textMuted, fontFamily: T.sans, padding: "8px 8px", textAlign: "left", borderBottom: `1px solid ${T.text}`, width: 110 }}>Arc Beat</th><th style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textMuted, fontFamily: T.sans, padding: "8px 8px", textAlign: "left", borderBottom: `1px solid ${T.text}` }}>Images + Narrative Job</th></tr></thead>
+            <tbody>{spreadRows.map((row, i) => (<tr key={i} style={{ borderBottom: `1px solid ${T.border}` }}><td style={{ padding: "9px 8px", fontSize: 12, fontFamily: T.sans, textAlign: "center", color: T.textLight }}>{row.num}</td><td><select defaultValue="" onChange={setSpread(i, "beat")} style={selectStyle}><option value="">—</option><option>Setup</option><option>Confrontation</option><option>Turning Point</option><option>Resolution</option><option>Technical Proof</option></select></td><td><input type="text" defaultValue="" onChange={setSpread(i, "content")} placeholder="What images? What story beat?" style={cellInput} onFocus={e => e.target.style.background = T.bgAlt} onBlur={e => e.target.style.background = "transparent"} /></td></tr>))}</tbody>
+          </table>
+        </WSection>
+
+      </div>
+
+      <div style={{ position: "sticky", bottom: 0, background: T.navy, padding: "14px 40px", display: "flex", justifyContent: "space-between", alignItems: "center", zIndex: 40 }}>
+        <span style={{ fontSize: 11, color: T.textLight, fontFamily: T.sans, letterSpacing: "0.02em" }}>Save your work — download all answers as a spreadsheet.</span>
+        <button onClick={downloadExcel} disabled={exporting} style={{ fontFamily: T.sans, fontSize: 11, fontWeight: 500, letterSpacing: "0.04em", color: T.navy, background: "#fff", border: "none", padding: "8px 20px", borderRadius: 2, cursor: "pointer" }}>{exporting ? "Exporting..." : "Download .xlsx"}</button>
+      </div>
+
+      <footer style={{ padding: "28px 40px", display: "flex", justifyContent: "space-between", fontSize: 9, color: T.textFaint, fontFamily: T.sans, letterSpacing: "0.04em" }}>
+        <span>Kent State University · CAED</span>
+        <a href="https://thresholdarch.com" target="_blank" rel="noopener noreferrer" style={{ color: T.textFaint, textDecoration: "none" }}>thresholdarch.com</a>
+      </footer>
+    </div>
+  );
+}
+
 /* ─── Main App ─── */
 export default function PortfolioGuide() {
   const route = useHashRoute();
@@ -1209,6 +1402,8 @@ export default function PortfolioGuide() {
 
   if (route === "#/about") {
     view = "about";
+  } else if (route === "#/worksheet") {
+    view = "worksheet";
   } else if (route === "#/casestudy") {
     view = "casestudy";
     isCaseStudy = true;
@@ -1337,6 +1532,24 @@ export default function PortfolioGuide() {
                 )}
               </div>
             ))}
+
+            {/* Worksheet link */}
+            <div style={{ marginTop: 28 }}>
+              <span style={{ fontSize: 9, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textFaint, fontWeight: 500, marginBottom: 0, display: "block" }}>Exercise</span>
+              <div
+                onClick={() => navigate("#/worksheet")}
+                style={{
+                  display: "flex", alignItems: "baseline", gap: 14,
+                  padding: "9px 0", borderBottom: `1px solid ${T.border}`,
+                  cursor: "pointer", transition: "opacity 0.2s ease",
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.5"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}
+              >
+                <span style={{ fontSize: 10, color: T.textFaint, minWidth: 20, fontWeight: 400, letterSpacing: "0.02em" }}></span>
+                <span style={{ fontSize: 12, color: T.text, fontWeight: 400, letterSpacing: "0.01em" }}>From Thread to Spread — Worksheet</span>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1346,6 +1559,11 @@ export default function PortfolioGuide() {
         </footer>
       </div>
     );
+  }
+
+  // ─── Worksheet ───
+  if (view === "worksheet") {
+    return <WorksheetView visible={visible} handleBack={handleBack} />;
   }
 
   // ─── About ───
